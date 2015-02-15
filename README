@@ -1,0 +1,21 @@
+Andrea's Sketchbook 
+=====================
+
+Esempi per i corsi su Arduino.
+Le ultime versioni sono disponibili su: git.andreamanni.com
+
+Per aggiornare il proprio archivio:
+cd sketchbook_andrea/ ; git fetch
+    
+
+Note
+------
+
+- head_tails_ino
+Is the code example of C book for control structures (IF)
+
+- loop_match_2_ino
+Is the code example of C book for iterative structures (while  - for loop)
+
+
+>-- Copyright note: all these is released into the Public Domain --<

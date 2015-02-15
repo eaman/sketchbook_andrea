@@ -1,0 +1,6 @@
+Use examples provided with arduino:
+
+EDIT -> Example -> Control -> ...
+
+- SwitchCase: check the range of a (mapped)  analog input with a switch loop.
+- SwitchCase2: SerialInput to light up a bunch of LEDS.

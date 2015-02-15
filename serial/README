@@ -1,0 +1,8 @@
+- Simple serial communication 2 arduino: switch 1 and LED 2
+- Serial Parser: Examples -> strings
+- Serial to RGB LED
+
+
+- I2C
+- SPI
+- display lcd , clock, ethernet, gyro, 

@@ -1,0 +1,71 @@
+/*
+  Analog Input
+ Demonstrates analog input by reading an analog sensor on analog pin 0 and
+ turning on and off a light emitting diode(LED)  connected to digital pin 13. 
+ The amount of time the LED will be on and off depends on
+ the value obtained by analogRead(). 
+ 
+ The circuit:
+ * Potentiometer attached to analog input 0
+ * center pin of the potentiometer to the analog pin
+ * one side pin (either one) to ground
+ * the other side pin to +5V
+ * LED anode (long leg) attached to digital output 13
+ * LED cathode (short leg) attached to ground
+ 
+ * Note: because most Arduinos have a built-in LED attached 
+ to pin 13 on the board, the LED is optional.
+ 
+ 
+ Created by David Cuartielles
+ modified 30 Aug 2011
+ By Tom Igoe
+ 
+ This example code is in the public domain.
+ 
+ http://arduino.cc/en/Tutorial/AnalogInput
+ 
+ Modified by A.Manni for using a 2.4k Pot with 2 5k resistors
+ Range = (1024 - offset) *  1024 / (1024 - offset)
+ Range can be defined with map(sensorValue, 724, 0124, 0, 1024)
+ Note: range is inverted
+ With serial debugging.
+ - Added initial limit for delay 
+ 
+ */
+
+int sensorPin = A0;    // select the input pin for the potentiometer
+int ledPin = 13;      // select the pin for the LED
+int sensorValue = 0;  // variable to store the value coming from the sensor
+int calValue = map(sensorValue, 723, 1024, 0, 1024) ;    // variable to store calibrated value for the Pot
+// This could be done with a map()
+void setup() {
+
+  pinMode(ledPin, OUTPUT);  // declare the ledPin as an OUTPUT:
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // read the value from the sensor:
+  sensorValue = analogRead(sensorPin);    
+
+    // turn the ledPin on
+    digitalWrite(ledPin, HIGH);  
+    // stop the program for <sensorValue> milliseconds:
+    delay(sensorValue);          
+    // turn the ledPin off:        
+    digitalWrite(ledPin, LOW);   
+    // stop the program for for <sensorValue> milliseconds:
+    // Range = (1024 - offset) *  1024 / (1024 - offset)
+    // calValue = (sensorValue -723 ) * 3.4 ; 
+    delay(calValue);
+    Serial.print("Sensor Value: ") ;
+    Serial.println(sensorValue);
+    Serial.print("Adjusted value: ") ;
+    Serial.println(calValue);
+ 
+}
+
+
+

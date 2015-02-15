@@ -1,0 +1,10 @@
+Sketch 8: Sketch con 4 modi per il LED:
+
+1. OFF
+2. ON
+3. Blink
+4. Fast Blink
+
+
+Si potrebbe fare con una struttura switch per attivare il modo,
+valutare se usare un array per iterare tra i modi.
