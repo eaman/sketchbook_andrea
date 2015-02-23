@@ -1,11 +1,18 @@
 /*
-  Blink v3
-  Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
-  Turns on an LED on for one second, then off for one second, repeatedly.
+  Blink v5
  
-  This example code is in the public domain.
+ Accensione e spegnimanto di 2 LED.
+ Nel circuito oltre al LED montato direttamente sul pin 13
+ viene aggiunto un altro LED pilotato dal PIN 12.
+ 
+ Ricordarsi di usare una resistenza da ~320ohms per il secondo LED.
+ Resistenza = (Voltaggio_Arduino - Forward_voltage_LED) / (ampere utilizzati)
+ R = (5v-1.8v) / 0.010a 
+ R =320ohms
+ 
+ This example code is in the public domain.
  */
- 
+
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
 int led = 13;
@@ -30,3 +37,5 @@ void loop() {
   digitalWrite(red, LOW);    // turn the LED off by making the voltage LOW
   delay(lunga); 
 }
+
+

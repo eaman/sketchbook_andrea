@@ -1,5 +1,5 @@
 /*
-  Blink v7
+  Blink v6
   
  Due LEDs con funzioni che accettano argomenti:
  gli argomenti permettono di modificar il comportamento

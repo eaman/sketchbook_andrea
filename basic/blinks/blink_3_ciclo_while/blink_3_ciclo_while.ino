@@ -1,7 +1,7 @@
 /*
   Blink v3
- Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
- Turns on an LED on for one second, then off for one second, repeatedly.
+ Accensione e spegnimanto di un LED utilizzando un ciclo
+ iterativo while per comandare il lampeggio.
  
  This example code is in the public domain.
  */
@@ -22,9 +22,9 @@ void setup() {
 // the loop routine runs over and over again forever:
 void loop() {
   while (iterator <10) {
-      rapido(); // accende e spegne rapidamente il LED
-      iterator = iterator +1 ; // incrementa l'iteratore
-      // iterator++ ; // equivalente
+    rapido(); // accende e spegne rapidamente il LED
+    iterator = iterator +1 ; // incrementa l'iteratore
+    // iterator++ ; // equivalente
   }
   lento();  // accende e spegne lentamente il LED
   // Domanda: a quanto equivale iterator ora?
@@ -51,5 +51,6 @@ void lento() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(lunga); 
 }
+
 
 

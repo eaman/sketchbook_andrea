@@ -1,7 +1,7 @@
 /*
-  Blink v3
- Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
- Turns on an LED on for one second, then off for one second, repeatedly.
+  Blink v4
+ Accensione e spegnimanto di un LED utilizzando un ciclo
+ iterativo for per comandare il lampeggio.
  
  This example code is in the public domain.
  */

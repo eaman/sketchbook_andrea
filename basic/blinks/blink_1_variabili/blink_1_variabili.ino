@@ -1,6 +1,9 @@
 /*
-  Blink v3
-  Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
+  Blink v1
+
+  Accensione e spegnimanto di un LED utilizzando variabili
+  per impostare la velocita' del lampeggio.
+  
   Turns on an LED on for one second, then off for one second, repeatedly.
  
   This example code is in the public domain.

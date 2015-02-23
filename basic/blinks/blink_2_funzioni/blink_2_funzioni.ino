@@ -1,7 +1,8 @@
 /*
-  Blink v3
- Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
- Turns on an LED on for one second, then off for one second, repeatedly.
+  Blink v2
+ 
+ Accensione e spegnimanto di un LED utilizzando funzioni
+ per comandare il lampeggio.
  
  This example code is in the public domain.
  */
@@ -46,5 +47,6 @@ void lento() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(lunga); 
 }
+
 
 
