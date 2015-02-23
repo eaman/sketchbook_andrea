@@ -1,16 +1,14 @@
 /*
-  Blink v3
- Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
- Turns on an LED on for one second, then off for one second, repeatedly.
+  Blink v6
  
- This example code is in the public domain.
+ Due LEDs con funzioni.
+ 
  */
 
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
 int led = 13;
 int red = 12;
-int button = 2;
 int breve = 200;
 int lunga = 1000;
 
@@ -19,30 +17,26 @@ void setup() {
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
   pinMode(red, OUTPUT);
-  pinMode(button, INPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
- if (digitalRead(button) == HIGH) { // HIGH sta per +5v
-   lightRed(breve);
- }
- if (digitalRead(button) == LOW) { // LOW sta per 0v                  
-   lightGreen(breve);
- }
+  lightRed();
+  lightGreen();
 }
 
-void lightRed(int length) { // Argomento
+void lightRed() {
   digitalWrite(red, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(length);               // wait for a second
+  delay(lunga);               // wait for a second
   digitalWrite(red, LOW);    // turn the LED off by making the voltage LOW
-  delay(length); 
+  delay(lunga); 
 }
 
-void lightGreen(int  length) {
+void lightGreen() {
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(length);               // wait for a second
+  delay(breve);               // wait for a second
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(length);               // wait for a second
+  delay(breve);               // wait for a second
 }
+
 

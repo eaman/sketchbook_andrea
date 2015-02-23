@@ -1,9 +1,10 @@
 /*
-  Blink v3
- Now with 2 variables and an extra LED (remember a ~320 ohms resistor).
- Turns on an LED on for one second, then off for one second, repeatedly.
+  Blink v7
+  
+ Due LEDs con funzioni che accettano argomenti:
+ gli argomenti permettono di modificar il comportamento
+ delle funzioni.
  
- This example code is in the public domain.
  */
 
 // Pin 13 has an LED connected on most Arduino boards.

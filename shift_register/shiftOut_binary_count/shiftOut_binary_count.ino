@@ -39,7 +39,7 @@ void loop() {
     digitalWrite(latchPin, LOW);
 
     // shift out the bits:
-    shiftOut(dataPin, clockPin, SBFIRST, numberToDisplay);  
+    shiftOut(dataPin, clockPin, MSBFIRST, numberToDisplay);  
 
     //take the latch pin high so the LEDs will light up:
     digitalWrite(latchPin, HIGH);
