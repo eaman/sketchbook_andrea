@@ -17,6 +17,8 @@
 // give it a name:
 int led = 13;
 int red = 12; // Definiamo un altro led
+int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
+int lunga = 1000;
 
 // the setup routine runs once when you press reset:
 void setup() {                
