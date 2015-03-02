@@ -6,7 +6,7 @@
  of a 74HC595 shift register.
 
  Hardware:
- * 74HC595 shift register attached to pins 2, 3, and 4 of the Arduino,
+ * 74HC595 shift register attached to pins 8, 12, and 11 of the Arduino,
  as detailed below.
  * LEDs attached to each of the outputs of the shift register
 

@@ -1,27 +1,32 @@
 /*
-    Adafruit Arduino - Lesson 3. RGB LED
+    LED for PWM
+ 
+ LEd PWM routine with a for loop, ascending and descending.
+ 
  */
 
-int redPin = 11;
-int greenPin = 10;
-int bluePin = 9;
+int led = 11;
 int c = 0;
 
-//uncomment this line if using a Common Anode LED
-//#define COMMON_ANODE
 
 void setup()
 {
-  pinMode(redPin, OUTPUT);
+  pinMode(led, OUTPUT);
 
 }
 
 void loop()
 {
   for ( c = 0; c < 255 ; c++) {
-    analogWrite(redPin, c) ;
+    analogWrite(led, c) ;
+    delay(5 );
+  }
+  // Now reverse
+    for ( c = 255; c > 0 ; c--) {
+    analogWrite(led, c) ;
     delay(5 );
   }
 }
+
 
 
