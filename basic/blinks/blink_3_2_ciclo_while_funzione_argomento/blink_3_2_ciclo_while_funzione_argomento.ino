@@ -2,6 +2,8 @@
   Blink v3
  Accensione e spegnimanto di un LED utilizzando un ciclo
  iterativo while per comandare il lampeggio.
+ Questa volta il ciclo while() e' relegato in una funzione
+ che accetta come argomento il numero di ripetizionei da effettuare.
  
  This example code is in the public domain.
  */
@@ -20,13 +22,9 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  int iterator = 0; // Defniamo un variabile per controllare un ciclo iterativo
-  while (iterator <10) {
-    rapido(); // accende e spegne rapidamente il LED
-    iterator = iterator + 1 ; // incrementa l'iteratore
-    // iterator++ ; // equivalente
-  }
+  lampeggia(8);
   lento();  // accende e spegne lentamente il LED
+  // Domanda: a quanto equivale iterator ora?
 }
 
 // Funzioni create dall'utente:
@@ -50,6 +48,19 @@ void lento() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(lunga); 
 }
+
+void lampeggia(int ripetizioni) {
+  // Accende un LED per un numero stabilito di volte
+
+  // Questa funziona accetta un parametro: ripetizioni
+  int i = 0;
+  while (i < ripetizioni) {
+    rapido();   // accende e spegne rapidamente il LED
+    i = i + 1 ; // incrementa l'iteratore
+ // i++ ;       // equivalente
+  }
+}
+
 
 
 

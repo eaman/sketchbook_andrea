@@ -8,38 +8,38 @@
  */
 
 int led = 11;
-int c = 0;
+int pausa = 3000; // or 20 when sampling
 
 
 void setup()
 {
   pinMode(led, OUTPUT);
-  delay(5000);
-
+  delay(4000);
 }
 
 void loop()
 {  
   // Static test value, comment exit() or ad a delay()
-  //analogWrite(led, 0) ; // No light
-  //delay(20)
-  //analogWrite(led, 254) ;  // Full light
-  //delay(20)
-  //analogWrite(led, 63) ;   // 1/4
-  //delay(20)
-  //analogWrite(led, 127) ;  // 1/2
-  //delay(20)
-  //analogWrite(led, 191) ;  // 3/4
-  //delay(20)
-  //return ;
-  
-  for ( c = 0; c < 255 ; c++) {
+  analogWrite(led, 1) ; // No light, just a bit
+  delay(pausa);
+  analogWrite(led, 63) ;   // 1/4
+  delay(pausa);
+  analogWrite(led, 127) ;  // 1/2
+  delay(pausa);
+  analogWrite(led, 191) ;  // 3/4
+  delay(pausa);
+  analogWrite(led, 254) ;  // Full light
+  delay(pausa);
+  // return ;
+
+  for (int c = 0; c < 255 ; c++) {
     analogWrite(led, c) ;
     delay(2 );
   }
   exit(0);
 
 }
+
 
 
 

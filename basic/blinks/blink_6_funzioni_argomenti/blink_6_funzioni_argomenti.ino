@@ -43,4 +43,8 @@ void lightGreen(int  length) {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(length);               // wait for a second
 }
-
+  
+  // Test: creare una funzione generica che permetta di accendere
+  // qualunque LED per un periodo di tempo impostabile
+  
+  // Suggerimento: quanti parametri deve accettare?
