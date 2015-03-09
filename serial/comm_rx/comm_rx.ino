@@ -1,7 +1,7 @@
 /*
   Analog comm: RX
  
- Comunicazione seriale tra due schede arduino.
+ Comunicazione analogica tra due schede arduino.
  La prima scheda ha un bottone come input e 
  comunica con un altra scheda che monta un LED come output.
  Il led della seconda si accende quando rileva
