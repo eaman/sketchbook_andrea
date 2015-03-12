@@ -4,17 +4,18 @@
  Connect pin ~11 to a logic analyzer and a multimeter
  and witness the power of the built-in PWM generator.
  
+ Usage: change pausa from 3000 (demostration) to 20 for sampling.
  BTW: Logic comes from: http://downloads.saleae.com/betas/1.1.34/Logic+1.1.34+(64-bit).zip
  */
 
-int led = 11;
-int pausa = 3000; // or 20 when sampling
+int led = 9;
+int pausa = 3000; // 3000 for demo or 20 when sampling
 
 
 void setup()
 {
   pinMode(led, OUTPUT);
-  delay(4000);
+  delay(3000);
 }
 
 void loop()
@@ -36,7 +37,7 @@ void loop()
     analogWrite(led, c) ;
     delay(2 );
   }
-  exit(0);
+  //exit(0);
 
 }
 

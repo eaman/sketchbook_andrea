@@ -4,28 +4,29 @@
  Legge lo stato di un input
  
  */
-int led = 13;
+int led = 13;              // Definizione delle variabili
 int buttonPin = 2;              
-int statoAttuale;                        // variable for reading the pin status
-int ultimoStato;                // variable to hold the last button state
+                           // Dichiarazione di variabili
+int statoAttuale;          // Variabile per leggere lo stato del bottone
+int ultimoStato;           // Variabile per registrare l'ultimo stato del bottone
 int ledStatus;             // varabile per mantenere lo stato del led
 
 void setup() {
-  pinMode(buttonPin, INPUT);    // Set the switch pin as input
+  pinMode(buttonPin, INPUT);    
   pinMode(led, OUTPUT);    
-  Serial.begin(9600);           // Set up serial communication at 9600bps
-  ultimoStato = digitalRead(buttonPin);   // read the initial state
-  ledStatus = 0;
+  Serial.begin(9600);           // Attiva la comunicazione seriale a 9600bps
+  ultimoStato = digitalRead(buttonPin);   // Prima lettura del bottone
+  ledStatus = 0;                          // Il LED viene inpostato come spento                        
 }
 
 void loop(){
   statoAttuale = digitalRead(buttonPin);      // read input value and store it in var
-  delay(20);                      // riduce l'effetto bounce
-  if (statoAttuale != ultimoStato) {          // the button state has changed!
-    if (statoAttuale == HIGH) {                // check if the button is pressed
+  delay(20);                                  // riduce l'effetto bounce
+  if (statoAttuale != ultimoStato) {          // lo stato del bottone e' cambiato
+    if (statoAttuale == HIGH) {               // il bottone e' stato provato
       Serial.println("Button premuto");
      
-      ledStatus = !ledStatus ;    // Inverte lo stato del LED 
+      ledStatus = !ledStatus ;          // Inverte lo stato del LED 
       // ledStatus = 1 - ledStatus ;    // Forma analoga
       
       Serial.print("Stato del LED: ");  // DEBUG
@@ -33,7 +34,7 @@ void loop(){
     } 
   }
 
-  ultimoStato = statoAttuale;                 // save the new state in our variable
+  ultimoStato = statoAttuale;        // save the new state in our variable
   digitalWrite(led, ledStatus);      // setta il led allo stato richiesto
 
 }
