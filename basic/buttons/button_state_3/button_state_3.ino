@@ -5,9 +5,9 @@
  
  */
 
-int switchPin = 2;              // switch is connected to pin 2
-int statoAttuale;                        // variable for reading the pin status
-int ultimoStato;                // variable to hold the last button state
+int switchPin = 2;              // switch connesso al pin 2
+int statoAttuale;               // Variabile per leggere lo stato del bottone
+int ultimoStato;                // Variabile per registrare l'ultimo stato del bottone
 
 void setup() {
   pinMode(switchPin, INPUT);    // Set the switch pin as input
@@ -18,10 +18,10 @@ void setup() {
 
 
 void loop(){
-  statoAttuale = digitalRead(switchPin);      // read input value and store it in val
-  // delay(20)                      // riduce leffetto bounce
-  if (statoAttuale != ultimoStato) {          // the button state has changed!
-    if (statoAttuale == HIGH) {                // check if the button is pressed
+  statoAttuale = digitalRead(switchPin);      // Legge lo stato del bottone e lo resistra in val
+  // delay(20)                                // riduce l'effetto bounce
+  if (statoAttuale != ultimoStato) {          // lo stato del bottone e' cambiato
+    if (statoAttuale == HIGH) {               // il bottone e' stato premuto
       Serial.println("Bottone premuto");
     } 
     else {                         // the button is -not- pressed...
@@ -29,6 +29,6 @@ void loop(){
     }
   }
 
-  ultimoStato = statoAttuale;                 // save the new state in our variable
+  ultimoStato = statoAttuale;                 // Aggiorna lo stato finale al valore attuale
 }
 

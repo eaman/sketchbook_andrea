@@ -16,7 +16,7 @@
 
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
-int led = 13;
+int led = 12;
 int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
 int lunga = 1000;
 
@@ -36,8 +36,8 @@ void loop() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(breve);               // wait for a second
 
-  digitalWrite(red, HIGH);   // turn the LED on (HIGH is the voltage level)
+  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(lunga);               // wait for a second
-  digitalWrite(red, LOW);    // turn the LED off by making the voltage LOW
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(lunga); 
 }

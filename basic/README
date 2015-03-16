@@ -1,0 +1,12 @@
+Esercizi di base
+================
+
+
+Gli esercizi di base sono divisi in argomenti:
+
+- Output digitali: Blinks
+- Input digitali: buttons
+- Input analogici: analog input
+- Output analogici: PWM
+
+In piu' c'e' una parte per le il debug seriale.

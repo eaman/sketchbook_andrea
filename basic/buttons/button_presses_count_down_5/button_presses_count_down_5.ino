@@ -5,7 +5,7 @@
 int switchPin = 2;              // switch is connected to pin 2
 int val;                        // variable for reading the pin status
 int buttonState;                // variable to hold the last button state
-int buttonPresses = 10;          // Counter for the button
+int buttonPresses = 10;         // Counter for the button
 
 void setup() {
   pinMode(switchPin, INPUT_PULLUP);    // Set the switch pin as input

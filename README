@@ -1,10 +1,13 @@
-Andrea's Sketchbook 
+Sketchbook di Andrea
 =====================
 
 Esempi per i corsi su Arduino.
 Le ultime versioni sono disponibili su: git.andreamanni.com
 - http://git.andreamanni.com/
 - Interfaccia web: http://git.andreamanni.com/web
+
+Gestione
+--------------------
 
 Per aggiornare il proprio archivio ::
     cd sketchbook_andrea/ ; git fetch
@@ -16,7 +19,7 @@ Per cancellare completamente il vecchio e reinstanziarlo ::
     rm -r sketchbook_andrea ; git clone --depth 1 git://git.andreamanni.com/sketchbook_andrea
 
 Download via HTTP
-==================
+--------------------
 
 L'archivio e' comunque disponibile per un download via HTTP:
 http://git.andreamanni.com/web?p=sketchbook_andrea;a=snapshot;h=HEAD;sf=tgz

@@ -1,5 +1,8 @@
 /* Exercise 2, with a WHILE loop
- Test a random number agains a value
+
+ Test a random number agains a value: 
+ a iteretive loop perform 255 runs to see if a random number in range 0-255
+ is equal tothe target value of 200
  Light a led in case
  Light the other LED if a run of 255 test has gone
  Log the results (if success) trough serialport
