@@ -37,10 +37,27 @@ void setup()                    // run once, when the sketch starts
 
   Serial.print("8 modulo 3 = ");       // Calculates the remainder when one integer is divided by another. 
   Serial.println(8 % 3);
+
+  Serial.print("a incrementato ++ = ");       // Increments 
+  Serial.println(a++);                        // Increments AFTER the call
+  Serial.print("valore attuale di a: ");
+  Serial.println(a);
+  Serial.print("++a incrementato  = ");       
+  Serial.println(++a);                        // Increments BEFORE the call
+
+
+  Serial.print("b decrementato -- = ");       // Decrement
+  Serial.println(b--);
+  Serial.print("valore attuale di b: ");
+  Serial.println(b);
+  Serial.print("--b decrementato  = ");       
+  Serial.println(--b);
+
 }
 
 void loop()                     // we need this to be here even though its empty
 {
 }
+
 
 
