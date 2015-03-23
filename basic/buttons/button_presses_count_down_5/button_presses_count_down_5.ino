@@ -1,5 +1,10 @@
 /*
- *  Alternating switch
+ *  Contatore di input
+
+    Il programma rileva la pressione del bottone e
+    riduce un contatore ad ogni pressione,
+    passando dallo stato iniziale a un secondo stato finale
+    dopo 10 iterazioni.
  */
 
 int switchPin = 2;              // switch is connected to pin 2

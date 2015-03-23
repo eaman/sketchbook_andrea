@@ -19,7 +19,7 @@ void setup() {
 
 void loop(){
   statoAttuale = digitalRead(switchPin);      // Legge lo stato del bottone e lo resistra in val
-  // delay(20)                                // riduce l'effetto bounce
+   delay(20)                                // riduce l'effetto bounce
   if (statoAttuale != ultimoStato) {          // lo stato del bottone e' cambiato
     if (statoAttuale == HIGH) {               // il bottone e' stato premuto
       Serial.println("Bottone premuto");

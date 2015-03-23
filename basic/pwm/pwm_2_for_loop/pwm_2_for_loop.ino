@@ -16,7 +16,7 @@ void setup()
 
 void loop()
 {
-  for ( i = 0; i < 255 ; i++) { // Operatore ternario, 3 argomenti:
+  for (int i = 0; i < 255 ; i++) { // Operatore ternario, 3 argomenti:
   /* 1. definizione iteratore
      2. limite iteratore
      3. incremento operatore
@@ -25,9 +25,9 @@ void loop()
     delay(5 );
   }
   // Ora l'inverso
-  for ( c = 255; c > 0 ; c--) {
+  for (int c = 255; c > 0 ; c--) {
     analogWrite(led, c) ;
-    delay(5 );
+    delay(5);
   }
 }
 

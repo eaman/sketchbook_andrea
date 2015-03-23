@@ -1,4 +1,4 @@
-/*pwm_
+/*
    Fade
  
    PWM per un LED: aumentare progressivamente la luminosita'.
@@ -24,4 +24,4 @@ void loop()  {
 1. Come fare a invertire la dissolvenza diminuendo la luminosita'?
 2. Provare a far salire e poi scendere la luminosita'
 
-
+*/

@@ -8,7 +8,7 @@ Fade
  */
 
 int led = 9;
-int brightness = 0;
+int brightness = 0; // this two could be bytes as well
 int fadeAmount = 5;
 // the pin that the LED is attached to
 // how bright the LED is
