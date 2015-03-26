@@ -20,10 +20,10 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  if (digitalRead(input) == HIGH) { // Verifica se il PIN input e' +5v
+  if (digitalRead(input) == HIGH) { // Verifica se il PIN input e' +5V
     digitalWrite(led, HIGH);
   } 
-  else { // Alterativa: se non e' +5v
+  if (digitalRead(input) == LOW) { // Verifica se il PIN input e' 0V
     digitalWrite(led, LOW);
   }
 }

@@ -1,10 +1,10 @@
 /*
-  Input serial
+  Input serial debug
  
  
  Accensione e spegnimanto di un LED utilizzando un pin come input.
  
- Schemi del circuito:
+ Schemi del circuito per bottone in pull down:
  - http://lab.piffa.net/schemi/button_1_bb.png
  - http://lab.piffa.net/schemi/button_1_schem.png
  */

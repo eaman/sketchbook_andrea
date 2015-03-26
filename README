@@ -27,3 +27,128 @@ http://git.andreamanni.com/web?p=sketchbook_andrea;a=snapshot;h=HEAD;sf=tgz
 ::
     wget http://git.andreamanni.com/web?p=sketchbook_andrea;a=snapshot;h=HEAD;sf=tgz
 
+Ordine sketches
+================
+Ordine da seguire per gli esercizi a seconda della traccia decisa per il corso.
+
+
+Digital output
+================================
+
+Tutti i blinks in ordine
+Dovrebbero coprire gli argomenti per 
+- istruzioni
+- sequenze di istruzioni
+
+Cicli iterativi vengono visti con bottoni mentre i cicli iterativi sono
+presentati con i PWM.
+
+
+Debug Seriale
+================================
+
+basic/serial_debug/serial_hello_world/
+
+Digital input
+================================
+Cicli condizionali
+
+basic/buttons/button_1
+basic/buttons/button_2_serial_debug/
+(pull down e pull up)
+
+
+Analog input
+================================
+
+basic/analog_input/analogInput_1/analogInput_1.ino
+basic/analog_input/analogInput_2_serial/analogInput_2_serial.ino
+
+
+Programmazione
+================================
+Data types: http://www.ladyada.net/learn/arduino/lesson4.html
+fare byte - int - long
+Magari uno script con serial print, eventualmente anche esadecimale
+
+
+Analog Output
+================================
+Cicli iterativi while
+
+basic/pwm/pwm_0_manuale/pwm_0_manuale.ino Dimostrativo
+basic/pwm/pwm_1_while_byte/pwm_1_while_byte.ino
+basic/pwm/pwm_1_soluzione_doppio_while_byte/pwm_1_soluzione_doppio_while_byte.ino
+
+
+Programmazione: operatori binari
+================================
+
+programming/operators/operator_1_basic/operator_1_basic.ino
+programming/operators/operator_2_comparison/operator_2_comparison.ino
+
+
+Analog Output
+================================
+Cicli iterativi For, operatore ternario
+
+basic/pwm/pwm_2_for_loop/pwm_2_for_loop.ino
+
+
+Programmazione: operatori logici
+================================
+
+programming/operators/operator_3_logic/operator_3_logic.ino
+
+
+Analog Output
+================================
+
+basic/pwm/pwm_3_fade_reverser/pwm_3_fade_reverser.ino
+basic/pwm/pwm_4_analog_input/pwm_4_analog_input.ino
+
+
+Status
+==========
+
+Completata la parte di:
+
+- fondamenti di programmazione
+- input / output digitali e analogici
+
+
+State machine
+=================
+Gestione stato di un bottone
+Simple multitasking con millis() e due blink contemporanei (questo si potrebbe
+        fare anche dopo).
+
+
+Sensori e attuatori
+=======================
+Fare un input e un output a rotazione
+
+- piezo, suoni e knocking
+- sensore luminosita'
+- LED RGB (array)
+- sensore temperatura
+- pulsante capacitivo
+- motori DC con transistor e diodo
+- motori step
+
+
+Devices
+=============
+
+Utilizzare specifici devices:
+
+- sensore a ultrasuoni
+- PIR 
+- infrarossi / telecomando IR
+- display LCD a due righe
+- shift register
+- POV persistence of vision
+- display a matrice e a "8"
+- connessione seriale via radio 
+- programmare un Attiny85 con Arduino
+- ethernet e WIFI
