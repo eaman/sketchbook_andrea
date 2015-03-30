@@ -108,6 +108,12 @@ basic/pwm/pwm_3_fade_reverser/pwm_3_fade_reverser.ino
 basic/pwm/pwm_4_analog_input/pwm_4_analog_input.ino
 
 
+For loop
+==========
+
+sketchbook_andrea/programming/loops/
+Random e interruzione del flusso del programma tramite if
+
 Status
 ==========
 

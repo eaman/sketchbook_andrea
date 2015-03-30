@@ -1,7 +1,9 @@
-/* Exercise 2, with a WHILE loop
+/* Exercise 2, with a WHILE loop and a Break statement:
+- http://arduino.cc/en/Reference/Break
+
  Test a random number agains a value: 
  a iteretive loop perform 255 runs to see if a random number in range 0-255
- is equal tothe target value of 200.
+ is equal to the target value set to 200.
  
  Light a led in case
  Light the other LED if a run of 255 test has gone
@@ -29,10 +31,7 @@ void setup() {
   // Serial stuff
   Serial.begin(9600);
   Serial.println("Initializing random sequence, please wait for results.");
-
-  // Random stuff
   randomSeed(analogRead(0)); // Random initializer
-
 }
 
 void loop() {  // put your main code here, to run repeatedly: 
@@ -42,20 +41,23 @@ void loop() {  // put your main code here, to run repeatedly:
 
   while (count < 255) {
     randomNumber = random(0,255); //Randoom value generated
+    Serial.print("|");
+    count++ ;  
+    delay(REST);
     if (randomNumber == TARGET) {  // When we catch the value
+      Serial.println();
       Serial.print("--> Match found! Counter was at: "); // serial message
       Serial.println(count);
       digitalWrite(GREEN, HIGH);
       delay(WAIT);
       count++ ;
+      break; // Interrompe il ciclo
     }
-    //Serial.println(count);
-    count++ ;  
-    delay(REST);
   }
 
-
+  Serial.println();
   Serial.println("Counter resetted.");   // serial staff
+  count = 0;
   digitalWrite(RED, HIGH);
   delay(WAIT);
   count++ ;
@@ -67,4 +69,5 @@ void loop() {  // put your main code here, to run repeatedly:
     exit(0);
   }
 } 
+
 

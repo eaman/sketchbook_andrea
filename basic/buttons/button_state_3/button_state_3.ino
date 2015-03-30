@@ -6,6 +6,8 @@
  */
 
 int switchPin = 2;              // switch connesso al pin 2
+                                // Nota: le prossime due variabili sono 
+                                // solo "dichiarate" e non "definite"
 int statoAttuale;               // Variabile per leggere lo stato del bottone
 int ultimoStato;                // Variabile per registrare l'ultimo stato del bottone
 
@@ -19,8 +21,9 @@ void setup() {
 
 void loop(){
   statoAttuale = digitalRead(switchPin);      // Legge lo stato del bottone e lo resistra in val
-   delay(20)                                // riduce l'effetto bounce
-  if (statoAttuale != ultimoStato) {          // lo stato del bottone e' cambiato
+   delay(20);                                // riduce l'effetto bounce
+  if (statoAttuale != ultimoStato) { 
+      // verifica due condizioni che devono realizzarsi contemporaneamente
     if (statoAttuale == HIGH) {               // il bottone e' stato premuto
       Serial.println("Bottone premuto");
     } 
