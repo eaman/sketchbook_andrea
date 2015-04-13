@@ -11,14 +11,16 @@
  
  Questo sketch modifica l'intervallo di intermittenza di un led
  in base alla luminosita' rilevata.
+ 
+ Schema: http://lab.piffa.net/schemi/photoresistor_led.png
  */
 
 int sensorPin = A0;    // select the input pin for the potentiometer
 int ledPin = 13;      // select the pin for the LED
 int sensorValue = 0;  // variable to store the value coming from the sensor
 
-int min = 240;        // valore minimo rilevato dal sensore
-int max = 380;        // valore massimo rilevato dal sensore
+int min = 60;        // valore minimo rilevato dal sensore
+int max = 600;        // valore massimo rilevato dal sensore
 
 void setup() {
   // declare the ledPin as an OUTPUT:
@@ -42,14 +44,16 @@ void loop() {
   // print the results to the serial monitor:
   Serial.print("sensor = " );                       
   Serial.print(sensorValue);      
-  Serial.print("\t delay = ");      
+  Serial.print("\t cal delay = ");      
   Serial.println(calValue);
   delay(sensorValue);                  
 }
 
-/* domande:
- 1. qual'e' il valore minimo rilevato?
- 2. quale il massimo?
- 3. Come adattare la risoluzione dell'attuatore alla sensibilita' del sensore?
- */
+/*
+Domande:
+1. Modificare lo sketch in modo che modifichi la luminosita' di un led 
+via PWM tramite il valore letto dal sensore.
+2. Come fare per costringere la variabile dentro un intervallo stabilito?
+3. Come si potrebbe eseguire la calibrazione automaticamente?
+*/
 

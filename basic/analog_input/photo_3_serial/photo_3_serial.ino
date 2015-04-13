@@ -1,6 +1,6 @@
 /*
   Photoresistor
-  
+ 
  Utilizzare una fotoresistenza come analog input.
  Il comportamento della foto resistenza e' simile
  a un potenziometro: varia la resistenza in base alla 
@@ -11,6 +11,8 @@
  
  Questo sketch modifica l'intervallo di intermittenza di un led
  in base alla luminosita' rilevata.
+ 
+ Schema: http://lab.piffa.net/schemi/photoresistor_led.png
  */
 
 int sensorPin = A0;    // select the input pin for the potentiometer
@@ -20,7 +22,7 @@ int sensorValue = 0;  // variable to store the value coming from the sensor
 void setup() {
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);  
-    // initialize serial communications at 9600 bps:
+  // initialize serial communications at 9600 bps:
   Serial.begin(9600); 
 }
 
@@ -34,7 +36,7 @@ void loop() {
   // turn the ledPin off:        
   digitalWrite(ledPin, LOW);   
   // stop the program for for <sensorValue> milliseconds:
-    // print the results to the serial monitor:
+  // print the results to the serial monitor:
   Serial.print("sensor = " );                       
   Serial.print(sensorValue);      
   Serial.print("\t delay = ");      
@@ -43,8 +45,9 @@ void loop() {
 }
 
 /* domande:
-1. qual'e' il valore minimo rilevato?
-2. quale il massimo?
-3. Come adattare la risoluzione dell'attuatore alla sensibilita' del sensore?
-*/
+ 1. qual'e' il valore minimo rilevato?
+ 2. quale il massimo?
+ 3. Come adattare la risoluzione dell'attuatore alla sensibilita' del sensore?
+ */
+
 

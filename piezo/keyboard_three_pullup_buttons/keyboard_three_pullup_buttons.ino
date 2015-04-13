@@ -15,7 +15,7 @@
  */
 
 // Please take care of the include path
-#include "/root/arduino/sketchbook-lessons/piezo_mario_tune/pitches.h";
+#include "/home/utente/sketchbook-andrea/piezo/piezo_mario_tune/pitches.h";
 int input[]= {1,2,3};
   int notes[] = {
   NOTE_A4, NOTE_C4,NOTE_E3 };
