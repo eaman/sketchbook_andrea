@@ -78,3 +78,4 @@ Domande:
 1. Modificare lo sketch in modo che modifichi la luminosita' di un led 
 via PWM tramite il valore letto dal sensore.
 2. Come fare per costringere la variabile dentro un intervallo stabilito?
+

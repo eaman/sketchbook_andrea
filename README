@@ -47,72 +47,104 @@ presentati con i PWM.
 Debug Seriale
 ================================
 
-basic/serial_debug/serial_hello_world/
+- basic/serial_debug/serial_hello_world/
 
 Digital input
 ================================
 Cicli condizionali
 
-basic/buttons/button_1
-basic/buttons/button_2_serial_debug/
+- basic/buttons/button_1
+- basic/buttons/button_2_serial_debug/
 (pull down e pull up)
 
 
 Analog input
 ================================
 
-basic/analog_input/analogInput_1/analogInput_1.ino
-basic/analog_input/analogInput_2_serial/analogInput_2_serial.ino
+- basic/analog_input/analogInput_1/analogInput_1.ino
+- basic/analog_input/analogInput_2_serial/analogInput_2_serial.ino
 
 
 Programmazione
 ================================
-Data types: http://www.ladyada.net/learn/arduino/lesson4.html
+- Data types: http://www.ladyada.net/learn/arduino/lesson4.html
 fare byte - int - long
-Magari uno script con serial print, eventualmente anche esadecimale
+- Magari uno script con serial print, eventualmente anche esadecimale
 
 
 Analog Output
 ================================
 Cicli iterativi while
 
-basic/pwm/pwm_0_manuale/pwm_0_manuale.ino Dimostrativo
-basic/pwm/pwm_1_while_byte/pwm_1_while_byte.ino
-basic/pwm/pwm_1_soluzione_doppio_while_byte/pwm_1_soluzione_doppio_while_byte.ino
+- basic/pwm/pwm_0_manuale/pwm_0_manuale.ino Dimostrativo
+- basic/pwm/pwm_1_while_byte/pwm_1_while_byte.ino
+- basic/pwm/pwm_1_soluzione_doppio_while_byte/pwm_1_soluzione_doppio_while_byte.ino
 
 
 Programmazione: operatori binari
 ================================
 
-programming/operators/operator_1_basic/operator_1_basic.ino
-programming/operators/operator_2_comparison/operator_2_comparison.ino
+- programming/operators/operator_1_basic/operator_1_basic.ino
+- programming/operators/operator_2_comparison/operator_2_comparison.ino
 
 
 Analog Output
 ================================
 Cicli iterativi For, operatore ternario
 
-basic/pwm/pwm_2_for_loop/pwm_2_for_loop.ino
+- Introduzione for loop: basic/pwm/pwm_2_for_loop/pwm_2_for_loop.ino
+- basic/pwm/pwm_3_fade_reverser/pwm_3_fade_reverser.ino
+- basic/pwm/pwm_4_analog_input/pwm_4_analog_input.ino
 
+
+
+State machine
+=================
+Gestione stato di un bottone
+Simple multitasking con millis() e due blink contemporanei
+
+- basic/buttons/button_state_3/button_state_3.ino
+- basic/buttons/button_state_4_state/button_state_4_state.ino
 
 Programmazione: operatori logici
-================================
+-----------------------------------
 
-programming/operators/operator_3_logic/operator_3_logic.ino
+- programming/operators/operator_3_logic/operator_3_logic.ino
 
+State machine: And
+-------------------
 
-Analog Output
-================================
+- basic/buttons/button_state_4_state_and_condition/button_state_4_state_and_condition.ino
 
-basic/pwm/pwm_3_fade_reverser/pwm_3_fade_reverser.ino
-basic/pwm/pwm_4_analog_input/pwm_4_analog_input.ino
 
 
 For loop
 ==========
+Approfondimento su i cicli for, uso degli array
 
-sketchbook_andrea/programming/loops/
-Random e interruzione del flusso del programma tramite if
+- programming/loops/loop_3_multi_led/loop_3_multi_led.ino
+- Array: programming/loops/loop_4_multi_led_array/loop_4_multi_led_array.ino
+- sketchbook_andrea/programming/loops/
+- Random e interruzione del flusso del programma tramite if
+
+
+Light sensor
+===============
+
+- basic/analog_input/photo_3_serial/
+- Calibrazione manuale: basic/analog_input/photo_4_calibrated/
+- Calibrazione automatica: basic/analog_input/photo_5_calibration/
+- Smoothing: basic/analog_input/photo_6_smooth/
+- basic/analog_input/photo_7_tonePitchFollower/
+
+Piezo
+========
+- Traduzione tra due percezioni: basic/analog_input/photo_7_tonePitchFollower/
+- Singole note e pull up: piezo/keyboard_three_pullup_buttons/
+- Melodia: piezo/piezo_3_toneMelody/
+- Melodia: piezo/piezo_4_mario_tune/
+
+
 
 Status
 ==========
@@ -125,8 +157,8 @@ Completata la parte di:
 
 State machine
 =================
-Gestione stato di un bottone
-Simple multitasking con millis() e due blink contemporanei (questo si potrebbe
+- Gestione stato di un bottone
+- Simple multitasking con millis() e due blink contemporanei (questo si potrebbe
         fare anche dopo).
 
 
