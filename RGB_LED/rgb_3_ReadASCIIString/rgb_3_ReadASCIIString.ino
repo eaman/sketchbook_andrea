@@ -1,5 +1,7 @@
 /*
   Reading a serial ASCII-encoded string.
+  
+  Beware: set monitor to NL NewLine only
  
  This sketch demonstrates the Serial parseInt() function.
  It looks for an ASCII string of comma-separated values.
@@ -11,16 +13,31 @@
  * blue cathode: digital pin 6
  * anode: +5V
  
+ Once you have programmed the Arduino, open your Serial minitor. 
+ Make sure you have chosen to send a newline character when sending a message. 
+ Enter values between 0-255 for the lights in the following format : 
+ Red,Green,Blue. 
+
+ 
+ Once you have sent the values to the Arduino, 
+ the attached LED will turn the color you specified, 
+ and you will receive the HEX values in the serial monitor. 
+ 
  created 13 Apr 2012
  by Tom Igoe
  
  This example code is in the public domain.
+
+
+
+  Schema: http://lab.piffa.net/schemi/rgb.jpg
+
  */
 
 // pins for the LEDs:
-const int redPin = 3;
-const int greenPin = 5;
-const int bluePin = 6;
+const int redPin = 11;
+const int greenPin = 10;
+const int bluePin = 9;
 
 void setup() {
   // initialize serial:

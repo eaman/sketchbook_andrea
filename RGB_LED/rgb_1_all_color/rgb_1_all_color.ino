@@ -1,5 +1,10 @@
     /*
     Adafruit Arduino - Lesson 3. RGB LED
+    
+    RGB LED: rotazione tra tutti i colori.
+
+     Schema: http://lab.piffa.net/schemi/rgb.jpg
+
     */
      
     int redPin = 11;
@@ -43,3 +48,6 @@
     analogWrite(greenPin, green);
     analogWrite(bluePin, blue);
     }
+    
+    
+

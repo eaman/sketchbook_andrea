@@ -1,8 +1,17 @@
+// RGB LED PWM transizione
+
+// Transizione di un LED RGB tra rosso - blue -verde
+// tramite PWM
+
 // This is meant for a Common Anodote RGB LED
 // See all those (255 - val). 
 
-#define GREEN 9
-#define BLUE 10
+
+// Schema: http://lab.piffa.net/schemi/rgb.jpg
+
+
+#define GREEN 10
+#define BLUE 9
 #define RED 11
 #define delayTime 20
 
