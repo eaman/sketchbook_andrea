@@ -40,8 +40,15 @@ void loop() {
   delay(1);        // delay in between reads for stability
 }
 
+/* Domande:
+1. Modificare l'estensione del range di frequenza del piezo
+tra i valori 20hz e 20.000hz.
 
+2. Modificare lo script in modo che vengano emessi suoni solo quando
+una mano offusca leggermente la luce (il piezo non deve suonare
+se non c'e' un operatore a interagire con la fotoresistenza).
 
+*/
 
 
 

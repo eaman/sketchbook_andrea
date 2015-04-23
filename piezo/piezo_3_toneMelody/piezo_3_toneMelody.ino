@@ -52,4 +52,9 @@ void loop() {
 
 /* Domande
 1. Codificare Twinkle twinkle little star
+2. Modificare lo script pitch follower (fotoresistenza + piezo) 
+   per suonare una serie di beep durante la fase di calibrazione
+   e un breve motivetto (magari una scala crescente) per confermare
+   l'avvenuta calibrazione.
+3. Codificare (magari utilizzando dei loop) qualche suono di allarme / conferma.
 */
