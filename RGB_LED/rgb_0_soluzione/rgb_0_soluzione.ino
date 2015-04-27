@@ -20,7 +20,8 @@ void setup()
 
 void loop()
 {
-  setColor(0xFF,0x00,0x00) ; // imposta il LED in rosso
+  setColor(255,0,0) ; // imposta il LED in rosso
+  //setColor(0xFF,0x00,0x00) ; // imposta il LED in rosso in esadecimale
 
   // setName("green") ; 
 }

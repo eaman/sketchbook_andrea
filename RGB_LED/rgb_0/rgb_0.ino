@@ -28,14 +28,18 @@ void loop()
 }
 
 /* Domande:
+ 1. Come scrivere le istruzioni analog Write in modo da sottrarre i valori?
+ 2. Accendere il LED nei vari colori
+    - http://i.stack.imgur.com/LcBvQ.gif
+    Soluzione: vedi lo sketch rgb_1_all_color
  
- 1. Accendere il LED nei vari colori
- 2. Come scrivere le istruzioni analog Write in modo da sottrarre i valori?
  3. Scrivere una funzione che accetti 3 parametri per impostare i colori
- 4. Scrivere una funzione che accetti i colori in esadecimale
-    - http://www.yellowpipe.com/yis/tools/hex-to-rgb/color-converter.php
- 5. Scrivere una funzione che accetti come parametro il nome del colore
+ 4. Scrivere una funzione che accetti come parametro il nome del colore
  es "blue" e imposti il LED.
+ 
+ Eventuale:  
+ 5. Scrivere una funzione che accetti i colori in esadecimale
+    - http://www.yellowpipe.com/yis/tools/hex-to-rgb/color-converter.php
  */
 
 
