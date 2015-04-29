@@ -14,6 +14,7 @@
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
+ modified by eaman
  
  This example code is in the public domain.
 
@@ -46,11 +47,10 @@ void loop()
   // difference between the current time and last time you blinked 
   // the LED is bigger than the interval at which you want to 
   // blink the LED.
-  unsigned long currentMillis = millis();
  
-  if(currentMillis - previousMillis > interval) {
+  if(millis() - previousMillis > interval) {
     // save the last time you blinked the LED 
-    previousMillis = currentMillis;   
+    previousMillis = millis();   
 
     // if the LED is off turn it on and vice-versa:
     if (ledState == LOW)
@@ -65,5 +65,5 @@ void loop()
 
 /* Domande
    1. Aggioungere un LED che brilli ogni 500ms
-   2. E' possibile cambiare gli intervalli dei due LED?
+   2. E' ora agevole cambiare gli intervalli dei due LED?
    */

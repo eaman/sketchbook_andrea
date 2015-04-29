@@ -1,30 +1,32 @@
 /* Blink without Delay
+ 
  Soluzione
  
- Introdotto un argomento per la funzione che nodifica l'intervallo di lampeggio
- 
+  3. Provare a isolare il codice per accendere ogni singolo led in una funzione:
+    Quali variabili determinano il comportamento del LED?
+    Sono globali o locali?
+    
  */
 
 // constants won't change. Used here to 
 // set pin numbers:
 
+/////////////
 // First LED
-const int ledA =  13;      // the number of the LED pin
-
+int ledA =  13;      // the number of the LED pin
 // Variables will change:
 int ledStateA = LOW;             // ledState used to set the LED
-
 long previousMillisA = 0;        // will store last time LED was updated
-
 // the follow variables is a long because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.
+long intervalA = 1000;           // interval at which to blink (milliseconds)
 
-
-// Second LED data
+//////////////
+// Second LED
 int ledB = 12; //Secondo LED
 int ledStateB = LOW;             // ledState used to set the LED
 long previousMillisB = 0;        // will store last time LED was updated
-
+long intervalB = 500;           // interval at which to blink (milliseconds)
 
 
 void setup() {
@@ -35,17 +37,15 @@ void setup() {
 
 void loop()
 {
-  lightLedA(40);
-  lightLedB(500);
+  lightLedA();
+  lightLedB();
 }
 
 
 // Funzioni
 
-void lightLedA (int interval) {
-  // Illumina il ledA secondo un intervallo passato come argomento
-
-  if(millis() - previousMillisA > interval) {
+void lightLedA () {
+  if(millis() - previousMillisA > intervalA) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
 
@@ -60,10 +60,8 @@ void lightLedA (int interval) {
 
 }
 
-void lightLedB (int interval) {
-  // Illumina il ledB secondo un intervallo passato come argomento
-
-  if(millis() - previousMillisB > interval) {
+void lightLedB () {
+  if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   
 
@@ -77,14 +75,12 @@ void lightLedB (int interval) {
   }
 }
 
-/* TODO
-- Differenze tra fuznioni e programmazione a oggetti: integrazione tra
-operativita' e dati
-- Rapporto tra global scope e uso di pointers
-- uso di forme di dati strutturate (array, struct) per scambiare dati tra funzioni e programma
-*/
 
+/* Domande
+ 1. Modificare le funzioni in modo che accettino come parametro
+    l'intervallo di lampeggio.
 
+ */
 
 
 

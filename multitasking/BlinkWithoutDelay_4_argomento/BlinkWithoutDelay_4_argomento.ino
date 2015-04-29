@@ -1,34 +1,20 @@
 /* Blink without Delay
- 
  Soluzione
  
-  3. Provare a isolare il codice per accendere ogni singolo led in una funzione:
-    Quali variabili determinano il comportamento del LED?
-    Sono globali o locali?
-    
+ Introdotto un argomento per la funzione che nodifica l'intervallo di lampeggio
+ 
  */
 
-// constants won't change. Used here to 
-// set pin numbers:
-
 // First LED
-const int ledA =  13;      // the number of the LED pin
-
+int ledA =  13;      // the number of the LED pin
 // Variables will change:
 int ledStateA = LOW;             // ledState used to set the LED
-
 long previousMillisA = 0;        // will store last time LED was updated
 
-// the follow variables is a long because the time, measured in miliseconds,
-// will quickly become a bigger number than can be stored in an int.
-long intervalA = 1000;           // interval at which to blink (milliseconds)
-
-// Second LED
+// Second LED data
 int ledB = 12; //Secondo LED
 int ledStateB = LOW;             // ledState used to set the LED
 long previousMillisB = 0;        // will store last time LED was updated
-long intervalB = 500;           // interval at which to blink (milliseconds)
-
 
 void setup() {
   // set the digital pin as output:
@@ -38,15 +24,17 @@ void setup() {
 
 void loop()
 {
-  lightLedA();
-  lightLedB();
+  lightLedA(1000);
+  lightLedB(500);
 }
 
-
+//////////////
 // Funzioni
 
-void lightLedA () {
-  if(millis() - previousMillisA > intervalA) {
+void lightLedA (int interval) {
+  // Illumina il ledA secondo un intervallo passato come argomento
+
+  if(millis() - previousMillisA > interval) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
 
@@ -61,8 +49,10 @@ void lightLedA () {
 
 }
 
-void lightLedB () {
-  if(millis() - previousMillisB > intervalB) {
+void lightLedB (int interval) {
+  // Illumina il ledB secondo un intervallo passato come argomento
+
+  if(millis() - previousMillisB > interval) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   
 
@@ -76,11 +66,16 @@ void lightLedB () {
   }
 }
 
+/* Approfondimenti
+- Quali similitudini ci sono tra le due funzioni?
+- Come si dovrebbe fare per semplificare il codice
+  evitando di ripetere larti del codice simile tra loro?
+- Distinguere i dati comuni tra le due funzioni che ci servono per
+  far lampeggiare i LED
+- Distinguere i dati che caratterizzano un LED rispetto all'altro
+*/
 
-/* Domande
- 2. Inserire un secondo LED con intervallo 500ms
- 1. Trasformare il codice utilizzato in una State Machine
- */
+
 
 
 

@@ -1,8 +1,6 @@
 /*
-  Blink
- Turns on an LED on for one second, then off for one second, repeatedly.
- 
- This example code is in the public domain.
+  Blink due LED - Soluzione
+
  */
 
 // Pin 13 has an LED connected on most Arduino boards.
@@ -39,10 +37,6 @@ void loop() {
   ;
 }
 
-/* Domande
- 1. Aggiungere un secondo LED e farlo brillare ogni 500ms
- mentre il primo brilla ogni 1000ms
- */
 
 
 

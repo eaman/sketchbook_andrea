@@ -1,4 +1,4 @@
-/* Blink without Delay
+/* Blink without Delay - due led
  
  Turns on and off a light emitting diode(LED) connected to a digital  
  pin, without using the delay() function.  This means that other code
@@ -14,6 +14,7 @@
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
+ modified by eaman
  
  This example code is in the public domain.
  
@@ -52,11 +53,10 @@ void loop()
   // difference between the current time and last time you blinked 
   // the LED is bigger than the interval at which you want to 
   // blink the LED.
-  unsigned long currentMillis = millis();
 
-  if(currentMillis - previousMillisA > intervalA) {
+  if(millis() - previousMillisA > intervalA) {
     // save the last time you blinked the LED 
-    previousMillisA = currentMillis;   
+    previousMillisA = millis();   
 
     // if the LED is off turn it on and vice-versa:
     if (ledStateA == LOW)
@@ -67,9 +67,9 @@ void loop()
     digitalWrite(ledA, ledStateA);
   }
   
-    if(currentMillis - previousMillisB > intervalB) {
+    if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
-    previousMillisB = currentMillis;   
+    previousMillisB = millis();   
 
     // if the LED is off turn it on and vice-versa:
     if (ledStateB == LOW)
@@ -82,9 +82,9 @@ void loop()
 }
 
 /* Domande
- 2. Inserire un secondo LED con intervallo 500ms
- 1. Trasformare il codice utilizzato in una State Machine
- 
+ 1. Provare a isolare il codice per accendere ogni singolo led in una funzione:
+    Quali variabili determinano il comportamento del LED?
+    Sono globali o locali? 
  */
 
 
