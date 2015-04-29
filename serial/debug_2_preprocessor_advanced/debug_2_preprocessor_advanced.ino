@@ -22,7 +22,10 @@ int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
   #define DEBUG_PRINT(x)       Serial.print (x)
   #define DEBUG_PRINTDEC(x)    Serial.print (x, DEC)
   #define DEBUG_PRINTLN(x)     Serial.println (x)
-#else
+#else 
+/* A volte il codice di debug e' complicato e deve sostituire parte del codice
+notmalmente usato. In questo modo potete specificare parte di codice
+da eseguire in modalita' non-debug differente da quello di debug */
   #define DEBUG_PRINT(x)
   #define DEBUG_PRINTDEC(x)
   #define DEBUG_PRINTLN(x) 
