@@ -10,7 +10,7 @@
   */
 
 
-boolean sposato = 1 ;
+boolean sposato = 1 ; // Variabile globale
 void setup(){
   Serial.begin(9600);
 }

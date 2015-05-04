@@ -57,10 +57,13 @@ void lightLedB (int interval) {
   }
   digitalWrite(ledB, ledStateB);
 }
-
+/* Domande:
+ 1. E' possibile avere una sola funzione che permetta di gestire 
+    qualunque LED io voglia aggiungere?
+    
 /* Approfondimenti
- - integrazione tra funzioni e dati
- - Rapporto tra global scope e uso di pointers
+ - integrazione tra funzioni e dati: programmazione a oggetti
+ - Uso di pointers per modificare dati esterni allo scope della funzione
  - Uso di forme di dati strutturate (array, struct) per scambiare dati tra funzioni e programma
  */
 

@@ -65,5 +65,6 @@ void loop()
 
 /* Domande
    1. Aggioungere un LED che brilli ogni 500ms
-   2. E' ora agevole cambiare gli intervalli dei due LED?
+   2. E' ora agevole cambiare gli intervalli dei due LED? 
+      Modificare gli intervalli dei due led (es 500ms - 320ms)
    */

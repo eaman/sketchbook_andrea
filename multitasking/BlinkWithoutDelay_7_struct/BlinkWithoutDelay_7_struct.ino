@@ -21,13 +21,13 @@ blinkLed ledB = {
   12, LOW, 500, 0};
 
 void setup() {
-  pinMode(ledA.ledPin, OUTPUT);
+  pinMode(ledA.ledPin, OUTPUT); // Domanda: integrare l'impostazione del LED nel codice della funzione.
   pinMode(ledB.ledPin, OUTPUT);
 }
 
 void loop()
 {
- ledA = lightLed(ledA );
+ ledA = lightLed(ledA ); // Aggiorna lo stato del LED in base all'esecuzione della funzione
  ledB = lightLed(ledB );
 }
 

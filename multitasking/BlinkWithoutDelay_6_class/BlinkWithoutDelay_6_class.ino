@@ -1,9 +1,10 @@
 /* Blink without Delay
- Soluzione
+ Class: definizione di una classe LED.
  
- Introdotto un argomento per la funzione che nodifica l'intervallo di lampeggio 
+ L'oggetto LED integra i dati (proprieta') del led con i metodi (le funzioni).
  */
 
+// Oggetti:
 class Lampeggiatore {
   // Lampeggia un LED utilizzando millis()
   // Variabili
@@ -53,4 +54,9 @@ ledA.Update();
 ledB.Update();
 }
 
+/* Domande:
+ 1. Ogni quante volte viene eseguito il codice del loop per ogni millisecondo?
+ 2. Utilizzare un interrupt per richiamare Update()
+    Es: https://learn.adafruit.com/multi-tasking-the-arduino-part-2/overview
+ */
 

@@ -1,15 +1,14 @@
 /* Blink without Delay
  
- Soluzione
+ Blink con funzione
  
-  3. Provare a isolare il codice per accendere ogni singolo led in una funzione:
-    Quali variabili determinano il comportamento del LED?
-    Sono globali o locali?
-    
+ Soluzione: Provare a isolare il codice per accendere ogni singolo led in una funzione:
+ 
+    - Quali variabili determinano il comportamento del LED?
+    - Come cambiano durante il corso dello script?
+    - Sono globali o locali? 
+ 
  */
-
-// constants won't change. Used here to 
-// set pin numbers:
 
 /////////////
 // First LED
@@ -42,7 +41,7 @@ void loop()
 }
 
 
-// Funzioni
+// Funzioni:
 
 void lightLedA () {
   if(millis() - previousMillisA > intervalA) {
@@ -78,9 +77,10 @@ void lightLedB () {
 
 /* Domande
  1. Modificare le funzioni in modo che accettino come parametro
-    l'intervallo di lampeggio.
-
+ l'intervallo di lampeggio.
+ 
  */
+
 
 
 

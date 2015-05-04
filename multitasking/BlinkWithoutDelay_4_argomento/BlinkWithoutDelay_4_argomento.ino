@@ -68,11 +68,13 @@ void lightLedB (int interval) {
 
 /* Approfondimenti
 - Quali similitudini ci sono tra le due funzioni?
-- Come si dovrebbe fare per semplificare il codice
-  evitando di ripetere larti del codice simile tra loro?
 - Distinguere i dati comuni tra le due funzioni che ci servono per
   far lampeggiare i LED
 - Distinguere i dati che caratterizzano un LED rispetto all'altro
+- Provare a integrare le variabili relative ai due LED dentro le 
+  rispettive funzioni.
+- Sarebbe possibile scrivere una funzione che possa interagire con un LED qualunque?
+  ES: Come inpostare il PIN del LED? Come gestire lo stato del LED?
 */
 
 

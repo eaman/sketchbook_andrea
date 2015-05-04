@@ -83,8 +83,10 @@ void loop()
 
 /* Domande
  1. Provare a isolare il codice per accendere ogni singolo led in una funzione:
-    Quali variabili determinano il comportamento del LED?
-    Sono globali o locali? 
+    - Quali variabili determinano il comportamento del LED?
+    - Come cambiano durante il corso dello script?
+    - Sono globali o locali? 
+    - Quali parti vanno eseguite una sola volta e quali a ogni esecuzione?
  */
 
 
