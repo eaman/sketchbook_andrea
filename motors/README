@@ -1,0 +1,10 @@
+Esercizi successivi
+=======================
+
+
+1. Fare il reverse del motore
+1.1 Utilizzare 4 transistor in configurazione ad H
+1.2 Utilizzare un driver: L2930 - motor shield - TB6612
+2. Utilizzar il motore con millis() contemporaneamente a LED o altro
+3. Utilizzare 2 motori contemporaneamente
+3. Utilizzare 2 motori contemporaneamente gestendoli da un telecomando IR

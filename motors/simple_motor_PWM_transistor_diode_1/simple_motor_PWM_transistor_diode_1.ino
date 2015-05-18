@@ -1,12 +1,10 @@
-/* Simple Motor
- This sketch use a transistor and a diode
- in order to poer a 5v ~150mAh directly from the board.
- Hard thing is to find a suitable motor!
-
- This version uses PWM for acceleration / deceleration
+/* Simple Motor: PWM 
+ Gestine di un motore DC utilizzando il PWM
+ per modificarne la velocita': ciclo ascendente e discendente
+ 
  */
 
-int motorPin = 9;
+int motorPin = 9; // Pin tramite cui Arduino controlla il motore
 void setup() {
   pinMode(motorPin, OUTPUT);
 }
@@ -22,6 +20,10 @@ void loop() {
 delay(900); // Pause 
 }
 
-
-
-
+/* Domande
+1. Il motore si muove con i valori di corrente molto bassi?
+2. A quali valori comincia a muoversi effettivamente?
+2.1 E per fermarsi, il valore e' diverso?
+3. Impostare un valore minimo per la partenza del motore.
+4. Come fare per invertire la direzione di rotazione del motore?
+*/
