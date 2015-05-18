@@ -2,6 +2,10 @@
  Gestine di un motore DC utilizzando il PWM
  per modificarne la velocita': ciclo ascendente e discendente
  
+  Schemi:
+ - Breadboard: http://lab.piffa.net/schemi/motor_transistor_diode_bb.png
+ - Schema circuito: http://lab.piffa.net/schemi/motor_transistor_diode_schem.png
+ 
  */
 
 int motorPin = 9; // Pin tramite cui Arduino controlla il motore

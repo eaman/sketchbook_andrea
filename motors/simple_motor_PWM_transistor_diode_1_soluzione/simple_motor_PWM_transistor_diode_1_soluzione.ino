@@ -2,6 +2,10 @@
 
  Motore DC con variazione della velocita' tramite PWM
  
+  Schemi:
+ - Breadboard: http://lab.piffa.net/schemi/motor_transistor_diode_bb.png
+ - Schema circuito: http://lab.piffa.net/schemi/motor_transistor_diode_schem.png
+ 
  */
 
 int motorPin = 9;
