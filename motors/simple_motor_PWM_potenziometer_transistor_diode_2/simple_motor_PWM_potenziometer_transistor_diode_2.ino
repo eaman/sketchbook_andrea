@@ -34,7 +34,7 @@ void loop() {
 
 /* Domande
 
-1. Cosa succede quando il motore ha riceve un carico molto basso?
+1. Cosa succede quando il motore riceve poca corrente?
 2. Impostare un valore minimo per la partenza del motore, 
    sotto al quale il motore non parte.
 */

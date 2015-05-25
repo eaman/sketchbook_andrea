@@ -33,7 +33,7 @@ void loop() {
   if (motValue > 60) { // Valore minimo per far partire il motore
     analogWrite(motorPin,motValue); // 
   } 
-  else analogWrite(motorPin,0); // Se non super il valore minimo 
+  else analogWrite(motorPin,0); // Se non supera il valore minimo 
   // deve restare fermo
 
   delay(3); // Pause, stabilizza la lettura del Pot           

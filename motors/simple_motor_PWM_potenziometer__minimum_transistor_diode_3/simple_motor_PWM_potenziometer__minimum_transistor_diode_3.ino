@@ -1,8 +1,10 @@
 /* 
   Simple Motor : Potenziometro con minimo
- 
+  
  Motore DC con variazione della velocita' impostata 
- tramite un potenziometro 10k ohms
+ tramite un potenziometro 10k ohms,
+ settato un valore minimo sotto il quale il motore
+ non viene attivato.
  
  Schema: http://lab.piffa.net/schemi/motor_pot_bb.png
  
