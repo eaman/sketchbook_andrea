@@ -32,3 +32,11 @@ void loop() {
   }
 }
 
+/* Domande
+Una connessione analogica permette di passare un solo tipo di segnale
+con eventuale modulazione (8bit in output da PWM e 10bit di scansione 
+come analog input).
+
+- Quanti tipi di dati permette di trasmettere la seriale?
+- Comandare un LED RGB via PWM via seriale (da una Arduino o da un PC).
+*/

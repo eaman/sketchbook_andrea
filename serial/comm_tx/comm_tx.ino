@@ -9,13 +9,13 @@
  */
 
 // Prima scheda: input
-int led = 13;
+int led = 13;  // Debug
 int input = 2;  // Questa e' la scheda con un input
 int TX = 3 ; // Pin di trasmissione
 
 void setup() {                
   // initialize the digital pin as an output.
-  pinMode(led, OUTPUT);       // Il PIN e' attivato come output
+  pinMode(led, OUTPUT);       // Il PIN e' attivato come output per DEBUG
   pinMode(TX, OUTPUT);       // Il PIN e' attivato come output
   pinMode(input, INPUT);        // Il PIN e' attivato come output
 }
@@ -23,7 +23,7 @@ void setup() {
 // the loop routine runs over and over again forever:
 void loop() {
   if (digitalRead(input) == HIGH) { // Verifica se il PIN input e' +5v
-    digitalWrite(led, HIGH);
+    digitalWrite(led, HIGH); // Debug
     digitalWrite(TX, HIGH);
     delay(50);
   } 

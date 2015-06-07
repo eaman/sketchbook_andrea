@@ -29,12 +29,12 @@ void setup() {
 void loop() {
   if (digitalRead(input) == HIGH) { // Verifica se il PIN input e' +5v
     digitalWrite(led, HIGH);
-    Serial.write(2);
+    Serial.write(2); // Indicatore per accendere il LED 2
     delay(50);
   } 
   if (digitalRead(inputRed) == HIGH) { // Verifica se il PIN input e' +5v
     digitalWrite(led, HIGH); 
-    Serial.write(3);
+    Serial.write(3); // Idicatore per accendere il LED 3
     delay(50);
   } 
   digitalWrite(led, LOW);
