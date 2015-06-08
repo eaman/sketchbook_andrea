@@ -6,7 +6,11 @@
  comunica con un altra scheda che monta un LED come output.
  Il led della seconda si accende quando rileva
  la pressione del bottone della prima.
+ 
+  Scema: http://lab.piffa.net/schemi/serial_common_bb.png
+        http://lab.piffa.net/schemi/serial_common_schem.png
  */
+
 
 // Seconda scheda: output
 // PIN 0 = RX
@@ -39,20 +43,35 @@ incomingByte = Serial.read();
 }
 
 /* Domande
- Una connessione analogica permette di passare un solo tipo di segnale
- con eventuale modulazione (8bit in output da PWM e 10bit di scansione 
- come analog input).
- 
- - Quanti tipi di dati permette di trasmettere la seriale?
- - Comandare un LED RGB via PWM via seriale (da una Arduino o da un PC).
- - Che caratteristiche di latenza si hanno rispetto 
- a una connessione analogica?
- - Rifare lo sketch utilizzando una STATE MACHINE: quando il
- il LED viene ACCESO / SPENTO alternativamente alla pressione
- del bottone.
- - Dove dovremo implementare il DEBOUNCE?
- - Dove implementare la gestione dello STATO?
- */
+
+1. Che differenza c'e' tra Serial.write() e Serial.print()?
+2. Qual'e' il codice ASCII per indicare il numero decimale 1?
+3. Servono entrambi i cavi per la connessione?
+4. Potrei attaccare una terza arduino?
+
+Links:
+- http://www.arduino.cc/en/Serial/Print
+- http://www.arduino.cc/en/Tutorial/ASCIITable
+
+
+
+
+
+
+
+
+
+
+Risposte in fondo:
+1. Vedere i links proposti: .write scrive un byte mentre
+   .print manda un codice ASCII
+2. 49
+3. No, dato solo il cavo dalla TX alla RX .
+   Provare a fare un script con comunicazione bilaterale
+4. No perche' non ci sarebbe sincronia tra i segnali,
+   vedere gli esercizi su I2C
+*/
+
 
 
 

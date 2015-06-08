@@ -6,6 +6,8 @@
  comunica con un altra scheda che monta un LED come output.
  Il led della seconda si accende quando rileva
  la pressione del bottone della prima.
+ 
+ Schema: http://lab.piffa.net/schemi/analog_io_bb.png
  */
 
 // Seconda scheda: output
