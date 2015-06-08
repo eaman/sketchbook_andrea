@@ -85,5 +85,5 @@ la connessione).
 3. Vedere lo sketch sucessivo, basandosi su gli sketch della 
     state machine per il bottne: basic/buttons/button_state_4_state_and_condition/
     
-*//
+*/
 
