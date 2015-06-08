@@ -19,12 +19,12 @@ void setup() {
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);       // Il PIN e' attivato come output per DEBUG
   pinMode(TX, OUTPUT);       // Il PIN e' attivato come output
-  pinMode(input, INPUT);        // Il PIN e' attivato come output
+  pinMode(input, INPUT_PULLUP);        // Il PIN e' attivato come output
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-  if (digitalRead(input) == HIGH) { // Verifica se il PIN input e' +5v
+  if (digitalRead(input) == LOW) { // Verifica se il PIN input e' +5v
     digitalWrite(led, HIGH); // Debug
     digitalWrite(TX, HIGH);
     delay(50);
