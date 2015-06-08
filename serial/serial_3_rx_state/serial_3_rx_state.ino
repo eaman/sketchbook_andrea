@@ -48,6 +48,8 @@ incomingByte = Serial.read();
 2. Qual'e' il codice ASCII per indicare il numero decimale 1?
 3. Servono entrambi i cavi per la connessione?
 4. Potrei attaccare una terza arduino?
+4.1 Posso avere piu' trasmittenti sullo stesso canale?
+4.2 Posso avere piu' riceventi sullo stesso canale?
 
 Links:
 - http://www.arduino.cc/en/Serial/Print
