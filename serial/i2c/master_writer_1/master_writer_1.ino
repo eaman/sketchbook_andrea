@@ -12,22 +12,15 @@ Invio dati via I2C
 
 void setup()
 {
-  Wire.begin(); // join i2c bus (address optional for master)
+  Wire.begin(); // Entra sul canale I2C come master
 }
 
 byte x = 0;
 
 void loop()
 {
-  //  Wire.beginTransmission(4); // transmit to device #4
-  //  Wire.write("DAto inviato dal master");        // sends five bytes
-  //
-  //  Wire.endTransmission();    // stop transmitting
-  //
-  //
-  //  delay(500);
-  Wire.beginTransmission(4); // transmit to device #4
-  Wire.write("Tora Tora!");        // sends five bytes
+  Wire.beginTransmission(4); //Trasmette al device  #4
+  Wire.write("Tora Tora!");        
   // sends one byte  
   Wire.endTransmission();    // stop transmitting
 
