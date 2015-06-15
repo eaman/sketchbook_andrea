@@ -13,9 +13,10 @@ char input ;
 
 void setup()
 {
-  Wire.begin(4);                // join i2c bus with address #4
-  Wire.onReceive(receiveEvent); // register event
-  
+  Wire.begin(4);                // Entra sul canale I2C come slave  ID 4
+  Wire.onReceive(receiveEvent); // Al verificarsi dell'evento Wire.onReceive
+          // richiama la funzione receiveEvent()
+          
   // Debug seriale
   Serial.begin(9600);           // start serial for output
   Serial.println("Slave / RX Debug:");
@@ -24,22 +25,21 @@ void setup()
 
 void loop()
 {
-
   delay(100);
-// Nel Loop non succede niente, tutta l'azione e nella funzione receiveEvent()
+// Nel Loop non succede niente, tutta l'azione e' nella funzione receiveEvent()
 // Innescata dall'evento Wire.onReceive
 }
 
-// function that executes whenever data is received from master
-// this function is registered as an event, see setup()
+// Funzioni
 void receiveEvent(int howMany)
+// Eseguita ogni volta che si riceve dati dal Master
 {
-  Serial.print("Lo slave ha ricevuto il seguente messaggio: ");
-  while( Wire.available()) // loop through all but the last
+  Serial.print("Lo slave ha ricevuto il seguente messaggio: \"");
+  while ( Wire.available()) // Scansiona tutti i dati ricevuti
   {
     input = Wire.read(); // receive byte as a character
     Serial.print(input);         // print the character
   }         // print the integer
-  Serial.println("");
+  Serial.println("\""); // \ e' l'escape character
 }
 

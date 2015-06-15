@@ -76,7 +76,7 @@ void setup(void)
   displaySensorDetails();
 }
 
-void loop(void) 
+void loop() 
 {
   /* Get a new sensor event */ 
   sensors_event_t event; 
