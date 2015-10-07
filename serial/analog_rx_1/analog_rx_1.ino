@@ -12,7 +12,7 @@
 
 // Seconda scheda: output
 int led  = 13; // Questa scheda ha spolo l'output
-int RX   = 3 ; // Pin di ricezione
+int RX   = 3 ; // Pin di ricezione  
 
 void setup() {                
   // initialize the digital pin as an output.
