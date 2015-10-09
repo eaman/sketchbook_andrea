@@ -25,6 +25,8 @@
  
  http://arduino.cc/en/Tutorial/AnalogInput
  
+ Schema: http://lab.piffa.net/schemi/potenziometro_bb.png
+ 
  */
 
 int sensorPin = A0;    // select the input pin for the potentiometer

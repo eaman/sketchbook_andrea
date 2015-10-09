@@ -25,7 +25,7 @@ void setup()                    // run once, when the sketch starts
   Serial.println(a > b);
 
   Serial.print("a < b = ");       // minore
-  Serial.println(a < c);
+  Serial.println(a < b);
 
   Serial.print("a == b -> ");       // stesso valore
   Serial.println(a == b);
@@ -34,10 +34,10 @@ void setup()                    // run once, when the sketch starts
   Serial.println(a != b);
 
   Serial.print("a <= b ->");       // minore uguale
-  Serial.println(b <= a);
+  Serial.println(a <= b);
 
   Serial.print("a >= b -> ");       // maggiore uguale
-  Serial.println(b >= a);
+  Serial.println(a >= b);
 }
 
 void loop()                     // we need this to be here even though its empty

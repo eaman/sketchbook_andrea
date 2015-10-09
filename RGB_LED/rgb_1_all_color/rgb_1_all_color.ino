@@ -12,7 +12,7 @@ int greenPin = 10;
 int bluePin = 9;
 
 //uncomment this line if using a Common Anode LED
-//#define COMMON_ANODE
+#define COMMON_ANODE
 
 void setup()
 {

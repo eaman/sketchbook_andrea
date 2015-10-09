@@ -10,7 +10,11 @@
  R = (5v-1.8v) / 0.010a 
  R =320ohms
  
- This example code is in the public domain.
+
+ Schema: http://lab.piffa.net/schemi/led_single_bb.png
+ - http://lab.piffa.net/schemi/led_single_schem.png
+
+  This example code is in the public domain.
  */
 
 // Pin 13 has an LED connected on most Arduino boards.

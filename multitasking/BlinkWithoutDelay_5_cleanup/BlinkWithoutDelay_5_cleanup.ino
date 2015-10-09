@@ -63,7 +63,7 @@ void lightLedB (int interval) {
     
 /* Approfondimenti
  - integrazione tra funzioni e dati: programmazione a oggetti
- - Uso di pointers per modificare dati esterni allo scope della funzione
+ - Uso di pointers per modificare dati esterni allo scope della funzione, static
  - Uso di forme di dati strutturate (array, struct) per scambiare dati tra funzioni e programma
  */
 

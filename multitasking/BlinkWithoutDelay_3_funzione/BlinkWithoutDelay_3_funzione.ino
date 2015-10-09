@@ -23,9 +23,9 @@ long intervalA = 1000;           // interval at which to blink (milliseconds)
 //////////////
 // Second LED
 int ledB = 12; //Secondo LED
-int ledStateB = LOW;             // ledState used to set the LED
+           // ledState used to set the LED
 long previousMillisB = 0;        // will store last time LED was updated
-long intervalB = 500;           // interval at which to blink (milliseconds)
+           // interval at which to blink (milliseconds)
 
 
 void setup() {
@@ -60,6 +60,8 @@ void lightLedA () {
 }
 
 void lightLedB () {
+  long intervalB = 500;
+   static int ledStateB ;  
   if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   
