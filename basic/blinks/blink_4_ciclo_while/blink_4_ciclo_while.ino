@@ -3,25 +3,25 @@
  Accensione e spegnimanto di un LED utilizzando un ciclo
  iterativo while per comandare il lampeggio.
  
- This example code is in the public domain.
  */
 
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
-int led = 13;
-int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
+int led   = 13;
+int breve = 200;  
 int lunga = 1000;
 
-// the setup routine runs once when you press reset:
+
+// /////////////////
+// Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
 }
 
-// the loop routine runs over and over again forever:
+// ///////////////
+// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   int iterator = 0; // Defniamo un variabile per controllare un ciclo iterativo
-  while (iterator <10) {
+  while (iterator < 10) {
     rapido(); // accende e spegne rapidamente il LED
     iterator = iterator + 1 ; // incrementa l'iteratore
     // iterator++ ; // equivalente
@@ -30,7 +30,6 @@ void loop() {
 }
 
 // Funzioni create dall'utente:
-
 void rapido() {
   // Accende e spegne rapidamente il LED
 
@@ -51,6 +50,13 @@ void lento() {
   delay(lunga); 
 }
 
+
+/* Domande
+ *  
+ *  1. Creare una funziona lampeggia() che accetti come parametro
+ *  il nuomero di ripetizioni da eseguire.
+ *  
+ */
 
 
 

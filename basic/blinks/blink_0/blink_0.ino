@@ -22,8 +22,7 @@ void setup() {
 }
 
 // ///////////////
-// loop
-// Le istruzioni vengono eseguite all'infinito
+// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   digitalWrite(led, HIGH);  // Mette il PIN del LED in stato acceso
   delay(1000);              // Aspetta un secondo (mille millisecondi)

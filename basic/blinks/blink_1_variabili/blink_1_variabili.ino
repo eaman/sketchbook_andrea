@@ -18,15 +18,14 @@ int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
 int lunga = 1000;
 
 // /////////////////
-// Setup: eseguita una volta sola
+// Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
 }
 
 // ///////////////
-// loop
-// the loop routine runs over and over again forever:
+// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(breve);               // wait for a second

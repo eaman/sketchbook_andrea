@@ -3,7 +3,6 @@
  Accensione e spegnimanto di un LED utilizzando un ciclo
  iterativo for per comandare il lampeggio.
  
- This example code is in the public domain.
  */
 
 // Pin 13 has an LED connected on most Arduino boards.
@@ -12,16 +11,17 @@ int led = 13;
 int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
 int lunga = 1000;
 
-// the setup routine runs once when you press reset:
+// Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
 }
 
-// the loop routine runs over and over again forever:
+// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   for (int i = 0, i <10, i++) { 
 // (Definizione iteratore, condizione di verifica, gestione dell'iteratore)
+// Operatore ternario (3 elementi)
       rapido(); // accende e spegne rapidamente il LED
   }
   

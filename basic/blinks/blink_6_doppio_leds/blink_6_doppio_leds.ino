@@ -17,21 +17,23 @@
   This example code is in the public domain.
  */
 
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
-int led = 13;
-int red = 12; // Definiamo un altro led
+
+int led = 13;     // Il LED onboard corrisponde al PIN 13
+                  // Ha una resistenza premontata
+int red = 12;     // Definiamo un altro led
 int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
 int lunga = 1000;
 
-// the setup routine runs once when you press reset:
+// /////////////////
+// Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
   // initialize the digital pin as an output.
   pinMode(led, OUTPUT); // Abilitaiamo entrambi i LED     
   pinMode(red, OUTPUT);
 }
 
-// the loop routine runs over and over again forever:
+// ///////////////
+// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(breve);               // wait for a second
@@ -44,4 +46,20 @@ void loop() {
   delay(lunga); 
 }
 
+/* Domande
+ *  
+ *  1. Creare una funzione che sia slegata dal PIN con cui interagisce.
+ *  
+ *  2. Come procede il flusso delle istruzioni per far brillare i LED?
+ *     E' possibile far brillare i LED indipendentemente l'uno dall'altro?
+ *     
+ *     
+ *     Nota: la risposta alla domanda 2 arrivera' a fine corso!
+ */
 
+
+
+
+
+
+ 
