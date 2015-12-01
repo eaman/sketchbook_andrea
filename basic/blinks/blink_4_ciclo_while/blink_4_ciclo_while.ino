@@ -1,13 +1,13 @@
 /*
-  Blink v3
+  Blink v4: while loop
+
  Accensione e spegnimanto di un LED utilizzando un ciclo
  iterativo while per comandare il lampeggio.
  
  */
 
-int led   = 13;
-int breve = 200;  
-int lunga = 1000;
+const int led   = 13;   // Il valore non cambia
+                        // durante l'esecuzione del programm
 
 
 // /////////////////
@@ -20,43 +20,23 @@ void setup() {
 // ///////////////
 // loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
-  int iterator = 0; // Defniamo un variabile per controllare un ciclo iterativo
-  while (iterator < 10) {
-    rapido(); // accende e spegne rapidamente il LED
-    iterator = iterator + 1 ; // incrementa l'iteratore
-    // iterator++ ; // equivalente
+  int iterator = 0;    // Defniamo una variabile per controllare il ciclo iterativo
+  while (iterator < 10) {       // Condizione del ciclo
+    iterator = iterator + 1 ;   // incrementa l'iteratore
+    brilla(30 * iterator);      // accende e spegne rapidamente il LED 
+                                // la pausa e' in funzione della variabile iteratore
   }
-  lento();  // accende e spegne lentamente il LED
 }
 
 // Funzioni create dall'utente:
-void rapido() {
-  // Accende e spegne rapidamente il LED
+void brilla(int velocita) {
+  // Accende e spegne il LED accetando un argomento 
+  // per impostare la velocita'.
 
   // sequenze di istruzione: accendere e spegnere il LED
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(breve);               // wait for a second
+  delay(velocita);               // wait for a second
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(breve);               // wait for a second
+  delay(velocita);               // wait for a second
 }
-
-void lento() {  
-  // Accende e spegne lentamente il LED
-
-  // sequenze di istruzione: accendere e spegnere il LED
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(lunga);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(lunga); 
-}
-
-
-/* Domande
- *  
- *  1. Creare una funziona lampeggia() che accetti come parametro
- *  il nuomero di ripetizioni da eseguire.
- *  
- */
-
-
 

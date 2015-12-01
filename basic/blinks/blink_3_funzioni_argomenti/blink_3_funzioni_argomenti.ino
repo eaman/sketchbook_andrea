@@ -1,6 +1,4 @@
 
-// ////////////
-// Commento iniziale
 /*
   Blink v2
  
@@ -9,7 +7,6 @@
  
  This example code is in the public domain.
  */
-// //////////////
 // Dichiarazione variabili
 
 // Pin 13 has an LED connected on most Arduino boards.
@@ -24,7 +21,6 @@ void setup() {
   pinMode(led, OUTPUT);     
 }
 
-// ///////////////
 // loop
 void loop() {
   brilla(300);
@@ -32,7 +28,6 @@ void loop() {
   brilla(600);
 }
 
-// ///////////////
 // Funzioni create dall'utente:
 
 void brilla(int velocita) {
@@ -56,6 +51,4 @@ void brilla(int velocita) {
  *  accorpate nelle rispettive funzioni?
  *  
  *  Esercizi sucessivi sulle funzioni: blink_5 e 6
- */
- 
  */
