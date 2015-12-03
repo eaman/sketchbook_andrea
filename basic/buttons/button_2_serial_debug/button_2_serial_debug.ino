@@ -3,10 +3,14 @@
  
  
  Accensione e spegnimanto di un LED utilizzando un pin come input.
- 
+ Utilizzare un bottone momentaneo per attivare il LED.
+
  Schemi del circuito per bottone in pull down:
  - http://lab.piffa.net/schemi/button_1_bb.png
  - http://lab.piffa.net/schemi/button_1_schem.png
+
+Tutorial:
+- 
  */
 
 int led = 12;
@@ -34,14 +38,13 @@ void loop() {
   }
 }
 
-// Modifiche: 
-// 1. invertire il programma facendo in modo che il led si spenga
-// quando il bottone e' premuto. Consoderare come ottenere lo stesso risultato
-// modificando il circuito.
-// 2. Modificare il programma per far brillare il led cinque volte al secondo
-// quando il bottone e' premuto.
-
-// Domanda: cosa succede se il jumper input non e' collegato ne al +5 ne al gound?
-
-
-
+/* Domande:
+ 1. invertire il programma facendo in modo che il led si spenga
+    quando il bottone e' premuto. Consoderare come ottenere lo stesso risultato
+    modificando il circuito.
+ 2. Modificare il programma per far brillare il led cinque volte al secondo
+    quando il bottone e' premuto.
+ 3. Si potrebbe usare un ciclo iterativo while invece che 
+    un ciclo condizonale if? Che differenza c'e' tra il ciclo while e  for?
+ 4. Domanda: cosa succede se il jumper input non e' collegato ne al +5 ne al gound?
+ */

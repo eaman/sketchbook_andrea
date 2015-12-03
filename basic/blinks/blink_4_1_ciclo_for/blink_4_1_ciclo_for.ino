@@ -49,7 +49,7 @@ void brilla(int velocita) {
 
 1.  Che differenza c'e' nella gestione dell'iteratore tra un ciclo
     while e for ?
-2.  In quali casi si usa un ciclo for piuttosto ch uno while?
+2.  In quali casi si usa un ciclo for piuttosto che uno while?
 
 .
 .
