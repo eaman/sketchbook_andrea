@@ -6,12 +6,12 @@
  
  */
 
-int led = 9; // Pin per il PWM
+int led     = 9; // Pin per il PWM
+int pausa   = 5; 
 
 void setup()
 {
   pinMode(led, OUTPUT);
-
 }
 
 void loop()
@@ -22,14 +22,44 @@ void loop()
      3. incremento operatore
      */
     analogWrite(led, i) ;
-    delay(5 );
+    delay(pausa);
   }
   // Ora l'inverso
-  for (int c = 255; c > 0 ; c--) {
+  for (int c = 255; c > 0 ; c--) {  // Domanda: 1. avrei potuto usare come 
+                                    // variabile di nuovo i ?
     analogWrite(led, c) ;
-    delay(5);
+    delay(pausa);
   }
 }
+
+/* Domande:
+ 2. I due loop sembrano molto simili: e' possibile accorparli?
+
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ - Risposte:
+ 1. Si, le variabili i e c esistono solo nello scopo degli iteratori
+    in cui sono dichiarate.
+ 2. Vedi es. suciessivo.
+ */
 
 
 

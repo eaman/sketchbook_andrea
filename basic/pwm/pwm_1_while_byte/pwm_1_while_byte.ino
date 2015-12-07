@@ -4,8 +4,9 @@
    PWM per un LED: aumentare progressivamente la luminosita'.
  */
 
-byte led  = 9   ;     // Il pin ~9 e' abilitato al PWM
-byte brightness = 0;  // Valore iniziale per il PWM del LED
+const byte led  = 9   ; // Il pin ~9 e' abilitato al PWM
+byte brightness = 0;    // Valore iniziale per il PWM del LED
+                        // Perche' brightness non e' una costante?
 
 // the setup routine runs once when you press reset:
 void setup()  { 

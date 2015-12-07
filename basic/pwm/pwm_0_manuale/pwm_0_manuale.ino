@@ -20,8 +20,8 @@ void loop()
 {
   brilla();
 // microBrilla();
+
 }
-/////////////////////////////
 // Funzioni personali
 
 void brilla() {
