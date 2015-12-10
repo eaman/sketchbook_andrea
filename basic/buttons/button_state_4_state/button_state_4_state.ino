@@ -44,5 +44,5 @@ void loop(){
  1. I due cicli if verificano che due condizioni siano concomitanti: e' possibile
     integrarli semplificando il codice?
     
-  */
+ */
 

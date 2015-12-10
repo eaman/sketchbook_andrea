@@ -7,7 +7,7 @@
  quantita' di luce.
  
  Per ottenere valori significativi utilizzare unaresistenza
- da ~5k ohms in serie con il sensore.
+ da ~5k - 10k ohms in serie con il sensore.
  
  Questo sketch modifica l'intervallo di intermittenza di un led
  in base alla luminosita' rilevata.

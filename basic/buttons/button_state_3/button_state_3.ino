@@ -38,7 +38,7 @@ void loop(){
 /* Domande:
 
  1. Cosa succde se non uso un delay(20) alla lettura del bottone?
- 2. Implementare un LED che passa dallo stato acceso a spento quando viene premuto il bottone.
+ 2. Implementare un LED che cambia stato quando viene premuto il bottone.
  3. Quanti stati ha il LED?
  4. Sarebbe possibile passare rapidamente da uno stato all'altro?
  

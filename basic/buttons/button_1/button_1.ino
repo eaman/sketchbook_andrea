@@ -41,5 +41,5 @@ void loop() {
     quando il bottone e' premuto.
  3. Si potrebbe usare un ciclo iterativo while invece che 
     un ciclo condizonale if? Che differenza c'e' tra il ciclo while e  for?
- 4. Domanda: cosa succede se il jumper input non e' collegato ne al +5 ne al gound?
+ 4. Domanda: cosa succede se il jumper input non e' collegato ne al +5 ne al ground?
  */
