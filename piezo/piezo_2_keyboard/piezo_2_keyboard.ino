@@ -24,7 +24,7 @@ int notes[] = {
 
 // Carica un file di esempio con tutte le note
 // #include "pitches.h";
-// int notes[] = {NOTE_C4, NOTE_G4,NOTE_A5 }; // suona una prima, quinta, ottava
+// int notes[] = {NOTE_C4, NOTE_G4,NOTE_C5 }; // suona una prima, quinta, ottava
 
 void setup(){
   //start serial connection
