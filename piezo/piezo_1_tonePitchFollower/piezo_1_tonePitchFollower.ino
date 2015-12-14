@@ -13,8 +13,9 @@
  by Tom Igoe, with suggestion from Michael Flynn
 
 This example code is in the public domain.
- 
- http://arduino.cc/en/Tutorial/Tone2
+
+- http://www.dummies.com/how-to/content/how-to-make-an-instrument-with-the-arduino.html
+- https://www.arduino.cc/en/Tutorial/tonePitchFollower
  
  */
 
@@ -38,7 +39,7 @@ void loop() {
   // to the output pitch range (120 - 1500Hz)
   // change the minimum and maximum input numbers below
   // depending on the range your sensor's giving:
-  int thisPitch = map(sensorReading, sensorMin, sensorMax, 220, 3500);
+  int thisPitch = map(sensorReading, 300, 900, 220, 3500);
 
   // play the pitch:
   tone(ledPin, thisPitch, 10);
