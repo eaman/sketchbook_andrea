@@ -24,6 +24,10 @@ unsigned long last_time;
 unsigned long currentMillis ;
 int steps_left=4095;
 long time;
+
+void SetDirection();
+void stepper(int xw);
+
 void setup()
 {
   Serial.begin(115200);

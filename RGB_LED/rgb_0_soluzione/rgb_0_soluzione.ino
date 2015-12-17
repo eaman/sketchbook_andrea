@@ -5,10 +5,9 @@
  common anode
  */
 
-int redPin = 11;
-int greenPin = 10;
-int bluePin = 9;
-
+int redPin      = 11;   // 2v a 20ma: che resistenza dovro usare?
+int greenPin    = 10;   // 3.5v a 20ma: che resistenza dovro usare?
+int bluePin     = 9;    // 3.5v a 20ma: che resistenza dovro usare?
 
 
 void setup()
