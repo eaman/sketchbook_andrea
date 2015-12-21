@@ -42,8 +42,8 @@ public:
 };
 
 // Instanziamo i due led dalla classe 
-Lampeggiatore ledA(1, 1000);
-Lampeggiatore ledB(2, 500);
+Lampeggiatore ledA(13, 1000);
+Lampeggiatore ledB(12, 500);
 
 void setup() {
 }

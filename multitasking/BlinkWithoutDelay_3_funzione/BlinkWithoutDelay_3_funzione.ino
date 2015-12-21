@@ -19,6 +19,7 @@ long previousMillisA = 0;        // will store last time LED was updated
 // the follow variables is a long because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.
 long intervalA = 1000;           // interval at which to blink (milliseconds)
+void lightLedA () ;
 
 //////////////
 // Second LED
@@ -26,6 +27,7 @@ int ledB = 12; //Secondo LED
            // ledState used to set the LED
 long previousMillisB = 0;        // will store last time LED was updated
            // interval at which to blink (milliseconds)
+void lightLedB () ;
 
 
 void setup() {
@@ -61,7 +63,7 @@ void lightLedA () {
 
 void lightLedB () {
   long intervalB = 500;
-   static int ledStateB ;  
+   static int ledStateB ;  // https://www.arduino.cc/en/Reference/Static
   if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   

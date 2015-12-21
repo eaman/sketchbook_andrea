@@ -57,6 +57,8 @@ void loop()
       ledState = HIGH;
     else
       ledState = LOW;
+    // e' possibile semplificare queta operazione?
+    // Hint: lo stato del LED e' binario: ha solo due stati possibili.
 
     // set the LED with the ledState of the variable:
     digitalWrite(ledPin, ledState);
@@ -67,4 +69,4 @@ void loop()
    1. Aggioungere un LED che brilli ogni 500ms
    2. E' ora agevole cambiare gli intervalli dei due LED? 
       Modificare gli intervalli dei due led (es 500ms - 320ms)
-   */
+ */

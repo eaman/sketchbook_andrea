@@ -54,6 +54,7 @@ void loop()
   // the LED is bigger than the interval at which you want to 
   // blink the LED.
 
+// First LED
   if(millis() - previousMillisA > intervalA) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
@@ -67,6 +68,7 @@ void loop()
     digitalWrite(ledA, ledStateA);
   }
   
+// Second LED
     if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   

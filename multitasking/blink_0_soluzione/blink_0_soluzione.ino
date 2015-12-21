@@ -4,12 +4,12 @@
  Aggiungere un secondo LED e farlo brillare ogni 500ms
  mentre il primo brilla ogni 1000ms
  
- a  |  b
- ========
- 1  |  1
- 1  |  0
- 0  |  1 
- 0  |  0
+ a  |  b    Changes
+ ========   =========
+ 1  |  1    x   |   x
+ 1  |  0        |   x
+ 0  |  1    x   |   x
+ 0  |  0        |   x
  
  Periodo = 500ms
  
@@ -51,6 +51,11 @@ void loop() {
   digitalWrite(ledB, LOW);
   ;
 }
+
+/* Domande
+ 1. Altro scenartio: fare brillare un LED ogni 300ms mentre il secondo brilla ogni 400m
+ 2. Aggiungere un terzo LED
+ */
 
 
 
