@@ -7,16 +7,14 @@
  It looks for an ASCII string of comma-separated values.
  It parses them into ints, and uses those to fade an RGB LED.
  
- Circuit: Common-anode RGB LED wired like so:
- * Red cathode: digital pin 3
- * Green cathode: digital pin 5
- * blue cathode: digital pin 6
- * anode: +5V
+
  
  Once you have programmed the Arduino, open your Serial minitor. 
  Make sure you have chosen to send a newline character when sending a message. 
  Enter values between 0-255 for the lights in the following format : 
  Red,Green,Blue. 
+
+ Seriously: did you set the Newline setting in the monitor?
 
  
  Once you have sent the values to the Arduino, 

@@ -25,11 +25,11 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
-  if (Serial.read() == 1) { // Verifica se il PIN input e' +5v
+  if (Serial.read() == 1) { // Verifica i dati ricevuti
     digitalWrite(led, HIGH);
     delay(50);
   } 
-  else if (Serial.read() == 0) { // Alterativa: se non e' +5v
+  else if (Serial.read() == 0) { // Alterativa
     digitalWrite(led, LOW);
     delay(50);
   }

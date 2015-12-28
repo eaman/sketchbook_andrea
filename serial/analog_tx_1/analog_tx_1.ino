@@ -27,15 +27,20 @@ void loop() {
   if (digitalRead(input) == LOW) { // Verifica se il PIN input e' +5v
     digitalWrite(led, HIGH); // Debug
     digitalWrite(TX, HIGH);
-    delay(50);
+    delay(50); // Debounce
   } 
   else { // Alterativa: se non e' +5v
-    digitalWrite(led, LOW);
+    digitalWrite(led, LOW); // Debug
     digitalWrite(TX, LOW);
     delay(50);
   }
 }
 
 
+/* Domande:
+ 1. Perche' i due ground delle due schede sono collegati?
+ 2. Quanti LED posso pilotare con questo sistema?
+ 3. Con che  latenze lavoro?
+ */
 
 

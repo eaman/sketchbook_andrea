@@ -32,3 +32,9 @@ void loop() {
   }
 }
 
+
+/* Domande:
+ 1. Perche' i due ground delle due schede sono collegati?
+ 2. Quanti LED posso pilotare con questo sistema?
+ 3. Con che  latenze lavoro?
+ */
