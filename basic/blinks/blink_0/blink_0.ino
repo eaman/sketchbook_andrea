@@ -1,4 +1,4 @@
-// ////////////
+// 1. ////////////
 // Commento iniziale multi linea
 /*
   Blink 
@@ -8,20 +8,20 @@
   
  */
  
-// //////////////
+// 2. //////////////
 // Dichiarazione variabili
 // 
 int led = 13; // Il LED onboard corrisponde al PIN 13
               // Ha una resistenza premontata
 
-// /////////////////
+// 3. /////////////////
 // Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
   pinMode(led, OUTPUT); // Abilita il PIN del LED come OUTPUT in modo che
                         // possa essere acceso    
 }
 
-// ///////////////
+// 4. ///////////////
 // loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   digitalWrite(led, HIGH);  // Mette il PIN del LED in stato acceso

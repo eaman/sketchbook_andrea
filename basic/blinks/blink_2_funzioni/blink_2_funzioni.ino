@@ -55,9 +55,11 @@ void lento() {
 }
 
 /* Domande:
- *  1. I valori delle variabili led, breve, lunga cambiano durante
- *  l'esecuzione del programma? Sono variabili?
- *  
- *  2. Le dichiarazioni delle variabili breve e lunga possono essere
- *  accorpate nelle rispettive funzioni?
+    1. I valori delle variabili led, breve, lunga cambiano durante
+    l'esecuzione del programma? Sono variabili?
+    
+    2. Le dichiarazioni delle variabili breve e lunga possono essere
+    accorpate nelle rispettive funzioni?
+
+    3. Esercizio: creare una funzione per effettuare un S.O.S. : ...---...
  */

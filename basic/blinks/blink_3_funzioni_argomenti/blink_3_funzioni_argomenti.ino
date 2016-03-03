@@ -7,6 +7,7 @@
  
  This example code is in the public domain.
  */
+
 // Dichiarazione variabili
 
 // Pin 13 has an LED connected on most Arduino boards.
@@ -47,8 +48,6 @@ void brilla(int velocita) {
  *  1. Come si potrebbe fare per poter utilizzare la funzione brilla
  *   con PIN diversi rispetto a LED?
  *  
- *  2. Le dichiarazioni delle variabili breve e lunga possono essere
- *  accorpate nelle rispettive funzioni?
  *  
  *  Esercizi sucessivi sulle funzioni: blink_5 e 6
  */
