@@ -48,6 +48,7 @@ void brilla(int velocita) {
  *  1. Come si potrebbe fare per poter utilizzare la funzione brilla
  *   con PIN diversi rispetto a LED?
  *  
+ *  2. velocita' ora e' una variabile o una costante ?
  *  
  *  Esercizi sucessivi sulle funzioni: blink_5 e 6
  */

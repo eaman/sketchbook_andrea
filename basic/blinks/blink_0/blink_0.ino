@@ -26,6 +26,6 @@ void setup() {
 void loop() {
   digitalWrite(led, HIGH);  // Mette il PIN del LED in stato acceso
   delay(1000);              // Aspetta un secondo (mille millisecondi)
-  digitalWrite(led, LOW);   // Mette il PIN del LED in stato acceso
+  digitalWrite(led, LOW);   // Mette il PIN del LED in stato spento
   delay(500);               // Aspetta mezzo secondo
 }

@@ -3,6 +3,8 @@
 
  Accensione e spegnimanto di un LED utilizzando un ciclo
  iterativo while per comandare il lampeggio.
+
+ Iterazione modificata da una variabile.
  
  */
 
@@ -34,9 +36,9 @@ void brilla(int velocita) {
   // per impostare la velocita'.
 
   // sequenze di istruzione: accendere e spegnere il LED
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(velocita);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(velocita);               // wait for a second
+  digitalWrite(led, HIGH);       // Mette il PIN del LED in stato acceso)
+  delay(velocita);               // Pausa
+  digitalWrite(led, LOW);       // Mette il PIN del LED in stato spento
+  delay(velocita);              // Pausa
 }
 
