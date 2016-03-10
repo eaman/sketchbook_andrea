@@ -10,13 +10,18 @@ Gestione
 --------------------
 
 Per aggiornare il proprio archivio ::
-    cd sketchbook_andrea/ ; git fetch
+    cd sketchbook_andrea/ ; git pull
 
 Per instanziarne uno nuovo ::
     git clone --depth 1 git://git.andreamanni.com/sketchbook_andrea
 
 Per cancellare completamente il vecchio e reinstanziarlo ::
     rm -r sketchbook_andrea ; git clone --depth 1 git://git.andreamanni.com/sketchbook_andrea
+
+Se avete modificato degli sketch, non potete piu' scaricare gli aggiornamenti,
+   siete disposti a perdere tutte le vostre modifiche:
+   git stash ; git pull
+
 
 Download via HTTP
 --------------------
@@ -35,13 +40,16 @@ Ordine da seguire per gli esercizi a seconda della traccia decisa per il corso.
 Digital output
 ================================
 
-Tutti i blinks in ordine
-Dovrebbero coprire gli argomenti per 
-- istruzioni
-- sequenze di istruzioni
+Tutti i blinks in ordine, Dovrebbero coprire gli argomenti per :
 
-Cicli condizionali vengono visti con bottoni mentre i cicli iterativi sono
-presentati con i PWM.
+
+- istruzioni
+- sequenze di istruzioni (funzioni)
+- cicli iterativi
+
+
+Cicli condizionali vengono visti con bottoni mentre i cicli iterativi saranno
+poi approfonditi con con i PWM.
 
 
 Debug Seriale
