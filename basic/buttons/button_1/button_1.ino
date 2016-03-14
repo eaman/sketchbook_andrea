@@ -34,8 +34,8 @@ void loop() {
 }
 
 /* Domande:
- 1. invertire il programma facendo in modo che il led si spenga
-    quando il bottone e' premuto. Consoderare come ottenere lo stesso risultato
+ 1. Invertire il programma facendo in modo che il led si spenga
+    quando il bottone e' premuto. Considerare come ottenere lo stesso risultato
     modificando il circuito.
  2. Modificare il programma per far brillare il led cinque volte al secondo
     quando il bottone e' premuto.
