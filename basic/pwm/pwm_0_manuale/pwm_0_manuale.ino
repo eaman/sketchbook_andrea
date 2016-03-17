@@ -8,7 +8,7 @@
   */
 
 
-int pausa = 5 ; // 100 e' Circa 10% del duty cicle @ 1KHz
+int pausa = 3 ; // pausa in millisecondi
 int microPausa = 100 ; // 100 e' Circa 10% del duty cicle @ 1KHz
 
 void setup()
@@ -30,7 +30,7 @@ void brilla() {
   digitalWrite(13, HIGH);
   delay(pausa); 
   digitalWrite(13, LOW);
-  delay(pausa * 5);
+  delay(pausa * 9);
 }
 
 void microBrilla() {

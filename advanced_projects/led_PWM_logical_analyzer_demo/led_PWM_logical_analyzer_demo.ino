@@ -1,7 +1,7 @@
 /*
     PWM demo with a logical analyzer
  
- Connect pin ~11 to a logic analyzer and a multimeter
+ Connect pin ~9 to a logic analyzer and a multimeter
  and witness the power of the built-in PWM generator.
  
  Usage: change pausa from 3000 (demostration) to 20 for sampling.
