@@ -7,35 +7,58 @@ Fade
  From Arduino for dummies.
  */
 
-int led = 9;
-int brightness = 0; // this two could be bytes as well
-int fadeAmount = 5;
-// the pin that the LED is attached to
-// how bright the LED is
-// how many points to fade the LED by
-// the setup routine runs once when you press reset:
+const int led = 9;          // LED con PWM
+byte brightness = 0;        // Luminosita'
+const int fadeAmount = 5;   // Step di modifica luminosita'
+const int pause = 30;       // Pausa tra incrementi
+
 
 void setup() {
-  // declare pin 9 to be an output:
-  pinMode(led, OUTPUT);
+  pinMode(led, OUTPUT); // declare pin 9 to be an output:
 }
-// the loop routine runs over and over again forever:
+
 void loop() {
-  // set the brightness of pin 9:
+
   analogWrite(led, brightness);
-  // change the brightness for next time through the loop:
   brightness = brightness + fadeAmount;
-  // reverse the direction of the fading at the ends of the fade:
+
   if (brightness == 0 || brightness == 255) {
+  // Invertire incremento ai valori limiti
     fadeAmount = -fadeAmount ;
   }
   // wait for 30  milliseconds to see the dimming effect
-  delay(30); // Question: should this value be here?
-             // Would it be better to have a variable for it? Why?
+  delay(pause); 
 }
 
 
+/* Domande:
+   1. Che rapporto c'e' tra un OR e due cicli IF ?
+   2. E tra un AND e due cicli IF ?
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+Soluzioni:
+   1. Due cicli IF sequenziali con:
+    - Condizioni diverse
+    - stessa conseguenza
 
-
-
-
+   2. Due cicli IF annidiati che verificano due condizioni in sucessione
+   
+/*

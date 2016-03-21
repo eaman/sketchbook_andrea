@@ -54,6 +54,7 @@ void setup() {
     if (sensorValue < sensorMin) {
       sensorMin = sensorValue;
     }
+    delay(5); // Let the sensor rest a bit and stabilize
   }
 
   // signal the end of the calibration period
