@@ -20,8 +20,8 @@ int pin4 = 4;
 int pin5 = 5;
 int pin6 = 6;
 int pin7 = 7;
-int pin7 = 8;
-int pin7 = 9;
+int pin8 = 8;
+int pin9 = 9;
 int timer = 100;
 
 void setup(){

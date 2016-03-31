@@ -52,11 +52,14 @@ void loop() {  // put your main code here, to run repeatedly:
     }
   }
 
+// Reset routine
   Serial.println("Counter resetted.");   // serial staff
   digitalWrite(RED, HIGH);
   delay(WAIT);
   count++ ;
   totalRun++ ;
+
+// Final Exit routine
   if (totalRun == MAXRUN) {
     Serial.println("10 runs done, exit program.");
     digitalWrite(RED, HIGH);

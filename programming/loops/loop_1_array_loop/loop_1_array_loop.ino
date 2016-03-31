@@ -1,12 +1,8 @@
 /* Knight Rider 2
  * --------------
+ * 
+ * Array e uso dei cicli iterativi.
  *
- * Reducing the amount of code using for(;;).
- *
- *
- * (cleft) 2005 K3, Malmo University
- * @author: David Cuartielles
- * @hardware: David Cuartielles, Aaron Hallborg
 
 
    Schema semplificato: 
@@ -15,24 +11,25 @@
  */
 
 int pinArray[8] = {2, 3, 4, 5, 6, 7, 8, 9};
-int count = 0;
 int timer = 100;
 
 void setup(){
   // we make all the declarations at once
-  for (count=0;count<9;count++) {
+  for (int count=0;count<9;count++) {
     pinMode(pinArray[count], OUTPUT);
   }
 }
 
 void loop() {
-  for (count=0;count<8;count++) { // 8 e' un numero magico
+  for (int count=0;count<8;count++) { // 8 e' un numero magico
    digitalWrite(pinArray[count], HIGH);
    delay(timer);
    digitalWrite(pinArray[count], LOW);
    delay(timer);
   }
-  for (count=8;count>=0;count--) {
+
+// Ciclo inverso: dall'alto in basso  
+  for (int count=8;count>=0;count--) {
    digitalWrite(pinArray[count], HIGH);
    delay(timer);
    digitalWrite(pinArray[count], LOW);
@@ -46,6 +43,16 @@ void loop() {
  2. Come posso fare per uscire completamente dal loop? 
  3. 8 e' un numero magico: come posso evitarlo?
 
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
 .
 .
 .
