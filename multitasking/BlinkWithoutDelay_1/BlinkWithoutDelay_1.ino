@@ -24,7 +24,7 @@
 
 // constants won't change. Used here to 
 // set pin numbers:
-const int ledPin =  13;      // the number of the LED pin
+const int ledPin =  13;      
 
 // Variables will change:
 int ledState = LOW;             // ledState used to set the LED
@@ -32,7 +32,7 @@ long previousMillis = 0;        // will store last time LED was updated
 
 // the follow variables is a long because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.
-long interval = 1000;           // interval at which to blink (milliseconds)
+const long interval = 1000;           // interval at which to blink (milliseconds)
 
 void setup() {
   // set the digital pin as output:
@@ -49,7 +49,7 @@ void loop()
   // blink the LED.
  
   if(millis() - previousMillis > interval) {
-    // save the last time you blinked the LED 
+    // Aggiorniamo il contatore previousMillis
     previousMillis = millis();   
 
     // if the LED is off turn it on and vice-versa:
@@ -57,7 +57,7 @@ void loop()
       ledState = HIGH;
     else
       ledState = LOW;
-    // e' possibile semplificare queta operazione?
+    // e' possibile semplificare questa operazione?
     // Hint: lo stato del LED e' binario: ha solo due stati possibili.
 
     // set the LED with the ledState of the variable:

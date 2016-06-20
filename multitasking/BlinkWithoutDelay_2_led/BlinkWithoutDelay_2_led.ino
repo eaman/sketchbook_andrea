@@ -24,20 +24,20 @@
 
 // constants won't change. Used here to 
 // set pin numbers:
-const int ledA =  13;      // the number of the LED pin
-int ledB = 12; //Secondo LED
+const int ledA = 13;      // Primo LED
+const int ledB = 12;      // Secondo LED
 
-// Variables will change:
+// Variabbili di stato
 int ledStateA = LOW;             // ledState used to set the LED
 int ledStateB = LOW;             // ledState used to set the LED
-
+              
 long previousMillisA = 0;        // will store last time LED was updated
 long previousMillisB = 0;        // will store last time LED was updated
 
 // the follow variables is a long because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.
 long intervalA = 1000;           // interval at which to blink (milliseconds)
-long intervalB = 500;           // interval at which to blink (milliseconds)
+long intervalB = 500;            // interval at which to blink (milliseconds)
 
 void setup() {
   // set the digital pin as output:
@@ -47,14 +47,7 @@ void setup() {
 
 void loop()
 {
-  // here is where you'd put code that needs to be running all the time.
-
-  // check to see if it's time to blink the LED; that is, if the 
-  // difference between the current time and last time you blinked 
-  // the LED is bigger than the interval at which you want to 
-  // blink the LED.
-
-// First LED
+// Primo LED
   if(millis() - previousMillisA > intervalA) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
@@ -68,7 +61,7 @@ void loop()
     digitalWrite(ledA, ledStateA);
   }
   
-// Second LED
+// Secondo LED
     if(millis() - previousMillisB > intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   

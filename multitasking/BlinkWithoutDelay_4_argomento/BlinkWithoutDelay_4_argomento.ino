@@ -24,7 +24,7 @@ void setup() {
 
 void loop()
 {
-  lightLedA(1000);
+  lightLedA(333);
   lightLedB(500);
 }
 

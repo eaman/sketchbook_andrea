@@ -4,6 +4,12 @@
  Aggiungere un secondo LED e farlo brillare ogni 500ms
  mentre il primo brilla ogni 1000ms
  
+ Massimo comun denominatore 1000 MCD 500 = 500ms
+ Durata Periodo = 500ms
+ 
+ 
+ Stati: 
+ 
  a  |  b    Changes
  ========   =========
  1  |  1    x   |   x
@@ -11,7 +17,6 @@
  0  |  1    x   |   x
  0  |  0        |   x
  
- Periodo = 500ms
  
  */
 
@@ -54,6 +59,7 @@ void loop() {
  1. Altro scenartio: fare brillare un LED ogni 300ms mentre il secondo brilla ogni 400m
  2. Aggiungere un terzo LED
  */
+
 
 
 
