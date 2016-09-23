@@ -12,7 +12,7 @@
 
 /////////////
 // First LED
-int ledA =  13;      // the number of the LED pin
+const int ledA =  13;      // the number of the LED pin
 // Variables will change:
 int ledStateA = LOW;             // ledState used to set the LED
 long previousMillisA = 0;        // will store last time LED was updated
@@ -22,8 +22,9 @@ long intervalA = 1000;           // interval at which to blink (milliseconds)
 void lightLedA () ;
 
 //////////////
-// Second LED
-int ledB = 12; //Secondo LED
+//  Second LED
+// Now with less global variables thanks to static (see function body)
+const int ledB = 12; //Secondo LED
            // ledState used to set the LED
 long previousMillisB = 0;        // will store last time LED was updated
            // interval at which to blink (milliseconds)

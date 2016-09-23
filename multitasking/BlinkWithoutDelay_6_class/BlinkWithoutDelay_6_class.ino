@@ -11,7 +11,7 @@ class Lampeggiatore {
   int ledPin ;           // il numero del LED pin
   int ledState ;         // stato attuale del LED
   long interval ;        // milliseconds di intervallo nel lampeggiare
-  long previousMillis ;  //precedente cambio di stato
+  long previousMillis ;  // precedente cambio di stato
 
   // Constructor: come viene instanziato un oggetto facente parte della classe
 public:
