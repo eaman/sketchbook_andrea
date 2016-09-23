@@ -15,22 +15,23 @@ void setup()  {
 } 
 
 void loop()  { 
-  // Ledd al 100% : 255
+  // OUTPUT al 100% : 255
   analogWrite(led, brightness) ; 
   delay(pausa);
 
-  // Ledd al 75% : 191
+  // OUTPUT al 75% : 191
   analogWrite(led, brightness * 0.75) ; 
   delay(pausa);
   
-  // Ledd al 50% : 127
+  // OUTPUT al 50% : 127
   analogWrite(led, brightness * 0.5) ; 
   delay(pausa);
   
-  // Ledd al 25%: 63
+  // OUTPUT al 25%: 63
   analogWrite(led, brightness * 0.25 ) ; 
   delay(pausa);
 
-  // Ledd al 0%
+  // OUTPUT al 0%
   analogWrite(led, brightness * 0) ;
+  delay(pausa);
 }

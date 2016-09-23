@@ -14,12 +14,12 @@ L'array puo' contenere un numero arbitrario di led
  */
 
 byte ledPins[] = {  // Domanda: cosa succede se uso int?
-  9, 10, 11, 12
+  2, 3, 4, 5, 6, 7, 8, 9
 }
 ; //Array
 
 long previousMillis ;
-long interval = 1000;
+long interval = 200;
 byte i = 0;
 
 
