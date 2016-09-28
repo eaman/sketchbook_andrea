@@ -9,6 +9,7 @@
 int led   = 13;   // LED OnBoard
 
 
+
 // /////////////////
 // Setup: eseguita una volta sola all'accensione della scheda
 void setup() {

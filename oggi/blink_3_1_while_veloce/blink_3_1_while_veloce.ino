@@ -5,7 +5,6 @@
  iterativo while per comandare il lampeggio.
 
  Iterazione modificata da una variabile.
- Introduzione const.
  
  */
 
