@@ -19,7 +19,7 @@ int input = 2;
 // the setup routine runs once when you press reset:
 void setup() {                
   pinMode(led, OUTPUT);       // Il PIN e' attivato come output
-  pinMode(input, INPUT);        // Il PIN e' attivato come output
+  pinMode(input, INPUT);      // Il PIN e' attivato come output
 
   Serial.begin(9600);         // Attivazione seriale
 }
