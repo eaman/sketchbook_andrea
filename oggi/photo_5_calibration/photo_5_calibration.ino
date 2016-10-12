@@ -39,7 +39,9 @@ int sensorMax = 0;           // maximum sensor value
 void setup() {
   // turn on LED to signal the start of the calibration period:
   pinMode(13, OUTPUT);
+  pinMode(9, OUTPUT);
   digitalWrite(13, HIGH);
+
 
   // calibrate during the first five seconds 
   while (millis() < 5000) {
@@ -66,7 +68,7 @@ void loop() {
   sensorValue = analogRead(sensorPin);
 
   // apply the calibration to the sensor reading
-  sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 255);
+  sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 254);
 
   // in case the sensor value is outside the range seen during calibration
   sensorValue = constrain(sensorValue, 0, 255);
