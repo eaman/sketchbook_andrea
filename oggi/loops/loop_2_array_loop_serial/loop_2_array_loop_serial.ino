@@ -50,9 +50,14 @@ void loop() {
   for (int thisPin = sizeof(ledPins) -1 ; thisPin > 0; thisPin--) {
     Serial.print("Accensione pin n. "); // Gli array sono indicizzati da 0
     Serial.println(thisPin);
+    // ><<turn the pin on:
     digitalWrite(ledPins[thisPin], HIGH);
     delay(timer);
+    // turn the pin off:
     digitalWrite(ledPins[thisPin], LOW);
 
   }
 }
+
+
+
