@@ -48,7 +48,7 @@ void loop()
   // the LED is bigger than the interval at which you want to 
   // blink the LED.
  
-  if(millis() - previousMillis > interval) {
+  if (millis() > previousMillis + interval) {
     // Aggiorniamo il contatore previousMillis
     previousMillis = millis();   
 

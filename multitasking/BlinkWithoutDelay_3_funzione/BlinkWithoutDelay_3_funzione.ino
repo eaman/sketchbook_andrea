@@ -47,7 +47,7 @@ void loop()
 // Funzioni:
 
 void lightLedA () {
-  if(millis() - previousMillisA > intervalA) {
+  if (millis() > previousMillisA + intervalA) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
 
@@ -65,7 +65,7 @@ void lightLedA () {
 void lightLedB () {
   long intervalB = 500;
    static int ledStateB ;  // https://www.arduino.cc/en/Reference/Static
-  if(millis() - previousMillisB > intervalB) {
+  if (millis() > previousMillisB + intervalB) {
     // save the last time you blinked the LED 
     previousMillisB = millis();   
 

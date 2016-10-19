@@ -38,7 +38,7 @@ void loop()
 void lightLedA (int interval) {
   // Illumina il ledA secondo un intervallo passato come argomento
 
-  if(millis() - previousMillisA > interval) {
+  if (millis() > previousMillisA + interval) {
     // save the last time you blinked the LED 
     previousMillisA = millis();   
 
@@ -51,7 +51,7 @@ void lightLedA (int interval) {
 void lightLedB (int interval) {
   // Illumina il ledB secondo un intervallo passato come argomento
 
-  if(millis() - previousMillisB > interval) {   
+  if (millis() > previousMillisB + interval) {   
     previousMillisB = millis(); 
   digitalWrite(ledB, !digitalRead(ledB));
   // Leggiamo direttamente il registro di ledB e scriviamo il suo opposto,
