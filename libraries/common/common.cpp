@@ -1,6 +1,11 @@
 /*  Common
- *
- *  Oggetti di uso comune
+  Collezione di funzioni e oggetti comuni incontrati durante
+  i vari esercizi.
+
+  Source file
+  Contiene il codice C++ delle funzioni e degli oggetti,
+  nel file common.h ci sono gli headers: prototipi.
+
  */
 
 #include "Arduino.h"
@@ -92,7 +97,7 @@ void RGBLed::SetColor (byte r, byte g, byte b) {
 
 void brilla(byte pin) {
   // Accende e spegne il LED senza un argomento 
-  // per impostare la velocita'.
+  // per impostare la velocita' con delay().
   const int velocita = 500;
 
 pinMode(pin, OUTPUT); 

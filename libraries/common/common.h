@@ -1,15 +1,21 @@
 /*
   Common Class
 
-  Oggetti comuni
+  Collezione di funzioni e oggetti comuni incontrati durante
+  i vari esercizi.
+
+  Header file
+  Contiene i prototipi delle funzioni e degli oggetti,
+  il codice e' nel fine *.cpp
 
 */
 
 #include "Arduino.h"
-#ifndef common_h
-#define common_h
+#ifndef common_h // Questi cicli IF, gestiti come macro da preprocessor
+#define common_h // fanno si che questo file non venga incluso piu' volte
 
 
+/////////////////////////////////////////////
 class RGBLed {
   // Classe rappresentativa di un LED RGB
   
@@ -33,6 +39,7 @@ class RGBLed {
 	void SetColor (byte r, byte g, byte b) ;
 };
 
+/////////////////////////////////////////////
 void brilla(byte pin, int velocita = 500) ;
 
 #endif
