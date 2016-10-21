@@ -1,16 +1,17 @@
 /*
-    Adafruit Arduino - Lesson 3. RGB LED
+    RGB Object
 
- RGB LED: mpostare i colori per un LED RGB
- common anode
+    Gestione di un LED RGB tramite programmazione a oggetti
 
  Schema: http://lab.piffa.net/schemi/rgb.jpg
  */
 
 class RGBLed {
-    const byte redPin ;
-    const byte greenPin ;
-    const byte bluePin ;
+  // Classe rappresentativa di un LED RGB
+  
+    byte redPin ;
+    byte greenPin ;
+    byte bluePin ;
     byte redValue ;
     byte greenValue ;
     byte blueValue ;
@@ -30,30 +31,39 @@ class RGBLed {
       pinMode(greenPin, OUTPUT);
     }
 
-    void Color (byte r, byte g, byte b) {
-      // Imposta il colore di un LED RGB
-      byte redValue   = r;
-      byte greenValue = g;
-      byte blueValue  = b;
+    void Arrossa () {
+      // Metodo = funzione dell'oggetto
+      // Imposta il colore di un LED RGB a rosso
 
-      analogWrite(redPin,   redValue);
-      analogWrite(greenPin, greenValue);
-      analogWrite(bluePin,  blueValue);
+      analogWrite(redPin,   0);
+      analogWrite(greenPin, 255);
+      analogWrite(bluePin,  255);
+    }
+
+    void SetColor (byte r, byte g, byte b) {
+      // Imposta il colore di un LED RGB
+
+      analogWrite(redPin,   r);
+      analogWrite(greenPin, g);
+      analogWrite(bluePin,  b);
     }
 };
 
 // Instanziamo un LED
-RGBLed led(11, 10, 9); 
+RGBLed led(11, 10, 9);
 /* L'oggetto viene istanziato qui e non nella funzione di setup()
- *  perche' altrimenti la sua esistenza sarebbe legata solo 
+ *  perche' altrimenti la sua esistenza sarebbe legata solo
  *  al contesto (scope) del setup(), non sarebbe disponibile nel loop()
  */
 
 void setup()  {
-      // I PIN mode vengono settati dal constructor    
-      }
+  // I PIN mode vengono settati dal constructor
+}
 
+void loop() {
+  led.Arrossa();
+  delay(1000);
+  led.SetColor(255, 0, 255) ; // Mettiamo il LED in Green
+  delay(1000);
 
-void loop(){
-led.Color(0,255,255) ; // Mettiamo il LED in Rosso
-    }
+}

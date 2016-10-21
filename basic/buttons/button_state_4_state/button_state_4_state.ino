@@ -20,7 +20,8 @@ void setup() {
 }
 
 void loop(){
-  statoAttuale = digitalRead(buttonPin);      // Legge lo stato del bottone e lo registra in val
+  statoAttuale = digitalRead(buttonPin);      // Legge lo stato del bottone e
+                                              //  lo registra nella variabile
   delay(20);                                  // riduce l'effetto bounce
   if (statoAttuale != ultimoStato) {          // lo stato del bottone e' cambiato
     if (statoAttuale == HIGH) {               // il bottone e' stato premuto

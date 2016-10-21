@@ -1,8 +1,8 @@
 /*
-    Adafruit Arduino - Lesson 3. RGB LED
+    RGB struct LED
 
  RGB LED: mpostare i colori per un LED RGB
- common anode
+ common anode utilizzando uno struct
 
  Schema: http://lab.piffa.net/schemi/rgb.jpg
  */
@@ -48,4 +48,33 @@ void loop()
  */
 
 
+/* Risposte:
+ *  1.
 
+struct ledRGB {
+    byte r;
+    byte g;
+    byte b;
+    byte    blue;
+    byte    green;
+    byte    red;
+};
+
+ledRGB led {0,255,255,9,10,11};
+   
+   
+
+void setup()
+{
+  pinMode(led.blue, OUTPUT);
+  pinMode(led.green, OUTPUT);
+  pinMode(led.red, OUTPUT);
+}
+
+void loop()
+{
+  analogWrite(led.red,led.r );
+  analogWrite(led.green,led.g);
+  analogWrite(led.blue,led.b);
+}
+*/

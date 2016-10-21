@@ -1,8 +1,8 @@
 /*
-    Adafruit Arduino - Lesson 3. RGB LED
+    RGB Array 
 
- RGB LED: mpostare i colori per un LED RGB
- common anode
+ RGB LED: impostare i colori per un LED RGB
+ common anode tramite array
 
  Schema: http://lab.piffa.net/schemi/rgb.jpg
  */
@@ -24,7 +24,7 @@ void loop()
 {
   analogWrite(pin[0], color[0]);
   analogWrite(pin[1], color[1]);
-  analogWrite(pin[2], color[1]);
+  analogWrite(pin[2], color[2]);
 }
 
 /* Domande:

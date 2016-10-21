@@ -20,11 +20,13 @@ void loop(){
   delay(20);                                  // riduce l'effetto bounce
   if (statoAttuale != ultimoStato && statoAttuale == HIGH) { // due condizione contemporanee
     // lo stato del bottone e' camabiato AND lo stato attuale e' HIGH
-      digitalWrite(led, !(digitalRead(led)));      // Il processore setta lo stato di un led
-      // impostando il relativo PIN: possiamo leggere il relativo registro allo stesso modo di un bottone.
+      digitalWrite(led, !(digitalRead(led)));      
+      // Il processore setta lo stato di un led
+      // impostando il relativo PIN: possiamo leggere il relativo registro 
+      // allo stesso modo di un bottone.
   }
 
-  ultimoStato = statoAttuale;        // Aggiorna lo stato finale al valore attuale
+  ultimoStato = statoAttuale;    // Aggiorna lo stato finale al valore attuale
 }
 
 

@@ -20,7 +20,8 @@ void setup() {
 
 
 void loop(){
-  statoAttuale = digitalRead(switchPin);      // Legge lo stato del bottone e lo resistra in val
+  statoAttuale = digitalRead(switchPin);      // Legge lo stato del bottone e 
+                                              // lo resistra nella variabile
    delay(20);                                 // riduce l'effetto bounce
   if (statoAttuale != ultimoStato) { 
       // verifica due condizioni che devono realizzarsi contemporaneamente

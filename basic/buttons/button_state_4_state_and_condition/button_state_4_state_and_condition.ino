@@ -65,6 +65,8 @@ void loop(){
 
  1. Per accendere o spegnere un LED Arduino imposta il valore del registro corrispondente
     al PIN: se questo e' 0 il circuito e' aperto mentre se e' 1 il circuito e' chiuso.
-    Allo stesso modo con DigitalRead() e' possibile leggere lo stato di quel regustro
+    Allo stesso modo con DigitalRead() e' possibile leggere lo stato di quel registro
     e conoscere se il LED e' acceso o spento.    
+    - https://www.arduino.cc/en/Reference/PortManipulation
+    - http://www.instructables.com/id/Microcontroller-Register-Manipulation/
  */

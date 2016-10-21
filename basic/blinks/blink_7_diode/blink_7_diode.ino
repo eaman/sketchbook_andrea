@@ -45,4 +45,48 @@ void loop() {
 }
 
 
+/* Domande
+ * 
+ 1. Quanti stati sono disponibili per i LED ?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Risposte:
+	1. Quattro combinazione tra cui 3 stati differenti.
+     */

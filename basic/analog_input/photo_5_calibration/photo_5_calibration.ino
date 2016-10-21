@@ -39,6 +39,7 @@ int sensorMax = 0;           // maximum sensor value
 void setup() {
   // turn on LED to signal the start of the calibration period:
   pinMode(13, OUTPUT);
+  pinMode(ledPin, OUTPUT);
   digitalWrite(13, HIGH);
 
   // calibrate during the first five seconds 

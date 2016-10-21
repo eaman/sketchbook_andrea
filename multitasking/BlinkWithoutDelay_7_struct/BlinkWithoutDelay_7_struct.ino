@@ -37,7 +37,7 @@ void loop()
 struct blinkLed lightLed(struct blinkLed temp) { // dataType tipo_di_struct nome_funzione(argomenti)
   // Illumina il ledA secondo un intervallo passato come argomento
 
-  if(millis() - temp.previousMillis > temp.interval) { // gli elementi dello struct sono accessibili tramite l'operatore [punto]
+  if (millis() > temp.previousMillis + temp.interval) { // gli elementi dello struct sono accessibili tramite l'operatore [punto]
     // save the last time you blinked the LED 
     temp.previousMillis = millis();   
 

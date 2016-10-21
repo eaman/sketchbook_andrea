@@ -20,7 +20,7 @@ struct blinkLed {
   long interval ;        // milliseconds di intervallo nel lampeggiare
   long previousMillis ;  //precedente cambio di stato  
 };
-// Instanziamo i due led dalla struttur 
+// Instanziamo i due led dalla struttura
 blinkLed ledA = {
   13 , LOW , 1000, 0 };
 blinkLed ledB = {
