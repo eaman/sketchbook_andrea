@@ -71,6 +71,121 @@ void RGBLed::Off () {
 
 
 
+/////////////////////////////////////
+// Lampeggiatore
+// Constructor
+Lampeggiatore::Lampeggiatore(int pin)
+{
+    ledPin = pin;
+    pinMode(ledPin, OUTPUT);
+    ledState = LOW;
+    previousMillis = 0;
+    interval = 500;
+};
+
+
+
+
+// Una funzione facente parte di una classe prende il nome di "metodo" della stessa:
+void Lampeggiatore::Blink() {
+    // Illumina il led a 500ms
+
+    if(millis() - previousMillis > interval) {
+        // save the last time you blinked the LED
+        previousMillis = millis();
+
+        // if the LED is off turn it on and vice-versa:
+        ledState = !ledState ; // Inverti il LED
+    }
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+};
+
+void Lampeggiatore::Blink(long time) {
+    // Illumina il led secondo un intervallo passato come argomento
+
+    if(millis() - previousMillis > time) {
+        // save the last time you blinked the LED
+        previousMillis = millis();
+
+        // if the LED is off turn it on and vice-versa:
+        ledState = !ledState ; // Inverti il LED
+    }
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+};
+
+void Lampeggiatore::Blink(long up, long down) {
+    // Illumina il ledB precisando ontime e downtime
+
+    if((ledState == HIGH)&& (millis() - previousMillis > up)) {
+    // save the last time you blinked the LED
+    	previousMillis = millis();
+        ledState = LOW  ;
+    }
+    else if((ledState == LOW)&& (millis() - previousMillis > down)) {
+    	previousMillis = millis();
+        ledState = HIGH  ;
+    }
+
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+};
+
+/////////////////////////////////////
+// Pwm
+// Constructor
+Pwm::Pwm(int pin)
+{
+    ledPin = pin;
+    pinMode(ledPin, OUTPUT);
+    previousMillis = 0;
+    byte brightness = 0 ;
+    increment = 1;
+};
+
+void Pwm::Up(long speed) {
+    // Aumenta progressivamente la luminosita' usanndo millis()
+    // quindi senza bloccare il processore
+
+    analogWrite(ledPin, brightness);  // La funziona analogWrite utilizza il PWM
+    // a 8 bit integrato nel MCU: simula un serie di valori intermedi
+    // nell'intervallo discreto con minimo 0 (spento) e  massimo 255 (acceso).
+
+    if ((millis() - previousMillis) > speed / 256) {
+        brightness++; // Incrementiamo la luminosita'
+        previousMillis = millis();
+    };
+}
+
+void Pwm::Down(long speed ) {
+    // Riduce progressivamente la luminosita' usanndo millis()
+    // quindi senza bloccare il processore
+
+    analogWrite(ledPin, brightness);  // La funziona analogWrite utilizza il PWM
+    // a 8 bit integrato nel MCU: simula un serie di valori intermedi
+    // nell'intervallo discreto con minimo 0 (spento) e  massimo 255 (acceso).
+
+    if ((millis() - previousMillis) > speed / 256) {
+        brightness--; // Incrementiamo la luminosita'
+        previousMillis = millis();
+    };
+}
+
+void Pwm::UD(long speed ) {
+    // Aumenta e riduce in sequenza la luminosita' usanndo millis()
+    if ((millis() - previousMillis) > speed / 512) {
+        brightness = brightness + increment; // Incrementiamo la luminosita'
+        previousMillis = millis();
+        if (brightness == 0 || brightness == 255) { // Reverse direction
+            increment = -increment ;
+        };
+    };
+    analogWrite(ledPin, brightness);
+}
+
+
+
 //////////////////
 // Funzioni
 
@@ -86,3 +201,4 @@ pinMode(pin, OUTPUT);
   digitalWrite(pin, LOW);    // turn the LED off by making the voltage LOW
   delay(velocita);               // wait for a second
 };
+

@@ -33,6 +33,51 @@ class RGBLed {
     void Off ();
 };
 
-void brilla(byte pin, int velocita = 200) ;
 
+
+class Lampeggiatore {
+    // Lampeggia un LED utilizzando millis()
+    // Variabili
+    int ledPin ;           // il numero del LED pin
+    int ledState ;         // stato attuale del LED
+    long interval ;        // milliseconds di intervallo nel lampeggiare
+    long previousMillis ;  // precedente cambio di stato
+
+
+    // Constructor: come viene instanziato un oggetto facente parte della classe
+public:
+    Lampeggiatore(int pin);
+    void Blink(); 	// Lampeggia ogni 500ms
+    void Blink(long interval); // Lampeggia inpostando l'intervallo
+    void Blink(long on, long down); // Imposta il tempo acceso e il tempo spento
+};
+
+
+
+////////////////////////////
+class Pwm {
+    /*
+       PWM per un LED: aumentare progressivamente la luminosita'.
+       Utilizza la funzione millis() invece che un delay()
+       in modo da non blocare il processore.
+    */
+    // Variabili
+    int ledPin ;           // il numero del LED pin
+    int speed ;            // velocita' del ciclo in ms
+    byte brightness  ;      // luminostia' iniziale
+    long previousMillis ;  //precedente cambio di stato
+    byte increment ;        // aumenta brighteness nel loop UD
+
+    // Constructor: come viene instanziato un oggetto facente parte della classe
+public:
+    Pwm(int pin);  // numero di pin, velocita' di ciclo
+    void Up(long speed);
+    void Down(long speed);
+    void UD(long speed);
+};
+
+//////////////////////
+// Funzioni
+
+void brilla(byte pin, int velocita = 200) ;
 #endif
