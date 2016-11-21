@@ -123,9 +123,6 @@ void sos() {
 //////////////////
 /* Domande:
     1. Che differenza c'e' tra le funzioni esse() e sos()?
-
-    2. Esercizio: creare uno sketch per far brillare un led 10 volte lentamente
-       e dieci volte rapidamente.
  
  Soluzioni a fondo pagina.
  

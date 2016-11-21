@@ -14,15 +14,10 @@ const int led   = 13;   // Il valore non cambia
 const int acceleratore = 30 ;                      
 int tempo ; //
 
-// /////////////////
-// Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
-  // initialize the digital pin as an output.
   pinMode(led, OUTPUT);     
 }
 
-// ///////////////
-// loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   int iterator = 0;    // Defniamo una variabile per controllare il ciclo iterativo
   while (iterator < 10) {       // Condizione del ciclo
