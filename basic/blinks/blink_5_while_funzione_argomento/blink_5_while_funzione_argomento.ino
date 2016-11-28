@@ -62,6 +62,12 @@ void lampeggia(int ripetizioni) {
 }
 
 
+/*  Esercizi:
 
+ 1. Preparare uno sketch contente le principali funzioni relative ai blinks
+    preparate fino ad ora in modo da poterlo includere per poter riutilizzarle
+    negli esercizi successivi.
+
+*/
 
 
