@@ -12,6 +12,8 @@
  modified 31 May 2012
  by Tom Igoe, with suggestion from Michael Flynn
 
+ Modified by A.Manni
+
 This example code is in the public domain.
  
  http://arduino.cc/en/Tutorial/Tone2
@@ -20,17 +22,19 @@ This example code is in the public domain.
 
 // These constants won't change:
 const int sensorPin = A0;    // pin that the sensor is attached to
-const int ledPin = 9;        // pin that the LED is attached to
+const int piezoPin  = 9;     // pin that the piezo is attached to
 
 // variables:
 int sensorValue = 0;         // the sensor value
-int sensorMin = 1023;        // minimum sensor value
-int sensorMax = 0;           // maximum sensor value
+int sensorMin   = 1023;      // minimum sensor value
+int sensorMax   = 0;         // maximum sensor value
+int pitch       = 0;         // pithc value for the piezo
 
 void setup() {
   // initialize serial communications (for debugging only):
   Serial.begin(9600);
     pinMode(13, OUTPUT);
+    pinMode(piezoPin, OUTPUT);
   digitalWrite(13, HIGH);
 
   // calibrate during the first five seconds 
@@ -54,24 +58,28 @@ void setup() {
 
 void loop() {
   // read the sensor:
-  int sensorReading = analogRead(sensorPin);
+  int sensorValue = analogRead(sensorPin);
   // print the sensor reading so you know its range
-  Serial.println(sensorReading);
-  // map the analog input range (in this case, 400 - 1000 from the photoresistor)
+  Serial.println(sensorValue);
+  // map the analog input range 
   // to the output pitch range (120 - 1500Hz)
   // change the minimum and maximum input numbers below
   // depending on the range your sensor's giving:
-  int thisPitch = map(sensorReading, sensorMin, sensorMax, 220, 3500);
+  pitch = map(sensorValue, sensorMin, sensorMax, 220, 3500);
 
   // play the pitch:
-  if (sensorReading < sensorMax -50) {
-  tone(ledPin, thisPitch, 10);
+  if (sensorValue < sensorMax -50) { // Offset to prevent the piezo to ring
+                                     // all the time, check sensor polarity
+  tone(piezoPin, pitch, 10);
   }
   delay(1);        // delay in between reads for stability
 }
 
 
 
+/* Esercizi:
+ 1. Implementare constrain e smoothing in questo sketch
 
+ */
 
 

@@ -155,6 +155,7 @@ void Pwm::Up(long speed) {
     if ((millis() - previousMillis) > speed / 256) {
         brightness++; // Incrementiamo la luminosita'
         previousMillis = millis();
+        Serial.println(brightness);
     };
 }
 
@@ -169,6 +170,7 @@ void Pwm::Down(long speed ) {
     if ((millis() - previousMillis) > speed / 256) {
         brightness--; // Incrementiamo la luminosita'
         previousMillis = millis();
+        Serial.println(brightness);
     };
 }
 
@@ -177,11 +179,12 @@ void Pwm::UD(long speed ) {
     if ((millis() - previousMillis) > speed / 512) {
         brightness = brightness + increment; // Incrementiamo la luminosita'
         previousMillis = millis();
+        Serial.println(brightness);
+        analogWrite(ledPin, brightness);
         if (brightness == 0 || brightness == 255) { // Reverse direction
             increment = -increment ;
         };
     };
-    analogWrite(ledPin, brightness);
 }
 
 

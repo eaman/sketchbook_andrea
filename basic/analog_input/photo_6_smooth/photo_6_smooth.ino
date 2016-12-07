@@ -62,7 +62,7 @@ int smoothRead(int sensorPin) {
     total = total + analogRead(sensorPin);
     delay(2); // Pausa per assestare il senstore
   }
-  return(total / 10);
+  return(total / 10); // Valore medio
 }
 
 

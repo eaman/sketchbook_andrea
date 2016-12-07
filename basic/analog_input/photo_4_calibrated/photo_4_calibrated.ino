@@ -32,21 +32,21 @@ void setup() {
 void loop() {
   // read the value from the sensor:
   sensorValue = analogRead(sensorPin);   
-  int calValue = map(sensorValue,min,max,0,1024) ; 
-  // Max pausa = 1024 
+  int calValue = map(sensorValue,min,max,0,1000) ; 
+  // Max pausa = 1sec
       // turn the ledPin on
     digitalWrite(ledPin, HIGH);  
   // stop the program for <sensorValue> milliseconds:
   delay(calValue);          
   // turn the ledPin off:        
   digitalWrite(ledPin, LOW);   
-  // stop the program for for <sensorValue> milliseconds:
-  // print the results to the serial monitor:
+  // Debug, per disabilitarlo togliere l'inizializzazione della seriale
+  // dal setup()
   Serial.print("sensor = " );                       
   Serial.print(sensorValue);      
   Serial.print("\t cal delay = ");      
   Serial.println(calValue);
-  delay(sensorValue);                  
+  delay(calValue);                  
 }
 
 /*

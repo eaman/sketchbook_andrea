@@ -64,7 +64,6 @@ class Pwm {
     // Variabili
     int ledPin ;           // il numero del LED pin
     int speed ;            // velocita' del ciclo in ms
-    byte brightness  ;      // luminostia' iniziale
     long previousMillis ;  //precedente cambio di stato
     byte increment ;        // aumenta brighteness nel loop UD
 
@@ -74,6 +73,7 @@ public:
     void Up(long speed);
     void Down(long speed);
     void UD(long speed);
+    byte brightness  ;      // luminostia' iniziale
 };
 
 //////////////////////
