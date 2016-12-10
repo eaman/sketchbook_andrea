@@ -87,6 +87,11 @@ Lampeggiatore::Lampeggiatore(int pin)
 
 
 // Una funzione facente parte di una classe prende il nome di "metodo" della stessa:
+void Lampeggiatore::Invert() {
+    // Inverte il lampeggio
+    ledState = HIGH ;
+}
+
 void Lampeggiatore::Blink() {
     // Illumina il led a 500ms
 
