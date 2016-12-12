@@ -52,10 +52,10 @@ void loop()
  *  1.
 
 struct ledRGB {
-    byte r;
-    byte g;
-    byte b;
-    byte    blue;
+    byte rPin ;     // PINS
+    byte gPin;
+    byte bPin;
+    byte    blue;   // Colors
     byte    green;
     byte    red;
 };
@@ -66,15 +66,15 @@ ledRGB led {0,255,255,9,10,11};
 
 void setup()
 {
-  pinMode(led.blue, OUTPUT);
-  pinMode(led.green, OUTPUT);
-  pinMode(led.red, OUTPUT);
+  pinMode(led.Pin, OUTPUT);
+  pinMode(led.Pin, OUTPUT);
+  pinMode(led.Pin, OUTPUT);
 }
 
 void loop()
 {
-  analogWrite(led.red,led.r );
-  analogWrite(led.green,led.g);
-  analogWrite(led.blue,led.b);
+  analogWrite(led.rPin,led.red );
+  analogWrite(led.gPin,led.green);
+  analogWrite(led.bPin,led.blue);
 }
 */
