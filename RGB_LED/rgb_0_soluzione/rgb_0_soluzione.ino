@@ -19,31 +19,43 @@ void setup()
 
 void loop()
 {
-  setColor(255,0,0) ; // imposta il LED in rosso
-  //setColor(0xFF,0x00,0x00) ; // imposta il LED in rosso in esadecimale
 
+  rendiBlu();
+  delay(1000);
+  //setColor(255,0,0) ; // imposta il LED in rosso
+  //setColor(0xFF,0x00,0x00) ; // imposta il LED in rosso in esadecimale
   // setName("green") ; 
+  // delay(1000);
 }
 
 // Funzioni:
-void setColor(int red, int green, int blue)
+
+void rendiBlu() {
+    // Accende di Blu
+
+    analogWrite(redPin, 255 );
+    analogWrite(greenPin, 255 );
+    analogWrite(bluePin, 0 );
+  }
+
+void setColor(int red, int green, int blue) {
 // Imposta i colori di un LED RGB Common Anodote
 // in esadecimale
-{
+
   analogWrite(redPin, 255 -red);
   analogWrite(greenPin, 255 - green);
   analogWrite(bluePin, 255 - blue);
 }
 
-void setName(String colorName)
+void setName(String colorName) {
 // Imposta i colori di un LED RGB Common Anodote
 // tramite una stringa
-{
+
   if (colorName == "red") {
     analogWrite(redPin, 0 );
     analogWrite(greenPin, 255 );
     analogWrite(bluePin, 255 );
-  } 
+  }
   else if (colorName == "green") {
     analogWrite(redPin, 255 );
     analogWrite(greenPin, 0 );
@@ -57,10 +69,3 @@ void setName(String colorName)
    - http://ardx.org/src/code/CIRC12-code-MB-SPAR.txt
  
  */
-
-
-
-
-
-
-

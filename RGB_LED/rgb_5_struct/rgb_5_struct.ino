@@ -43,7 +43,7 @@ void loop()
  3. Sarebbe piu' elegante scrivere una funzione per gestire il setup dei PIN
  e impostare i colori?
  3.1 Servira' una o piu' funzioni?
- 4. Esiste un costrutto che mi permetta di legare le differenti caratteristiche
+ 4. Esiste un costrutto che mi permetta di legare le differenti proprieta'
  del LED RGB e contemporaneamente raggruppare le funzioni che tipicamente uso con questo?
  */
 

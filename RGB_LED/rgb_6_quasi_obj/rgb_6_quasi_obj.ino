@@ -52,7 +52,7 @@ void loop() {
 }
 
 /* Domande
- 1. Come posso fare per instanziare un altro oggetto LED?
+ 1. Potrei istanziare un altro oggetto RGBLed con PIN diversi?
  2. Posso accedere (leggere / modificare) le proprieta' dell'oggetto?
  3. A quali di queste proprieta' potrei voler accedere?
  4. Devo comunque abilitare i PIN come OUTPUT nel setup(): sarebbe possibile
