@@ -9,15 +9,18 @@
 class RGBLed {
   // Classe rappresentativa di un LED RGB
   
+    // Private properties, le proprieta' sono private per default
     byte redPin ;
     byte greenPin ;
     byte bluePin ;
+
+  public:
+    // Public properties
     byte redValue ;
     byte greenValue ;
     byte blueValue ;
 
     // Constructor: come viene instanziato un oggetto facente parte della classe
-  public:
     RGBLed(byte pinR, byte pinG, byte pinB)
     {
       // Carichiamo i valori dei PIN dentro alle proprieta'
@@ -52,8 +55,8 @@ class RGBLed {
 // Instanziamo un LED
 RGBLed led(11, 10, 9);
 /* L'oggetto viene istanziato qui e non nella funzione di setup()
- *  perche' altrimenti la sua esistenza sarebbe legata solo
- *  al contesto (scope) del setup(), non sarebbe disponibile nel loop()
+    perche' altrimenti la sua esistenza sarebbe legata solo
+    al contesto (scope) del setup(), non sarebbe disponibile nel loop()
  */
 
 void setup()  {
@@ -67,3 +70,9 @@ void loop() {
   delay(1000);
 
 }
+
+/* Domande
+ 1. Provate ad accedere (serial print oppure modificare) le proprieta private e pubbliche.
+
+ */
+
