@@ -18,7 +18,7 @@ long previousMillisA = 0;        // will store last time LED was updated
 const int ledB = 12; //Secondo LED
 // int ledStateB = LOW;             // Possiamo leggere lo stato del registro del LED
                                     // con digitalRead()
-long previousMillisB = 0;        // will store last time LED was updated
+unsigned long previousMillisB = 0;  // millis() ritorna sempre un unsigned long
 
 void setup() {
   // set the digital pin as output:
@@ -51,7 +51,7 @@ void lightLedA (int interval) {
 void lightLedB (int interval) {
   // Illumina il ledB secondo un intervallo passato come argomento
 
-  if (millis() > previousMillisB + interval) {   
+  if (millis() - previousMillisB > interval) {   
     previousMillisB = millis(); 
   digitalWrite(ledB, !digitalRead(ledB));
   // Leggiamo direttamente il registro di ledB e scriviamo il suo opposto,
