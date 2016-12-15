@@ -11,8 +11,7 @@
 // //////////////
 // Dichiarazione variabili
 
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
+// Pin 13 ha un LED preconfigurato su molte schede Arduino
 int led = 13;
 int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
 int lunga = 1000;
@@ -20,7 +19,7 @@ int lunga = 1000;
 // /////////////////
 // Setup: eseguita una volta sola all'accensione della scheda
 void setup() {                
-  // initialize the digital pin as an output.
+  // Inizializziamo il PIN 13 come OUTPUT
   pinMode(led, OUTPUT);     
 }
 

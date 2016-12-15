@@ -1,5 +1,13 @@
 /* Blink without Delay
  
+ Utilizziamo la funzione millis() al posto di delay()
+ per poter gestire il lampeggio di un LED senza bloccare
+ il processore.
+
+ Questo esercizio e' strutturato in una serie di passaggi incrementali
+ nei quali una versione minimale si evolve per introdurre
+ programmazione ad oggetti, interrupts, pointers.
+
  Turns on and off a light emitting diode(LED) connected to a digital  
  pin, without using the delay() function.  This means that other code
  can run at the same time without being interrupted by the LED code.
@@ -14,7 +22,7 @@
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
- modified by eaman
+ 2015 modified by Andrea Manni
  
  This example code is in the public domain.
 
@@ -66,7 +74,9 @@ void loop()
 }
 
 /* Domande
-   1. Aggioungere un LED che brilli ogni 500ms
+   1. Aggioungere un LED che brilli ogni 500ms: iniziare pensando
+      a quali variabili gestiscono l'attuale LED e a quali si
+      dovranno aggiungere.
    2. E' ora agevole cambiare gli intervalli dei due LED? 
       Modificare gli intervalli dei due led (es 500ms - 320ms)
  */

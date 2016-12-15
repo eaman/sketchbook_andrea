@@ -57,7 +57,7 @@ void loop() {
 
 /* Domande
  1. Altro scenartio: fare brillare un LED ogni 300ms mentre il secondo brilla ogni 400m
- 2. Aggiungere un terzo LED
+ 2. ...valutare come aggiungere un terzo LED, gestire altri intevalli.
  */
 
 
