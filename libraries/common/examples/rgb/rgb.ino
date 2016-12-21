@@ -20,6 +20,17 @@ void loop() {
   led.SetColor(255, 0, 255) ; // Mettiamo il LED in Green
   delay(1000);
   led.Off();
-  
-  brilla(13); // Funzione 
 }
+
+/* Colori disponibili:
+    Red 
+    Green 
+    Blue 
+    Magenta 
+    Cyano 
+    White 
+    Yellow 
+
+Nota: per aggiungerne uno senza modificare la libreria originale
+si potrebbe usara l'ereditarieta': vedi esempio "eredita.ino" .
+*/

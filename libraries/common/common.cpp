@@ -141,6 +141,8 @@ void Lampeggiatore::Blink(long up, long down) {
 // Pwm
 // Constructor
 Pwm::Pwm(int pin)
+    // Gestione del PWM utilizzando millis
+    // per non bloccare il processore con delay
 {
     ledPin = pin;
     pinMode(ledPin, OUTPUT);

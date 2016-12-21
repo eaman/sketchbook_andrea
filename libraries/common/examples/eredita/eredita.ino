@@ -1,7 +1,8 @@
 /* Ereditarieta'
    
    La classe SuperLED definita in questo sketch
-   eredita le caratteristiche di RGBLed e introduce un nuovo metodo.
+   eredita le caratteristiche di RGBLed e introduce un nuovo metodo
+   per un nuovo colore custom.
 
 */
 
@@ -16,6 +17,7 @@ class SuperLED : public RGBLed { // Ereditamo dalla classe RGBLed
   public:
     void Violet () {        // Nuovo metodo
     // Accende il LED di viola
+
           analogWrite(redPin,   255 - 238);
           analogWrite(greenPin, 255 - 130);
           analogWrite(bluePin,  255 - 238);
@@ -33,7 +35,7 @@ SuperLED led(11, 10, 9); //Istanziamo un oggetto led facente parte
 void loop() {
   led.Violet(); // Nuovo metodo
   delay(1000);
-  led.Off();
-  delay(1000);  // Vecchio metodo
+  led.Off();    // Vecchio metodo
+  delay(1000);  
 }
 
