@@ -3,7 +3,7 @@
   
   Le funzioni sono una sequenza di istruzione raggruppate appunto in un a funzione.
   Le funzioni possono accettare argomenti e avere questi pre-impostati a valori di default se omessi.
-  Le funzioni possono limitarsi a svolgere istruzionioppure elaborare valori restituendo un risultato.
+  Le funzioni possono limitarsi a svolgere istruzioni oppure elaborare valori restituendo un risultato.
   
  */
 

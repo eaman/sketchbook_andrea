@@ -1,2 +1,9 @@
-Ottima lezione in italiano:
+La serie degli esercizi sui LED RGB introduce argomenti come:
+
+- Forme di dati strutturate: array associativi
+- Programmazione ad oggetti per rappresentare un LED RGB (vedi anche
+        la serie multitasking per refactoring, scope delle variabili /
+        proprieta').
+
+Ottima lezione in italiano sul componente:
 - http://www.maffucci.it/2014/09/27/arduino-lezione-09-uso-di-led-rgb-parte-1/

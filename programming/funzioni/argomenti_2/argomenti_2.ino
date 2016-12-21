@@ -1,3 +1,10 @@
+/*
+Fuznioni: return
+
+La funzione area accetta due parametri di tipo int
+e ritorna un int corrispondente all'area.
+*/
+
 void setup(){
   Serial.begin(9600);
 }
