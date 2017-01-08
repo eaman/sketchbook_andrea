@@ -143,6 +143,7 @@ void Lampeggiatore::Blink(long up, long down) {
 Pwm::Pwm(int pin)
     // Gestione del PWM utilizzando millis
     // per non bloccare il processore con delay
+    // Warning: serialWrite puo' interferire con i tempi.
 {
     ledPin = pin;
     pinMode(ledPin, OUTPUT);
@@ -162,7 +163,6 @@ void Pwm::Up(long speed) {
     if ((millis() - previousMillis) > speed / 256) {
         brightness++; // Incrementiamo la luminosita'
         previousMillis = millis();
-        Serial.println(brightness);
     };
 }
 
@@ -177,7 +177,6 @@ void Pwm::Down(long speed ) {
     if ((millis() - previousMillis) > speed / 256) {
         brightness--; // Incrementiamo la luminosita'
         previousMillis = millis();
-        Serial.println(brightness);
     };
 }
 
@@ -186,7 +185,6 @@ void Pwm::UD(long speed ) {
     if ((millis() - previousMillis) > speed / 512) {
         brightness = brightness + increment; // Incrementiamo la luminosita'
         previousMillis = millis();
-        Serial.println(brightness);
         analogWrite(ledPin, brightness);
         if (brightness == 0 || brightness == 255) { // Reverse direction
             increment = -increment ;
