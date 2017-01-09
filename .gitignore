@@ -4,3 +4,4 @@ libraries/aero/
 *.swp
 *Makefile
 *tags
+libraries/LedControl/

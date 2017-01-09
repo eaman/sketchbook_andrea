@@ -155,13 +155,12 @@ Pwm::Pwm(int pin)
 void Pwm::Up(long speed) {
     // Aumenta progressivamente la luminosita' usanndo millis()
     // quindi senza bloccare il processore
+    // Viene usato un float, in alternativa un coseno
 
-    analogWrite(ledPin, brightness);  // La funziona analogWrite utilizza il PWM
-    // a 8 bit integrato nel MCU: simula un serie di valori intermedi
-    // nell'intervallo discreto con minimo 0 (spento) e  massimo 255 (acceso).
+    if (millis() != previousMillis)  { // si potrebbe togliere
+            brightness = 255.0 /(float)speed * millis() ;
+            analogWrite(ledPin, brightness);
 
-    if ((millis() - previousMillis) > speed / 256) {
-        brightness++; // Incrementiamo la luminosita'
         previousMillis = millis();
     };
 }
@@ -170,26 +169,18 @@ void Pwm::Down(long speed ) {
     // Riduce progressivamente la luminosita' usanndo millis()
     // quindi senza bloccare il processore
 
-    analogWrite(ledPin, brightness);  // La funziona analogWrite utilizza il PWM
-    // a 8 bit integrato nel MCU: simula un serie di valori intermedi
-    // nell'intervallo discreto con minimo 0 (spento) e  massimo 255 (acceso).
+    if (millis() != previousMillis)  {
+            brightness = 255 - 255.0 /(float)speed * millis() ;
+            analogWrite(ledPin, brightness);
 
-    if ((millis() - previousMillis) > speed / 256) {
-        brightness--; // Incrementiamo la luminosita'
         previousMillis = millis();
     };
 }
 
 void Pwm::UD(long speed ) {
     // Aumenta e riduce in sequenza la luminosita' usanndo millis()
-    if ((millis() - previousMillis) > speed / 512) {
-        brightness = brightness + increment; // Incrementiamo la luminosita'
-        previousMillis = millis();
-        analogWrite(ledPin, brightness);
-        if (brightness == 0 || brightness == 255) { // Reverse direction
-            increment = -increment ;
-        };
-    };
+    brightness = 128 + 127 * cos(2 * PI / speed * millis());
+    analogWrite(ledPin, brightness);  
 }
 
 
