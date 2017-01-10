@@ -5,3 +5,4 @@ libraries/aero/
 *Makefile
 *tags
 libraries/LedControl/
+libraries/FreeRTOS/
