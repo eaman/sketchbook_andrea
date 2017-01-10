@@ -80,9 +80,11 @@ Serial.println(state);
 }
 
 /* Domande:
- 1. Introdurre un secondo semaforo che cambia stato quando viene attivato
+ 1. Introdurre una memoria nello stato green che tenga traccia della pressione del bottone
+    per lo stato succiessivo.
+ 2. Introdurre un secondo semaforo che cambia stato quando viene attivato
     lo stimolo.
- 2. L'uso di delay() puo' essere limitativo: come rimediare?
+ 3. L'uso di delay() puo' essere limitativo: come rimediare?
 .
 .
 .
@@ -94,6 +96,6 @@ Serial.println(state);
 .
 .
   Soluzioni
-2. Si potrebbe utilizzare un interrupt per gli stimoli oppure millis()
+3. Si potrebbe utilizzare un interrupt per gli stimoli oppure millis()
    per gestire le pause.
  */
