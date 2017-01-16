@@ -1,21 +1,21 @@
-#include <Arduino_FreeRTOS.h>
-/* E' necessario installare la libreria: Arduino_FreeRTOS
+/* Blink without Delay: RTOS
+
+   Implementazione di due processi indipendenti:
+   TaskFirstBlink e  TaskSecondBlink
+   per far lampeggiare due LED tramite il framework FreeRTOS
+
+ * E' necessario installare la libreria: Arduino_FreeRTOS
 - https://github.com/feilipu/Arduino_FreeRTOS_Library
 - https://www.hackster.io/feilipu/using-freertos-multi-tasking-in-arduino-ebc3cc
-*/
+ */
+#include <Arduino_FreeRTOS.h>
+
 // define two tasks for Blink & AnalogRead
 void TaskFirstBlink( void *pvParameters );
 void TaskSecondBlink( void *pvParameters );
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-  
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB, on LEONARDO, MICRO, YUN, and other 32u4 based boards.
-  }
 
   // Now set up two tasks to run independently.
   xTaskCreate(
@@ -42,29 +42,7 @@ void loop()
   // Empty. Things are done in Tasks.
 }
 
-/*--------------------------------------------------*/
-/*---------------------- Tasks ---------------------*/
-/*--------------------------------------------------*/
-
-void TaskFirstBlink(void *pvParameters)  // This is a task.
-{
-  (void) pvParameters;
-
 /*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-
-  Most Arduinos have an on-board LED you can control. On the UNO, LEONARDO, MEGA, and ZERO 
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN takes care 
-  of use the correct LED pin whatever is the board used.
-  
-  The MICRO does not have a LED_BUILTIN available. For the MICRO board please substitute
-  the LED_BUILTIN definition with either LED_BUILTIN_RX or LED_BUILTIN_TX.
-  e.g. pinMode(LED_BUILTIN_RX, OUTPUT); etc.
-  
-  If you want to know what pin the on-board LED is connected to on your Arduino model, check
-  the Technical Specs of your board  at https://www.arduino.cc/en/Main/Products
-  
   This example code is in the public domain.
 
   modified 8 May 2014
@@ -72,13 +50,26 @@ void TaskFirstBlink(void *pvParameters)  // This is a task.
   
   modified 2 Sep 2016
   by Arturo Guadalupi
+
+  modified 9 Gen 2017 
+  by Andrea Manni
 */
 
-  // initialize digital LED_BUILTIN on pin 13 as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-const int pausa = 500;
+/*--------------------------------------------------*/
+/*---------------------- Tasks ---------------------*/
+/*--------------------------------------------------*/
 
-  for (;;) // A Task shall never return or exit.
+// First Task
+void TaskFirstBlink(void *pvParameters)  // This is a task.
+{
+  (void) pvParameters;
+
+// initialize digital LED_BUILTIN on pin 13 as an output.
+byte led = 13;
+const int pausa = 500;
+pinMode(led, OUTPUT);
+
+  for (;;) // Equivalent to the classic loop() function
   {
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
     vTaskDelay( pausa / portTICK_PERIOD_MS ); // wait for one second
@@ -87,13 +78,16 @@ const int pausa = 500;
   }
 }
 
+// Second Task
 void TaskSecondBlink(void *pvParameters)  // This is a task.
 {
   (void) pvParameters;
   
-pinMode(3, OUTPUT);
+byte led = 3;
 const int pausa = 1000;
-  for (;;) // A Task shall never return or exit.
+pinMode(led, OUTPUT);
+
+  for (;;) 
   {
     digitalWrite(3, HIGH);   // turn the LED on (HIGH is the voltage level)
     vTaskDelay( pausa / portTICK_PERIOD_MS ); // wait for one second
