@@ -201,3 +201,9 @@ pinMode(pin, OUTPUT);
   delay(velocita);               // wait for a second
 };
 
+
+byte lum(byte val) { 
+    // Mappatura dell'intervallo 0-255 con correzione di luminosita.
+    // storata in SRAM
+return pgm_read_byte_near(BCORRECT + val);
+};
