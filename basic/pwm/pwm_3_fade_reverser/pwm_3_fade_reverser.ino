@@ -9,7 +9,7 @@ Fade
 
 const int led = 9;          // LED con PWM
 byte brightness = 0;        // Luminosita'
-const int fadeAmount = 5;   // Step di modifica luminosita'
+int fadeAmount = 5;         // Step di modifica luminosita'
 const int pause = 30;       // Pausa tra incrementi
 
 
