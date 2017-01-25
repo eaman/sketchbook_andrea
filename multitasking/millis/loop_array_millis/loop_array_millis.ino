@@ -14,11 +14,10 @@ L'array puo' contenere un numero arbitrario di led
  */
 
 byte ledPins[] = {  // Domanda: cosa succede se uso int?
-  2, 3, 4, 5, 6, 7, 8, 9
-}
-; //Array
+  2, 3, 4, 5, 6, 7
+}; 
 
-long previousMillis ;
+unsigned long previousMillis ;
 long interval = 200;
 byte i = 0;
 
@@ -28,10 +27,11 @@ void setup() {
     pinMode(ledPins[thisPin], OUTPUT);
   }
   previousMillis = millis();
+  digitalWrite(ledPins[0],HIGH);
 }
 
 void loop() {
-  if (millis() - previousMillis > interval) {
+  if (millis() - previousMillis >= interval) {
     previousMillis = millis();
 
     if ( i < sizeof(ledPins) - 1 ) {

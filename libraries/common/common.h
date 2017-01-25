@@ -64,7 +64,7 @@ class Lampeggiatore {
     // Variabili
     int ledPin ;           // il numero del LED pin
     long interval ;        // milliseconds di intervallo nel lampeggiare
-    long previousMillis ;  // precedente cambio di stato
+    unsigned long previousMillis ;  // precedente cambio di stato
     int ledState ;         // stato attuale del LED, pubblico per invertirlo
 
     // Constructor: come viene instanziato un oggetto facente parte della classe
@@ -88,7 +88,7 @@ class Pwm {
     // Variabili
     int ledPin ;           // il numero del LED pin
     int speed ;            // velocita' del ciclo in ms
-    long previousMillis ;  //precedente cambio di stato
+    unsigned long previousMillis ;  //precedente cambio di stato
     byte increment ;        // aumenta brighteness nel loop UD
 
     // Constructor: come viene instanziato un oggetto facente parte della classe
