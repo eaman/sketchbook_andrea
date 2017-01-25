@@ -22,12 +22,13 @@ class Sequenza {
     byte i = 0;
     byte *ledPins;
     byte size;
+    int inc = 1;
     long interval;
-    
+
   public:
     Sequenza (byte passed[], byte dim) {
-       ledPins = passed ;
-       size = dim ;
+      ledPins = passed ;
+      size = dim ;
       for (int thisPin = 0; thisPin < size; thisPin++) {
         pinMode(ledPins[thisPin], OUTPUT);
       }
@@ -57,24 +58,57 @@ class Sequenza {
         }
       }
     }
+
+
+    void Reverse(long value) {
+      interval = value;
+      if (millis() - previousMillis >= interval) {
+        previousMillis = millis();
+
+        if  (i == 0)   { // Entry point, ultimo LED
+          digitalWrite(ledPins[size - 1], HIGH);
+          digitalWrite(ledPins[0], LOW);
+          i = size - 1 ;
+        }
+        else {
+          digitalWrite(ledPins[i], LOW);
+          digitalWrite(ledPins[--i], HIGH);
+        }
+      }
+    }
+
+    void UD(long value) {
+      interval = value;
+      if (millis() - previousMillis >= interval) {
+        previousMillis = millis();
+        // Spegni precedente led
+        digitalWrite(ledPins[i], LOW);
+        i = i + inc ;
+        // Accendi successivo led
+        digitalWrite(ledPins[i], HIGH);
+
+        if (i == 0 || i == size - 1) {
+          inc = -inc ;
+        }
+      }
+    }
+
 };
 
 
 
 void setup() {
-  Serial.begin(9600);
-  //Serial.print(seq.ledPins);
 };
 
-byte pins[] = {  
+byte pins[] = {
   2, 3, 4, 5, 6, 7
-}; 
+};
 
-Sequenza seq = Sequenza(pins,sizeof(pins));
+Sequenza seq = Sequenza(pins, sizeof(pins));
 
 
 void loop() {
-  seq.Update(200);
+  seq.UD(200);
 };
 
 

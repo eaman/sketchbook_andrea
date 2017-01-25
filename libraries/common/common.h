@@ -100,6 +100,40 @@ public:
     byte brightness  ;      // luminostia' iniziale
 };
 
+
+
+////////////////////////////
+class Sequenza {
+    // Lampeggia LED in sequenza utilizzando millis()
+    unsigned long previousMillis ;
+    byte i = 0;
+    byte *ledPins;
+    byte size;
+    int inc = 1;
+    long interval;
+    
+  public:
+    Sequenza (byte passed[], byte dim) ; // Array contentente i PINS, dimensioni array
+    void Update(long value) ;  // Accende in sequenza
+    void Reverse(long value) ; // Invertita
+    void UD(long value) ; // Up & Down
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////
 // Funzioni
 

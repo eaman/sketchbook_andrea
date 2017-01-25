@@ -83,9 +83,6 @@ Lampeggiatore::Lampeggiatore(int pin)
     interval = 500;
 };
 
-
-
-
 // Una funzione facente parte di una classe prende il nome di "metodo" della stessa:
 void Lampeggiatore::Invert() {
     // Inverte il lampeggio
@@ -183,6 +180,77 @@ void Pwm::UD(long speed ) {
     analogWrite(ledPin, brightness);  
 }
 
+
+/////////////////////////////////////
+// Sequenza
+// Constructor
+Sequenza::Sequenza (byte passed[], byte dim) {
+    ledPins = passed ;
+    size = dim ;
+    for (int thisPin = 0; thisPin < size; thisPin++) {
+        pinMode(ledPins[thisPin], OUTPUT);
+    }
+    previousMillis = millis();
+    digitalWrite(ledPins[0], HIGH);
+}
+
+void Sequenza::Update(long value) {
+    // Incrementa dal primo all'ultimo valore dell'array
+    interval = value;
+    if (millis() - previousMillis >= interval) {
+        previousMillis = millis();
+
+        if ( i < size - 1 ) {
+            // Spegni precedente led
+            digitalWrite(ledPins[i], LOW);
+
+            // Accendi successivo led
+            digitalWrite(ledPins[++i], HIGH);
+        }
+
+        else if  (i == size - 1 )   {
+            // Ultimo caso
+            i = 0;
+            previousMillis = millis();
+            digitalWrite(ledPins[i], HIGH);
+            digitalWrite(ledPins[ size - 1 ], LOW);
+        }
+    }
+}
+
+
+void Sequenza::Reverse(long value) {
+    interval = value;
+    if (millis() - previousMillis >= interval) {
+        previousMillis = millis();
+
+        if  (i == 0)   { // Entry point, ultimo LED
+            digitalWrite(ledPins[size -1],HIGH);
+            digitalWrite(ledPins[0],LOW);
+            i = size -1 ;
+        }
+        else {
+            digitalWrite(ledPins[i],LOW);
+            digitalWrite(ledPins[--i],HIGH);
+        }
+    }
+}
+
+void Sequenza::UD(long value) {
+    interval = value;
+    if (millis() - previousMillis >= interval) {
+        previousMillis = millis();
+        // Spegni precedente led
+        digitalWrite(ledPins[i], LOW);
+        i = i + inc ;
+        // Accendi successivo led
+        digitalWrite(ledPins[i], HIGH);
+
+        if (i == 0 || i == size -1) {
+            inc = -inc ;
+        }
+    }
+}
 
 
 //////////////////
