@@ -43,9 +43,11 @@ class RGBLed {
     byte redValue ;
     byte greenValue ;
     byte blueValue ;
+    byte common ;
 
   public:
     RGBLed (byte pinR, byte pinG, byte pinB) ;
+    RGBLed (byte pinR, byte pinG, byte pinB, byte com) ;
 	void SetColor (byte r, byte g, byte b) ;
 	void Red ();
     void Green ();

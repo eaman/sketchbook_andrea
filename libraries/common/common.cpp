@@ -9,12 +9,26 @@
 
 //////////////////////
 // RGB LED
-// Common anode
+// Common anode / cat
 
 RGBLed::RGBLed(byte pinR, byte pinG, byte pinB) {
       redPin    = pinR ;
       greenPin  = pinG ;
       bluePin   = pinB ;
+      common    = 0 ;
+      
+      // Equvalente del Setup() per inizializzare i PIN
+      pinMode(redPin, OUTPUT);
+      pinMode(greenPin, OUTPUT);
+      pinMode(greenPin, OUTPUT);
+};
+
+RGBLed::RGBLed(byte pinR, byte pinG, byte pinB, byte com) {
+    // Per un common catode, inverte il valore max / min
+      redPin    = pinR ;
+      greenPin  = pinG ;
+      bluePin   = pinB ;
+      common    = com ;
 
       // Equvalente del Setup() per inizializzare i PIN
       pinMode(redPin, OUTPUT);
@@ -24,9 +38,9 @@ RGBLed::RGBLed(byte pinR, byte pinG, byte pinB) {
 
 void RGBLed::SetColor (byte r, byte g, byte b) {
 // Imposta il colore di un LED RGB
-      analogWrite(redPin,   r);
-      analogWrite(greenPin, g);
-      analogWrite(bluePin,  b);
+      analogWrite(redPin,   common - r);
+      analogWrite(greenPin, common - g);
+      analogWrite(bluePin,  common - b);
     };
 
 void RGBLed::Red () {
