@@ -13,10 +13,10 @@ void setup() {
 // Instanziamo un LED
 RGBLed led(11, 10,9); //Istanziamo un oggetto led (common catodo)
 // facente parte della classe RGBLed
-//RGBLed led(10, 9, 11,255); // Inizializzazione Common anodo, valori invertiti
+//RGBLed led(10,9,11,255); // Inizializzazione Common anodo, valori invertiti
 
 void loop() {
-  led.Red();
+  led.White();
 
 }
 
