@@ -1,4 +1,10 @@
-// sketch 03_01_interrupts
+/*
+ * Interrupt base
+ * 
+ * Utilizzo di un interrupt ala Arduino per intercettare
+ * la pressione di un bottone.
+ * 
+ */
 
 int ledPin = 13; 
 
