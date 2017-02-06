@@ -13,8 +13,8 @@
 
 // Pin 13 ha un LED preconfigurato su molte schede Arduino
 int led = 13;
-int breve = 200;  // Variabile richiambile nel corso dell'esecuzione
-int lunga = 1000;
+int breve = 100;  // Variabile richiambile nel corso dell'esecuzione
+int lunga = 400;
 
 // /////////////////
 // Setup: eseguita una volta sola all'accensione della scheda
@@ -27,10 +27,21 @@ void setup() {
 // loop: Le istruzioni vengono eseguite all'infinito
 void loop() {
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(breve +40);               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(breve +40);               // wait for a second
+
+   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(breve);               // wait for a second
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(breve);               // wait for a second
-
+ 
+   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(breve -40) 
+  ;               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(breve -40);               // wait for a second
+ 
   digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(lunga);               // wait for a second
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW

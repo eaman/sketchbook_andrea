@@ -49,15 +49,12 @@ void loop()
 // Funzioni:
 
 void lightLedA () {
-  if (millis() > previousMillisA + intervalA) {
+  if (millis() - previousMillisA >=  intervalA) {
     // save the last time you blinked the LED 
-    previousMillisA = millis();   
+    previousMillisA += intervalA;
 
     // if the LED is off turn it on and vice-versa:
-    if (ledStateA == LOW)
-      ledStateA = HIGH;
-    else
-      ledStateA = LOW;
+      ledStateA = !ledStateA ;
     // set the LED with the ledState of the variable:
     digitalWrite(ledA, ledStateA);
   }
@@ -67,15 +64,12 @@ void lightLedA () {
 void lightLedB () {
   long intervalB = 500;
    static int ledStateB ;  // https://www.arduino.cc/en/Reference/Static
-  if (millis() > previousMillisB + intervalB) {
+  if (millis() - previousMillisB >= intervalB) {
     // save the last time you blinked the LED 
-    previousMillisB = millis();   
+    previousMillisB += intervalB ;
 
     // if the LED is off turn it on and vice-versa:
-    if (ledStateB == LOW)
-      ledStateB = HIGH;
-    else
-      ledStateB = LOW;
+      ledStateB = !ledStateB;
     // set the LED with the ledState of the variable:
     digitalWrite(ledB, ledStateB);
   }

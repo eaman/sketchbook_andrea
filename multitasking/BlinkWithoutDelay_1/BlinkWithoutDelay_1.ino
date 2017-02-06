@@ -56,9 +56,11 @@ void loop()
   // the LED is bigger than the interval at which you want to 
   // blink the LED.
  
-  if (millis() > previousMillis + interval) {
+  if (millis() >= previousMillis + interval) {
     // Aggiorniamo il contatore previousMillis
-    previousMillis = millis();   
+    previousMillis += interval ; 
+    // previousMillis = millis(); // 3) Cosa succederebbe se fosse
+    // passato piu' di 1ms dall'evento all'azione?
 
     // if the LED is off turn it on and vice-versa:
     if (ledState == LOW)
@@ -79,4 +81,10 @@ void loop()
       dovranno aggiungere.
    2. E' ora agevole cambiare gli intervalli dei due LED? 
       Modificare gli intervalli dei due led (es 500ms - 320ms)
+
+
+
+   Risposta
+   3. Si sarebbe introdotto uno slip (ritardo) nei tempi dello sketch
+
  */

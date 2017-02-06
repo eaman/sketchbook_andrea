@@ -14,7 +14,7 @@
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
- modified by eaman
+ modified by Andrea Manni
  
  This example code is in the public domain.
  
@@ -48,9 +48,9 @@ void setup() {
 void loop()
 {
 // Primo LED
-  if (millis() > previousMillisA + intervalA) {
-    // save the last time you blinked the LED 
-    previousMillisA = millis();   
+  if (millis() >= previousMillisA + intervalA) {
+    // Aggiornimo il riferimento temporale
+    previousMillisA += intervalA;
 
     // if the LED is off turn it on and vice-versa:
     if (ledStateA == LOW)
@@ -62,9 +62,9 @@ void loop()
   }
   
 // Secondo LED
-    if (millis() > previousMillisB + intervalB) {
+    if (millis() >= previousMillisB + intervalB) {
     // save the last time you blinked the LED 
-    previousMillisB = millis();   
+    previousMillisB += intervalB;
 
     // if the LED is off turn it on and vice-versa:
     if (ledStateB == LOW)

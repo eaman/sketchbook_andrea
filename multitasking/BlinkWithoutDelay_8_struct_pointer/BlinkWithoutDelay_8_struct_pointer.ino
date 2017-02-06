@@ -43,8 +43,8 @@ void loop()
 void lightLed(struct blinkLed *temp) { // temp ora e' un pointer e non una struttura autonoma: pass by reference (not by value)
   // Illumina il ledA secondo un intervallo passato come argomento
 
-  if(millis() - (*temp).previousMillis > (*temp).interval) { // l'operatore punto ha priorita' maggiore rispetto al pointer asterisco
-    (*temp).previousMillis = millis();   
+  if(millis() - (*temp).previousMillis >= (*temp).interval) { // l'operatore punto ha priorita' maggiore rispetto al pointer asterisco
+    (*temp).previousMillis += (*temp).interval ;
 
     // if the LED is off turn it on and vice-versa:
     temp->ledState = !temp->ledState ; // Forma contratta, deference operator: temp->ledState == (*temp).ledState

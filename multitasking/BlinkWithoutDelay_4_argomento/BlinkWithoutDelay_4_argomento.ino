@@ -34,15 +34,12 @@ void loop()
 void lightLedA (int interval) {
   // Illumina il ledA secondo un intervallo passato come argomento
 
-  if (millis() > previousMillisA + interval) {
+  if (millis() - previousMillisA >= interval) {
     // save the last time you blinked the LED 
-    previousMillisA = millis();   
+    previousMillisA += interval;
 
     // if the LED is off turn it on and vice-versa:
-    if (ledStateA == LOW)
-      ledStateA = HIGH;
-    else
-      ledStateA = LOW;
+      ledStateA = !ledStateA;
     // set the LED with the ledState of the variable:
     digitalWrite(ledA, ledStateA);
   }
@@ -52,15 +49,12 @@ void lightLedA (int interval) {
 void lightLedB (int interval) {
   // Illumina il ledB secondo un intervallo passato come argomento
 
-  if (millis() > previousMillisB + interval) {
+  if (millis() - previousMillisB >= interval) {
     // save the last time you blinked the LED 
-    previousMillisB = millis();   
+    previousMillisB += interval;
 
     // if the LED is off turn it on and vice-versa:
-    if (ledStateB == LOW)
-      ledStateB = HIGH;
-    else
-      ledStateB = LOW;
+      ledStateB = !ledStateB;
     // set the LED with the ledState of the variable:
     digitalWrite(ledB, ledStateB);
   }

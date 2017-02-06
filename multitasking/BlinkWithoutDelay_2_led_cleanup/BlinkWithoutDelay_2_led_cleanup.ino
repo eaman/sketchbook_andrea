@@ -14,7 +14,7 @@
  by David A. Mellis
  modified 8 Feb 2010
  by Paul Stoffregen
- modified by eaman
+ modified by Andrea Manni
  
  This example code is in the public domain.
  
@@ -48,9 +48,9 @@ void setup() {
 void loop()
 {
 // Primo LED
-  if (millis() - previousMillisA > intervalA) {
-    // save the last time you blinked the LED 
-    previousMillisA = millis();   
+  if (millis() - previousMillisA >= intervalA) {
+    // Timestamp + timestamp = delta temporale
+    previousMillisA += intervalA ;
 
     // if the LED is off turn it on and vice-versa:
      ledStateA = !ledStateA;
@@ -59,9 +59,9 @@ void loop()
   }
   
 // Secondo LED: contratta
-    if (millis() - previousMillisB > intervalB) {
+    if (millis() - previousMillisB >= intervalB) {
     digitalWrite(ledB, !digitalRead(ledB));
-    previousMillisB = millis();   
+    previousMillisB += intervalB ;
   }
 }
 

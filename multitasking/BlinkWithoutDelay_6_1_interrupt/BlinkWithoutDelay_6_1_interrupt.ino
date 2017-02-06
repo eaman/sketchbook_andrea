@@ -28,9 +28,9 @@ public:
   void Update () {
     // Illumina il ledB secondo un intervallo passato come argomento
 
-    if (millis() > previousMillis + interval) {
+    if (millis() - previousMillis >= interval) {
       // save the last time you blinked the LED 
-      previousMillis = millis();   
+      previousMillis += interval;
 
       // if the LED is off turn it on and vice-versa:
       ledState = !ledState ; // Inverti il LED
