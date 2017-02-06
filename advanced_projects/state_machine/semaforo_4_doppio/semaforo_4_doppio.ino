@@ -54,14 +54,14 @@ switch (state) {
     case green:
     if (millis() - timer => pausa * 2/3) {
     state = wait_button ;
-    timer = millis(); 
+    timer += pausa * 2/3 ;
     }
     break;
 
     case wait_button:
     if (digitalRead(input) == LOW) { 
-    state = turn_yellow ; // Il passaggio di stato avviene alla pressione di un bottone
     delay(20); // Debouncing, si potrebbe fare con millis()
+    state = turn_yellow ; // Il passaggio di stato avviene alla pressione di un bottone
     timer = millis();
     };
 
@@ -75,7 +75,7 @@ switch (state) {
     case yellow :
     if (millis() - timer >= pausa / 3) {
     state = turn_red ;
-    timer = millis(); 
+    timer += pausa / 3;
     }
     break;
 
@@ -88,7 +88,7 @@ switch (state) {
     case red :
     if (millis() - timer >= pausa /3) {
     state = turn_sec_yellow ;
-    timer = millis(); 
+    timer += pausa /3 ;
     }
     break;
 
@@ -100,7 +100,7 @@ switch (state) {
     case sec_yellow :
     if (millis() - timer >= pausa / 3) {
     state = turn_green ;
-    timer = millis(); 
+    timer += pausa /3;
     }
     break;
 

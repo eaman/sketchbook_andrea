@@ -51,15 +51,15 @@ switch (FSM1) {
     case green:
     if (millis() - timer >= pausa * 2/3) {
     FSM1 = wait_button ;
-    timer = millis(); 
+    timer += pausa * 2/3;
     }
     break;
 
     case wait_button:
     if (digitalRead(input) == LOW) { 
+    delay(20); // Debouncing, si potrebbe fare con millis() o un interrupt
     FSM1 = turn_yellow ; 
     timer = millis();
-    delay(20); // Debouncing, si potrebbe fare con millis()
     };
 
     break;
@@ -72,7 +72,7 @@ switch (FSM1) {
     case yellow :
     if (millis() - timer >= pausa * 2/3) {
         FSM1 = turn_red ;
-        timer = millis();
+        timer += pausa * 2/3 ;
     }
     break;
 
@@ -102,7 +102,7 @@ switch (FSM2) {
     case green:
     if (millis() - timer >= pausa * 2/3) {
     FSM2 = turn_yellow;
-    timer = millis(); 
+    timer += pausa * 2/3;
     }
     break;
 
@@ -114,7 +114,7 @@ switch (FSM2) {
     case yellow :
     if (millis() - timer >= pausa / 3) {
     FSM2 = turn_red ;
-    timer = millis(); 
+    timer += pausa * 2/3;
     }
     break;
 

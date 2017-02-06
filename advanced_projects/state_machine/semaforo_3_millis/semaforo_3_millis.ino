@@ -48,15 +48,15 @@ switch (state) {
     led.Green();
     if (millis() - timer >= pausa * 2/3) {
     state = wait_button ;
-    timer = millis(); 
+    timer += pausa * 2/3 ;
     }
     break;
 
     case wait_button:
     if (digitalRead(input) == LOW) { 
     state = turn_yellow ; // Il passaggio di stato avviene alla pressione di un bottone
-    timer = millis();
     delay(20); // Debouncing, si potrebbe fare con millis()
+    timer = millis();
     };
     break;
 
@@ -68,7 +68,7 @@ switch (state) {
     led.Yellow();
     if (millis() - timer >= pausa * 2/3) {
     state = turn_red ;
-    timer = millis(); 
+    timer += pausa * 2/3;
     }
     break;
 
@@ -80,7 +80,7 @@ switch (state) {
     led.Red();
     if (millis() - timer >= pausa) {
     state = turn_green ;
-    timer = millis(); 
+    timer += pausa ;
     }
     break;
 
