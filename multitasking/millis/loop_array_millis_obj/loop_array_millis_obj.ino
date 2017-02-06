@@ -39,7 +39,7 @@ class Sequenza {
     void Update(long value) {
       interval = value;
       if (millis() - previousMillis >= interval) {
-        previousMillis = millis();
+        previousMillis += interval;
 
         if ( i < size - 1 ) {
           // Spegni precedente led
@@ -52,7 +52,7 @@ class Sequenza {
         else if  (i == size - 1 )   {
           // Ultimo caso
           i = 0;
-          previousMillis = millis();
+          previousMillis += interval;
           digitalWrite(ledPins[i], HIGH);
           digitalWrite(ledPins[ size - 1 ], LOW);
         }
@@ -63,7 +63,7 @@ class Sequenza {
     void Reverse(long value) {
       interval = value;
       if (millis() - previousMillis >= interval) {
-        previousMillis = millis();
+        previousMillis += interval;
 
         if  (i == 0)   { // Entry point, ultimo LED
           digitalWrite(ledPins[size - 1], HIGH);
@@ -80,7 +80,7 @@ class Sequenza {
     void UD(long value) {
       interval = value;
       if (millis() - previousMillis >= interval) {
-        previousMillis = millis();
+        previousMillis += interval;
         // Spegni precedente led
         digitalWrite(ledPins[i], LOW);
         i = i + inc ;
@@ -96,7 +96,6 @@ class Sequenza {
 };
 
 
-
 void setup() {
 };
 
@@ -110,6 +109,3 @@ Sequenza seq = Sequenza(pins, sizeof(pins));
 void loop() {
   seq.UD(200);
 };
-
-
-

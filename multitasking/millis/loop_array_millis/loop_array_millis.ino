@@ -32,7 +32,7 @@ void setup() {
 
 void loop() {
   if (millis() - previousMillis >= interval) {
-    previousMillis = millis();
+    previousMillis += interval ;
 
     if ( i < sizeof(ledPins) - 1 ) {
       // Spegni precedente led
@@ -45,7 +45,7 @@ void loop() {
     else if  (i == sizeof(ledPins) - 1 )   {
       // Ultimo caso
       i = 0;
-      previousMillis = millis();
+      previousMillis += interval ;
       digitalWrite(ledPins[i], HIGH);
       digitalWrite(ledPins[ sizeof(ledPins) - 1 ], LOW);
     }

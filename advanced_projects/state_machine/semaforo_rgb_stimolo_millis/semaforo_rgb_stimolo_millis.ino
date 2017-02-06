@@ -46,7 +46,7 @@ switch (state) {
 
     case green:
     led.Green();
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer >= pausa * 2/3) {
     state = wait_button ;
     timer = millis(); 
     }
@@ -66,7 +66,7 @@ switch (state) {
 
     case yellow :
     led.Yellow();
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer >= pausa * 2/3) {
     state = turn_red ;
     timer = millis(); 
     }
@@ -78,7 +78,7 @@ switch (state) {
 
     case red :
     led.Red();
-    if (millis() > timer + pausa) {
+    if (millis() - timer >= pausa) {
     state = turn_green ;
     timer = millis(); 
     }

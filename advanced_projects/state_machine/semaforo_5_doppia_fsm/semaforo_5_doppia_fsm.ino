@@ -49,7 +49,7 @@ switch (FSM1) {
     break;
 
     case green:
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer >= pausa * 2/3) {
     FSM1 = wait_button ;
     timer = millis(); 
     }
@@ -70,7 +70,7 @@ switch (FSM1) {
     break;
 
     case yellow :
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer >= pausa * 2/3) {
         FSM1 = turn_red ;
         timer = millis();
     }
@@ -100,7 +100,7 @@ switch (FSM2) {
     break;
 
     case green:
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer >= pausa * 2/3) {
     FSM2 = turn_yellow;
     timer = millis(); 
     }
@@ -112,7 +112,7 @@ switch (FSM2) {
     break;
 
     case yellow :
-    if (millis() > timer + pausa / 3) {
+    if (millis() - timer >= pausa / 3) {
     FSM2 = turn_red ;
     timer = millis(); 
     }

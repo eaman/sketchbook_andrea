@@ -52,7 +52,7 @@ switch (state) {
     break;
 
     case green:
-    if (millis() > timer + pausa * 2/3) {
+    if (millis() - timer => pausa * 2/3) {
     state = wait_button ;
     timer = millis(); 
     }
@@ -73,7 +73,7 @@ switch (state) {
     break;
 
     case yellow :
-    if (millis() > timer + pausa / 3) {
+    if (millis() - timer >= pausa / 3) {
     state = turn_red ;
     timer = millis(); 
     }
@@ -86,7 +86,7 @@ switch (state) {
     break;
 
     case red :
-    if (millis() > timer + pausa /3) {
+    if (millis() - timer >= pausa /3) {
     state = turn_sec_yellow ;
     timer = millis(); 
     }
@@ -98,7 +98,7 @@ switch (state) {
     break;
 
     case sec_yellow :
-    if (millis() > timer + pausa / 3) {
+    if (millis() - timer >= pausa / 3) {
     state = turn_green ;
     timer = millis(); 
     }
