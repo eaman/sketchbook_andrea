@@ -8,6 +8,9 @@
  * e riconfigura l'interrupt con RISING a una seconda
  * ISR che a sua volta ripristina il comportamento
  * precedente.
+
+ In questa versione le ISRs modificano una variabile state
+ corrispondente allo stato del bottone, impostato nel loop.
  */
 
 const byte ledPin = 13;
@@ -30,6 +33,10 @@ void loop()
   digitalWrite(ledPin, state);
   // La variabile state viene richiamata fuori dalla ISR
   // quindi deve essere dichiarata volatile
+// altrimenti il compilatore potrebbe decidere di trattarlo come constante
+// in fase di ottimizzazione
+// oppure si potrebbe creare un dualismo tra il valore di questa
+// storato in SRAM o in un registro
 }
 
 void eventoFall() // Sempre VOID

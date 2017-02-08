@@ -4,6 +4,10 @@
    PWM per un LED: aumentare progressivamente la luminosita'.
    Utilizza la funzione millis() invece che un delay()
    in modo da non blocare il processore.
+
+   La durata del ciclo e' pero' molto approssimativa in multipli di 256ms
+   quindi con errore di +-128ms, inoltre si possono accumulare ulteriori
+   ritardi se la funzione non viene eseguita regolarmente ogni ms.
    
  */
 
@@ -33,8 +37,7 @@ void pwmUp(byte led, int speed) {
   // nell'intervallo discreto con minimo 0 (spento) e  massimo 255 (acceso).
 
   if ((millis() - previousMillis) > speed / 256) {
-    brightness = brightness + 1; // Incrementiamo la luminosita'
+    brightness++ ; // Incrementiamo la luminosita'
     previousMillis = millis();
   };
 }
-

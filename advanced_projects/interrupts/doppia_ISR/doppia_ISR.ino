@@ -1,13 +1,15 @@
 /*
- * Interrupt doppia ISR
- * 
- * Utilizzo di un interrupt ala Arduino per intercettare
- * la pressione di un bottone.
- * 
- * Doppia ISR: la prima ISR intercetta FALLING
- * e riconfigura l'interrupt con RISING a una seconda
- * ISR che a sua volta ripristina il comportamento
- * precedente.
+   Interrupt doppia ISR
+   
+   Utilizzo di un interrupt ala Arduino per intercettare
+   la pressione di un bottone in PULL UP.
+   
+   Doppia ISR: la prima ISR intercetta FALLING
+   e riconfigura l'interrupt con RISING per una seconda
+   ISR che a sua volta ripristina il comportamento
+   precedente.
+
+Schema: https://www.arduino.cc/en/uploads/Tutorial/inputPullupButton.png
  */
 
 int ledPin = 13; 
