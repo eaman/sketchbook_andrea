@@ -22,9 +22,24 @@ void setup()
 
 void loop()
 {
-  analogWrite(redPin, 255);
+  // Red
+  analogWrite(redPin, 0);
   analogWrite(greenPin,255);
   analogWrite(bluePin, 255);
+  delay(1000);
+
+    // Green
+  analogWrite(redPin, 255);
+  analogWrite(greenPin,0);
+  analogWrite(bluePin, 255);
+  delay(1000);
+  
+  // Blue
+  analogWrite(redPin, 255);
+  analogWrite(greenPin,255);
+  analogWrite(bluePin, 0);
+  delay(1000);
+  
 }
 
 /* Domande:

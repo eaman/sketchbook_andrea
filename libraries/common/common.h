@@ -54,6 +54,7 @@ class RGBLed {
     RGBLed (byte pinR, byte pinG, byte pinB) ;
     RGBLed (byte pinR, byte pinG, byte pinB, byte com) ;
 	void SetColor (byte r, byte g, byte b) ;
+	void Rand ();
 	void Red ();
     void Green ();
     void Blue ();

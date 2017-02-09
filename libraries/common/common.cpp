@@ -20,7 +20,7 @@ RGBLed::RGBLed(byte pinR, byte pinG, byte pinB) {
     redPin    = pinR ;
     greenPin  = pinG ;
     bluePin   = pinB ;
-    common    = 0 ;
+    common    = 255 ;
 
     // Equvalente del Setup() per inizializzare i PIN
     pinMode(redPin, OUTPUT);
@@ -46,46 +46,62 @@ void RGBLed::SetColor (byte r, byte g, byte b) {
     analogWrite(redPin,   common - r);
     analogWrite(greenPin, common - g);
     analogWrite(bluePin,  common - b);
+
+// Debug
+//   Serial.print(common - r);
+//   Serial.print("-");
+//   Serial.print(common - g);
+//   Serial.print("-");
+//   Serial.print(common - b);
+//   while(1);
+
+};
+
+void RGBLed::Rand () {
+// Imposta il colore di un LED RGB
+    analogWrite(redPin, random(0,256));
+    analogWrite(greenPin, random(0,256));
+    analogWrite(bluePin, random(0,256));
 };
 
 void RGBLed::Red () {
 // Accende il LED di rosso
-    SetColor(0,255,255);
+    SetColor(255,0,0);
 };
 
 void RGBLed::Green () {
 // Accende il LED di verde
-    SetColor(255,0,255);
+    SetColor(0,255,0);
 };
 
 void RGBLed::Blue () {
 // Accende il LED di blu
-    SetColor(255,255,0);
+    SetColor(0,0,255);
 };
 
 void RGBLed::Magenta () {
 // Accende il LED di magenta
-    SetColor(0,255,0);
+    SetColor(255,0,255);
 };
 
 void RGBLed::Cyano () {
 // Accende il LED di Cyano
-    SetColor(255,0,0);
+    SetColor(0,255,255);
 };
 
 void RGBLed::Yellow () {
 // Accende il LED di giallo
-    SetColor(0,0,255);
+    SetColor(255,255,0);
 };
 
 void RGBLed::White () {
 // Accende il LED
-    SetColor(0,0,0);
+    SetColor(255,255,255);
 };
 
 void RGBLed::Off () {
 // Spegne il LED
-    SetColor(255,255,255);
+    SetColor(0,0,0);
 };
 
 
@@ -372,24 +388,23 @@ int calibraTrim(int pin, byte ledPin) {
     Serial.println(">> Calibrazione: ");
     while (a < 10) {
         if (millis() > 10000) {
-            Serial.print(">> Calibrazione annullata: segnale assente.");
-            ail = 1500;
+            Serial.println(">> Calibrazione annullata a causa di assenza di seganle. \nAssicurarsi di accendere radio e ricevente \ne ripetere la procedura.");
+            ail = 15000; // Return value is divided by 10
             break;
         };
         ailIn = pulseIn(pin, HIGH, 25000);
-        if (ailIn != 0 ) {
+        if (ailIn != 0 && ailIn > 1000 && ailIn <2000)  {
             ail = ail + ailIn ;
             a++ ;
             Serial.print(a);
             Serial.print(": ");
             Serial.println(ail);
             digitalWrite(ledPin, !digitalRead(ledPin));
-            delay(10);
+            delay(100);
         }
     }
-    Serial.println(">> Fine Calibrazione: ");
-    Serial.print(ail / 10);
-    Serial.println("--");
+    Serial.print(">> Fine Calibrazione, media: ");
+    Serial.println(ail / 10);
     Serial.flush() ;
     return(ail / 10) ;
 // END calibrazione

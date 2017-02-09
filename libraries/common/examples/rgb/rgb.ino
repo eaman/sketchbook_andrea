@@ -8,15 +8,17 @@
 
 void setup() {
   // I PINs vengono impostati dalla dichiarazione dell'ogetto.
+  Serial.begin(9600);
 }
 
 // Instanziamo un LED
 RGBLed led(11, 10,9); //Istanziamo un oggetto led (common catodo)
 // facente parte della classe RGBLed
+// RGBLed led(11, 10,9,255); // Stessa cosa: 255 = common catodo
 //RGBLed led(10,9,11,255); // Inizializzazione Common anodo, valori invertiti
 
 void loop() {
-  led.White();
+  led.Blue();
 
 }
 
@@ -28,6 +30,8 @@ void loop() {
     Cyano 
     White 
     Yellow 
+    Off
+    SetColor(byte r, byte g, byte b)
 
 Nota: per aggiungerne uno senza modificare la libreria originale
 si potrebbe usara l'ereditarieta': vedi esempio "eredita.ino" .
