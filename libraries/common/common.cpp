@@ -10,6 +10,7 @@
 #include "Arduino.h"
 #include "common.h"
 
+#define DEBUG_not
 
 //////////////////////
 // RGB LED
@@ -48,12 +49,14 @@ void RGBLed::SetColor (byte r, byte g, byte b) {
     analogWrite(bluePin,  common - b);
 
 // Debug
-//   Serial.print(common - r);
-//   Serial.print("-");
-//   Serial.print(common - g);
-//   Serial.print("-");
-//   Serial.print(common - b);
-//   while(1);
+#ifdef DEBUG
+   Serial.print(common - r);
+   Serial.print("-");
+   Serial.print(common - g);
+   Serial.print("-");
+   Serial.print(common - b);
+   while(1);
+#endif
 
 };
 
@@ -372,7 +375,7 @@ byte lum(byte val) {
 };
 
 
-int calibraTrim(int pin, byte ledPin) {
+int calibraTrim(int pin, const byte ledPin) {
     /* START Calibrazione TRIM canale:
        Lettura di 10 smaple
        calcolo del valore medio esclusi gli 0
@@ -382,31 +385,40 @@ int calibraTrim(int pin, byte ledPin) {
        questa funzione nel setup serve per trovare il punto medio
        all'avvio dello sketch.
      */
+    pinMode(ledPin,OUTPUT);
     byte a 		= 0;
-    int ail 	= 0;
-    int ailIn 	= 0;
+    int servoValue 	= 0;
+    int middle = 0; 
+#ifdef DEBUG
     Serial.println(">> Calibrazione: ");
+#endif 
     while (a < 10) {
         if (millis() > 10000) {
+#ifdef DEBUG
             Serial.println(">> Calibrazione annullata a causa di assenza di seganle. \nAssicurarsi di accendere radio e ricevente \ne ripetere la procedura.");
-            ail = 15000; // Return value is divided by 10
+#endif 
+            middle = 15000; // Return value is divided by 10
             break;
         };
-        ailIn = pulseIn(pin, HIGH, 25000);
-        if (ailIn != 0 && ailIn > 1000 && ailIn <2000)  {
-            ail = ail + ailIn ;
+        servoValue = pulseIn(pin, HIGH, 25000);
+        if (servoValue != 0 && servoValue > 950 && servoValue <2000)  {
+            middle = middle + servoValue ;
             a++ ;
-            Serial.print(a);
+#ifdef DEBUG
+            Serial.print(servoValue);
             Serial.print(": ");
-            Serial.println(ail);
+            Serial.println(middle / a);
+#endif 
             digitalWrite(ledPin, !digitalRead(ledPin));
-            delay(100);
+            delay(50);
         }
     }
+#ifdef DEBUG
     Serial.print(">> Fine Calibrazione, media: ");
-    Serial.println(ail / 10);
+    Serial.println(middle / 10 + 10);
     Serial.flush() ;
-    return(ail / 10) ;
+#endif 
+    return(middle / 10 + 10) ;
 // END calibrazione
-}
+};
 

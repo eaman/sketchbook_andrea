@@ -158,7 +158,7 @@ void brilla(byte pin, int velocita = 200) ;
 
 byte lum(byte val);
 
-int calibraTrim(int pin, byte ledPin = 13);
+int calibraTrim(int pin, const byte ledPin = 13);
 
 
 #endif
