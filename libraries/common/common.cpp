@@ -112,6 +112,8 @@ void RGBLed::Off () {
 /////////////////////////////////////
 // Lampeggiatore
 // Constructor
+//
+// Esempi incrementali: https://lab.piffa.net/sketchbook_andrea/multitasking/
 Lampeggiatore::Lampeggiatore(int pin)
 {
     ledPin = pin;
@@ -175,19 +177,16 @@ void Lampeggiatore::Blink(long up, long down, long drift ) {
 
 void Lampeggiatore::High() {
     // Accende il LED
-
     digitalWrite(ledPin, HIGH);
 }
 
 void Lampeggiatore::Low() {
     // Spegne  il LED
-
     digitalWrite(ledPin, LOW);
 }
 
 void Lampeggiatore::Swap() {
     // Inverte lo stato del LED
-
     digitalWrite(ledPin, !digitalRead(ledPin));
 }
 
