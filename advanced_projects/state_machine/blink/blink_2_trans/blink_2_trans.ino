@@ -11,7 +11,7 @@ Costrutto switch basato su uno struct.
 // Dichiarazione variabili
 int led = 11; // PWM
 int pausa = 1000;  // Variabile richiambile nel corso dell'esecuzione
-byte lum = 255 ;
+byte lum = 0 ;
 
 void setup() {
     // Inizializziamo il PIN 13 come OUTPUT
@@ -36,7 +36,7 @@ void loop() {
 
 	// Stati
         stato = to_off ; // Setta il prossimo state
-        // lum = 255;
+        lum = 255;
         break;
 
     case to_off :
@@ -54,7 +54,7 @@ void loop() {
         delay(pausa);             
 
         stato = to_on ;
-        // lum = 0;
+        lum = 0;
         break;
 
     case to_on :
@@ -66,9 +66,6 @@ void loop() {
 
         stato = on ; // Setta il prossimo state
         break;
-
-    default: // Opzionale, quando non si verificano altre condizioni
-        break;
     }
 }
 
@@ -78,10 +75,10 @@ void loop() {
  2.Come si puo' modificare lo sketch per poter eseguire piu' conpiti contemporaneamente?
 
 Esercizi successivi:
-- Creare una FSM con un LED RGB avente due stati Red e Green, una transizione yellow tra i due.
-- Creare una FSM in cui il passaggio di stato e' causato da un evento esterno, es la pressione di un bottone.
+- Creare una FSM con un LED RGB avente due stati Red e Green, una transizione yellow tra i due
 - Creare una FSM per la gestione di un semaforo 
 	(esempio disponibile in sketchbook_andrea/advanced_projects/state_machine )
+
  .
  .
  .
@@ -106,5 +103,4 @@ Esercizi successivi:
 
  1.Delay rende il codice blocking, null'altro puo' essere eseguito durante i delay
  2.Si potrebbe utilizzare millis(), vedi esercizi multitasking
-   oppure: https://www.sparkfun.com/news/1801
 */

@@ -25,13 +25,11 @@ enum fsm_stati { // Stati della FMS
 fsm_stati stato;
 
 void loop() {
-    switch (stato) {
+    switch (stato){
     case on :
-        // Machine: operazioni svolte
         digitalWrite(led, HIGH);  // Mette il PIN del LED in stato acceso
         delay(pausa);              // Aspetta un secondo (mille millisecondi)
 
-        // State: gestione degli stati
         stato = off ; // Setta il prossimo state
         break;
 
@@ -40,9 +38,6 @@ void loop() {
         delay(pausa);               // Aspetta mezzo secondo
 
         stato = on ;
-        break;
-
-    default: // Opzionale, quando non si verificano altre condizioni
         break;
     }
 }

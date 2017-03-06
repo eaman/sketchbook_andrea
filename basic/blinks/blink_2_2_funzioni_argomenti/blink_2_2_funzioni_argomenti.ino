@@ -1,4 +1,6 @@
-
+void brilla(int velocita = 1000); // Function prototype con valore di default
+// _Deve_ essere dichiarato in alto, arduino sbaglia a creare i prototipi.
+// Altro modo: metterle in un "tab" functions.h e includere questo
 /*
   Blink v2
  
@@ -26,7 +28,7 @@ void setup() {
 void loop() {
   brilla(300);
   brilla(300);
-  brilla(600);
+  brilla(); // default
 }
 
 // Funzioni create dall'utente:
