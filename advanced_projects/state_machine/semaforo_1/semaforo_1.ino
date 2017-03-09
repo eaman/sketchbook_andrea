@@ -4,6 +4,9 @@
    Un singolo semaforo costruito col paradigma delle macchine a stato.
    Viene utilizzato un oggetto della libreria common per gestire il LED.
 
+
+- Schema per un led RGB: https://lab.piffa.net/schemi/rgb.jpg
+
    */
 #include <common.h>
 int pausa = 3000;
@@ -14,7 +17,7 @@ enum states_available { // Stati della FMS
     red
 };
 
-states_available state  ;
+states_available state = red;
 
 
 void setup() {
@@ -39,13 +42,12 @@ switch (state) {
 
     case turn_red :
     led.Yellow();
-    delay(pausa/3);
-    led.Red();
-    delay(pausa);
+    delay(pausa / 3);
     state = red ;
     break;
 
     case red :
+    led.Red();
     delay(pausa);
     state = turn_green ;
     break;

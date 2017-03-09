@@ -4,14 +4,33 @@ FSM
 
 Risorse utili per le Macchine a stati.
 
+In questi esercizi vengono presentati alcuni paradigmi di base per la creazione
+di macchine a stato con Arduino. Vengono proposti esempi con FSM singole e FSM
+doppie concorrenti, per altri esempi pratici con semplici cicli IF, gestione degli eventi esterni / interni si puo' guardare anche il codice del progetto "Luci per Aerei RC": 
+- http://aerei.piffa.net/repo/esempi/base_th_3stati/base_th_3stati.ino
+- http://aerei.piffa.net/esempi/2017/02/15/throttle-fsm.html
+- http://aerei.piffa.net/esempi/2017/02/20/alettoni-fsm.html
+- http://aerei.piffa.net/repo/aerei/
+
 
 Tutorials
 ===========
 
 * https://www.sparkfun.com/news/1801
+* http://digitaldiy.io/articles/mcu-programming/general-programming/500-finite-state-+machines#.VT0r1s90yh3
+* http://www.gammon.com.au/forum/?id=12316
+* https://github.com/JChristensen/Button/blob/master/Examples/LongPress/LongPress.pde
+* http://www.thebox.myzen.co.uk/Tutorial/State_Machine.html
 
 
 
+Teoria
+========
+
+* https://en.wikipedia.org/wiki/Finite-state_machine
+* https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton
+* https://en.wikipedia.org/wiki/Deterministic_finite_automaton#Complete_and_incomplete
+* http://43oh.com/2017/02/how-to-implement-finite-state-machines-using-energia/
 
 
 
@@ -21,3 +40,4 @@ Elementi
 
 * http://playground.arduino.cc/Code/Enum
 * https://www.arduino.cc/en/Reference/SwitchCase
+* https://learn.adafruit.com/multi-tasking-the-arduino-part-1
