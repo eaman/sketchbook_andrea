@@ -9,6 +9,10 @@
    Uno stimolo esterno rappresentato dalla pressione di un bottone
    causa il passaggio di stato.
 
+   Questo sketch usa due FSM indipendenti che modificano i rispettivi stati.
+
+- Schema per un led RGB: https://lab.piffa.net/schemi/rgb.jpg
+- Schema per un bottone: https://www.arduino.cc/en/uploads/Tutorial/inputPullupButton.png
  */
 
 #include <common.h>
@@ -37,6 +41,7 @@ RGBLed led_secondary(8, 7, 6);
 
 void loop() {
 switch (FSM1) {
+    // Semaforo principale
     case turn_green :
     led_main.Green();
     FSM1 = green ; // Setta il prossimo state
@@ -68,7 +73,9 @@ switch (FSM1) {
     //main = turn_green ;
     break;
 }
+
 switch (FSM2) {
+    // Semaforo Secondario
     case turn_green :
     led_secondary.Green();
     FSM2 = green ; // Setta il prossimo state
@@ -90,7 +97,7 @@ switch (FSM2) {
     led_secondary.Red();
     break;
 }
-
+// Debug
 Serial.print(millis()); 
 Serial.print(" \t Stato attuale Main: ");
 Serial.print(FSM1);

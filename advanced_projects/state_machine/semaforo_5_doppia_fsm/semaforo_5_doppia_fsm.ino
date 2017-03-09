@@ -1,15 +1,21 @@
 /*
-   Semaforo RGB
+   Semaforo con doppia FSM
 
-   Un singolo semaforo costruito col paradigma delle macchine a stato.
-   Viene utilizzato un oggetto della libreria common per gestire il LED.
+Due FSM indipendenti per la gestione di ognuno dei 2 semafori
+che costituiscono un incrocio. Le due FSM possono modificare
+i rispettivi stati.
 
-   Uno stimolo esterno rappresentato dalla pressione di un bottone
-   causa il passaggio di stato.
+Un singolo semaforo costruito col paradigma delle macchine a stato.
+Viene utilizzato un oggetto della libreria common per gestire il LED.
 
-   Implementata con millis() invece che con delay(),
-   sono stati aggiuntu due stati per meglio gestire lo stato yellow.
+Uno stimolo esterno rappresentato dalla pressione di un bottone
+causa il passaggio di stato.
 
+Implementata con millis() invece che con delay(),
+sono stati aggiuntu due stati per meglio gestire lo stato yellow.
+
+- Schema per un led RGB: https://lab.piffa.net/schemi/rgb.jpg
+- Schema per un bottone: https://www.arduino.cc/en/uploads/Tutorial/inputPullupButton.png
    */
 
 #include <common.h>

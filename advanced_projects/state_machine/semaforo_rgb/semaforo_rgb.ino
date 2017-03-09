@@ -1,5 +1,7 @@
 /*
    Semaforo RGB
+   
+Version: singolo semaforo + millis + memoria giallo
 
    Un singolo semaforo costruito col paradigma delle macchine a stato.
    Viene utilizzato un oggetto della libreria common per gestire il LED.
@@ -17,7 +19,6 @@ const byte input = 2; // PIN del bottone
 int pausa = 3000;
 long timer ;
 enum states_available { // Stati della FMS
-    turn_green,    // Dinamico, transizione
     green,         // Statico
     yellow,            // Statico
     red            // Statico
@@ -38,13 +39,10 @@ RGBLed led(11, 10, 9); //Istanziamo un oggetto led facente parte
 
 void loop() {
     switch (state) {
-    case turn_green :
-        state = green ; // Setta il prossimo state
-        break;
 
     case green:
         led.Green();
-        if (wait && millis() - timer >= pausa * 2/3) {
+        if (wait && (millis() - timer >= pausa * 2/3)) {
             state = yellow;
             timer = millis();
         }
@@ -67,7 +65,7 @@ void loop() {
     case red :
         led.Red();
         if (millis() - timer >= pausa) {
-            state = turn_green ;
+            state = green ;
             timer += pausa ;
         }
         break;

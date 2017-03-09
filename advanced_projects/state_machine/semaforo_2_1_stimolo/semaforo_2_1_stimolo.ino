@@ -7,6 +7,8 @@
    Uno stimolo esterno rappresentato dalla pressione di un bottone
    causa il passaggio di stato.
 
+- Schema per un led RGB: https://lab.piffa.net/schemi/rgb.jpg
+- Schema per un bottone: https://www.arduino.cc/en/uploads/Tutorial/inputPullupButton.png
    */
 
 #include <common.h>
@@ -55,12 +57,11 @@ switch (state) {
     case turn_red :
     led.Yellow();
     delay(pausa/3);
-    led.Red();
-    delay(pausa);
     state = red ;
     break;
 
     case red :
+    led.Red();
     delay(pausa);
     state = turn_green ;
     break;
@@ -80,8 +81,7 @@ Serial.println(state);
 }
 
 /* Domande:
- 1. Introdurre una memoria nello stato green che tenga traccia della pressione del bottone
-    per lo stato succiessivo.
+ 1. Introdurre una memoria nello stato green che tenga traccia della pressione del bottone per lo stato successivo.
  2. Introdurre un secondo semaforo che cambia stato quando viene attivato
     lo stimolo.
  3. L'uso di delay() puo' essere limitativo: come rimediare?
@@ -96,6 +96,7 @@ Serial.println(state);
 .
 .
   Soluzioni
+1. Vedi sketch: semaforo_rgb
 3. Si potrebbe utilizzare un interrupt per gli stimoli oppure millis()
    per gestire le pause.
  */

@@ -1,5 +1,5 @@
 /*
-   Semaforo RGB
+   Semaforo RGB single FSM
 
 
    Doppio semaforo, una via prinicipale (led) e una secondaria (secondary):
@@ -12,6 +12,8 @@
    Lo sketch e' stato implementato con una sola FSM in cui si incrociano
    gli stati dei due semafori.
 
+- Schema per un led RGB: https://lab.piffa.net/schemi/rgb.jpg
+- Schema per un bottone: https://www.arduino.cc/en/uploads/Tutorial/inputPullupButton.png
    */
 
 #include <common.h>

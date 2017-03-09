@@ -4,7 +4,7 @@
   Accensione e spegnimanto di un LED utilizzando
   una FSM  con 4 stati, statici e di transizione.
 
-Costrutto switch basato su uno struct.
+Costrutto switch basato su un enum:
 
  */
 
@@ -18,14 +18,13 @@ void setup() {
     pinMode(led, OUTPUT);
 }
 
-enum fsm_stati { // Stati della FMS
+enum fsm_stati: byte { // Stati della FMS, explicit type cast
     on,     // Statico
     to_off, // Transizione
     off,
     to_on
-};
+} stato ; // denominazione di una variabile
 
-fsm_stati stato ;
 
 void loop() {
     switch (stato) {
