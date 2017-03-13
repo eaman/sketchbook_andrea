@@ -8,7 +8,7 @@
  */
 
 byte pin[3]   = {11, 10, 9};   // 2v a 20ma: che resistenza dovro usare?
-byte color[3] = {255, 255, 255};
+byte color[3] = {0, 255, 255};
 
 
 

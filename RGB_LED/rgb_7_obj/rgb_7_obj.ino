@@ -15,11 +15,6 @@ class RGBLed {
     byte bluePin ;
 
   public:
-    // Public properties
-    byte redValue ;
-    byte greenValue ;
-    byte blueValue ;
-
     // Constructor: come viene instanziato un oggetto facente parte della classe
     RGBLed(byte pinR, byte pinG, byte pinB)
     {
@@ -28,7 +23,7 @@ class RGBLed {
       greenPin  = pinG ;
       bluePin   = pinB ;
 
-      // Equvalente del Setup() per inizializzare i PIN
+      // Equivalente del Setup() per inizializzare i PIN
       pinMode(redPin, OUTPUT);
       pinMode(greenPin, OUTPUT);
       pinMode(greenPin, OUTPUT);
@@ -68,7 +63,6 @@ void loop() {
   delay(1000);
   led.SetColor(255, 0, 255) ; // Mettiamo il LED in Green
   delay(1000);
-
 }
 
 /* Domande

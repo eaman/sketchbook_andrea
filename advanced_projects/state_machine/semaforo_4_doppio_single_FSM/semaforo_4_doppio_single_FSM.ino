@@ -20,11 +20,11 @@
 const byte input = 2; // PIN del bottone
 int pausa = 3000;
 long timer ;
+boolean wait = 0; // Memoria bottone
+
 enum states_available { // Stati della FMS
     turn_green,    // Dinamico, transizione
     green,         // Statico
-    wait_button,   // Evento - Stimolo
-    turn_yellow,   // Dinamico, transizione
     yellow,        // Statico
     turn_red,      // Dinamico, transizione
     turn_sec_yellow,// Yellow per semaforo secondario
@@ -32,7 +32,7 @@ enum states_available { // Stati della FMS
     red            // Statico
 };
 
-states_available state  ;
+states_available state ;
 
 
 void setup() {
@@ -54,29 +54,22 @@ switch (state) {
     break;
 
     case green:
-    if (millis() - timer => pausa * 2/3) {
-    state = wait_button ;
-    timer += pausa * 2/3 ;
-    }
-    break;
+        led.Green();
+        if (wait && (millis() - timer >= pausa * 2/3)) {
+            state = yellow;
+            timer = millis();
+        }
 
-    case wait_button:
-    if (digitalRead(input) == LOW) { 
-    delay(20); // Debouncing, si potrebbe fare con millis()
-    state = turn_yellow ; // Il passaggio di stato avviene alla pressione di un bottone
-    timer = millis();
-    };
-
-    break;
-
-    case turn_yellow :
-    led.Yellow();
-    state = yellow ;
-    break;
+        if (digitalRead(input) == LOW) {
+            wait = 1;
+        }
+        break;
 
     case yellow :
+    led.Yellow();
     if (millis() - timer >= pausa / 3) {
     state = turn_red ;
+    wait = 0; 
     timer += pausa / 3;
     }
     break;

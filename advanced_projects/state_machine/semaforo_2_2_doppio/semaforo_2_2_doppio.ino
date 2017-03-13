@@ -26,18 +26,20 @@ enum states_available { // Stati della FMS
     red
 };
 
-states_available FSM1  ; // Semaforo principale
-states_available FSM2 ; // Semaforo secondario
+states_available FSM1  = turn_green; // Semaforo principale
+states_available FSM2 = turn_red; // Semaforo secondario
 
+
+RGBLed led_main(11, 10, 9); 
+RGBLed led_secondary(8, 7, 6); 
 
 void setup() {
   pinMode(input, INPUT_PULLUP);
   Serial.begin(9600);
   Serial.flush();
+  led_secondary.Red();
 }
 
-RGBLed led_main(11, 10, 9); 
-RGBLed led_secondary(8, 7, 6); 
 
 void loop() {
 switch (FSM1) {

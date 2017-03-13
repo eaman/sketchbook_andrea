@@ -76,9 +76,9 @@ switch (FSM1) {
     break;
 
     case yellow :
-    if (millis() - timer >= pausa * 2/3) {
+    if (millis() - timer >= pausa * 1/3) {
         FSM1 = turn_red ;
-        timer += pausa * 2/3 ;
+        timer += pausa * 1/3 ;
     }
     break;
 
@@ -113,20 +113,21 @@ switch (FSM2) {
     break;
 
     case turn_yellow :
-    led2.Yellow();
+    led2.Blue();
     FSM2 = yellow ;
     break;
 
     case yellow :
     if (millis() - timer >= pausa / 3) {
     FSM2 = turn_red ;
-    timer += pausa * 2/3;
+    //timer += pausa * 2/3;
     }
     break;
 
     case turn_red :
     FSM2 = red ;
     FSM1 = turn_green;
+    timer = millis();
     break;
 
     case red :
