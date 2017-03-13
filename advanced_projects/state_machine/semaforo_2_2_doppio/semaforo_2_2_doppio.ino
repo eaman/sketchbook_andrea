@@ -26,8 +26,8 @@ enum states_available { // Stati della FMS
     red
 };
 
-states_available FSM1  ;
-states_available FSM2 ;
+states_available FSM1  ; // Semaforo principale
+states_available FSM2 ; // Semaforo secondario
 
 
 void setup() {
@@ -65,7 +65,7 @@ switch (FSM1) {
     delay(pausa/3);
     led_main.Red();
     FSM1 = red ;
-    FSM2 = turn_green; // Stimolo al semafor secondario
+    FSM2 = turn_green; // **** Stimolo al semaforo secondario
     break;
 
     case red :
@@ -89,12 +89,13 @@ switch (FSM2) {
     case turn_red :
     led_secondary.Yellow();
     delay(pausa/3);
-    FSM1 = turn_green ;
+    FSM1 = turn_green ; // ****
     FSM2 = red ;
+    led_secondary.Red();
     break;
 
     case red :
-    led_secondary.Red();
+    // niente da fare, statico
     break;
 }
 // Debug

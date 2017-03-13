@@ -8,9 +8,10 @@ Version: singolo semaforo + millis + memoria giallo
 
    Uno stimolo esterno rappresentato dalla pressione di un bottone
    causa il passaggio di stato.
+   Il semaforo resta verde fino a quando non riceve lo stimolo
+   (es passaggio pedonale).
 
    Implementata con millis() invece che con delay(),
-   sono stati aggiuntu due stati per meglio gestire lo stato yellow.
 
    */
 
@@ -18,6 +19,8 @@ Version: singolo semaforo + millis + memoria giallo
 const byte input = 2; // PIN del bottone
 int pausa = 3000;
 long timer ;
+boolean wait = 0; // Memoria bottone
+
 enum states_available { // Stati della FMS
     green,         // Statico
     yellow,            // Statico
@@ -25,7 +28,6 @@ enum states_available { // Stati della FMS
 };
 
 states_available state  ;
-boolean wait = 0;
 
 
 void setup() {
@@ -34,8 +36,7 @@ void setup() {
     timer = millis();
 }
 
-RGBLed led(11, 10, 9); //Istanziamo un oggetto led facente parte
-// della classe RGBLed
+RGBLed led(11, 10, 9); 
 
 void loop() {
     switch (state) {

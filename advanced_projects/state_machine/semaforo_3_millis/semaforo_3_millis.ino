@@ -18,6 +18,7 @@
 const byte input = 2; // PIN del bottone
 int pausa = 3000;
 long timer ;
+
 enum states_available { // Stati della FMS
     green,         // Statico
     wait_button,   // Evento - Stimolo
@@ -52,7 +53,7 @@ case green:
 
 case wait_button:
     if (digitalRead(input) == LOW) {
-        state = turn_yellow ; // Il passaggio di stato avviene alla pressione di un bottone
+        state = turn_yellow ; 
         delay(20); // Debouncing, si potrebbe fare con millis()
         timer = millis();
     };

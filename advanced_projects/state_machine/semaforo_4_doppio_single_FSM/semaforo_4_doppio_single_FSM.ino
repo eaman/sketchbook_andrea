@@ -24,11 +24,11 @@ enum states_available { // Stati della FMS
     turn_green,    // Dinamico, transizione
     green,         // Statico
     wait_button,   // Evento - Stimolo
-    turn_yellow,      // Dinamico, transizione
-    yellow,            // Statico
+    turn_yellow,   // Dinamico, transizione
+    yellow,        // Statico
     turn_red,      // Dinamico, transizione
-    turn_sec_yellow,  // Yellow per semaforo secondario
-    sec_yellow,
+    turn_sec_yellow,// Yellow per semaforo secondario
+    sec_yellow,     // Statico
     red            // Statico
 };
 

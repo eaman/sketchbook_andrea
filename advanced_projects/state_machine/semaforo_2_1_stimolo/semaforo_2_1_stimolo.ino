@@ -13,7 +13,7 @@
 
 #include <common.h>
 const byte input = 2; // PIN del bottone
-int pausa = 3000;
+const int pausa = 3000;
 enum states_available { // Stati della FMS
     turn_green,    // Dinamico, transizione
     green,         // Statico
@@ -51,7 +51,6 @@ switch (state) {
     state = turn_red ; // Il passaggio di stato avviene alla pressione di un bottone
     delay(20);
     };
-
     break;
 
     case turn_red :
