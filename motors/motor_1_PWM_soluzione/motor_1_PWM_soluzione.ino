@@ -37,6 +37,5 @@ delay(900); // Pause
 
   Risposte:
 4. Basta invertire la polarita' dei cavi che vanno al motore
-
 */
 
