@@ -1,7 +1,19 @@
-// Sweep
-// by BARRAGAN <http://barraganstudio.com> 
-// This example code is in the public domain.
+/* Sweep
 
+   Rotazione di un servomotore tramite la librerio Servo.h .
+
+L'utilizzo della libreria Servo rende inutilizzabile analogWrite()
+sui pin 9 e 10 dato che utilizza i timer associati a questi PIN.
+
+Power: un servo da 9g puo' arrivare ad impegnare 750mA sotto carico
+(se viene opposta resistenza al movimento del servo), un  SG90 prende 
+~62mA se il movimento e' libero. Quindi in fase di test il servo puo'
+essere alimentato direttamente da una scheda Arduino (200ma dal PIN 5v)
+ma per l'uso finale dovra' essere alimentato autonomamente.
+
+Schema: https://www.arduino.cc/en/uploads/Tutorial/sweep_bb.png
+        http://microbotlabs.com/images/mearm-uno-servo-1.jpg
+   */
 
 #include <Servo.h> 
  

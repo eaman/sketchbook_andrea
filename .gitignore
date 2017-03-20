@@ -7,3 +7,4 @@ libraries/aero/
 libraries/LedControl/
 libraries/FreeRTOS/
 libraries/Adafruit_HMC5883_Unified/
+libraries/aero

@@ -1,5 +1,19 @@
-// Controlling a servo position using a potentiometer (variable resistor) 
-// by Michal Rinott <http://people.interaction-ivrea.it/m.rinott> 
+/* Knob
+
+   Rotazione di un servomotore tramite un potenziometro
+
+L'utilizzo della libreria Servo rende inutilizzabile analogWrite()
+sui pin 9 e 10 dato che utilizza i timer associati a questi PIN.
+
+Power: un servo da 9g puo' arrivare ad impegnare 750mA sotto carico
+(se viene opposta resistenza al movimento del servo), un  SG90 prende 
+~62mA se il movimento e' libero. Quindi in fase di test il servo puo'
+essere alimentato direttamente da una scheda Arduino (200ma dal PIN 5v)
+ma per l'uso finale dovra' essere alimentato autonomamente.
+
+Schema: 
+- https://www.arduino.cc/en/uploads/Tutorial/knob_bb.png
+*/
 
 #include <Servo.h> 
  
