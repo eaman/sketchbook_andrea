@@ -15,11 +15,13 @@ Schema:
 - https://www.arduino.cc/en/uploads/Tutorial/knob_bb.png
 */
 
+// Schema: https://lab.piffa.net/schemi/potenziometro_bb.png
+
 #include <Servo.h> 
  
 Servo myservo;  // create servo object to control a servo 
  
-int potpin = 0;  // analog pin used to connect the potentiometer
+const int potpin = A0;  // analog pin used to connect the potentiometer
 int val;    // variable to read the value from the analog pin 
 
 void setup() 

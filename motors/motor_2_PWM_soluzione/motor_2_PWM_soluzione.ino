@@ -39,9 +39,7 @@ void loop() {
   delay(3); // Pause, stabilizza la lettura del Pot           
 }
 
+/* Domande:
+   1. Rifare questo esercizio utilizzando la funzione map().
 
-
-
-
-
-
+   */
