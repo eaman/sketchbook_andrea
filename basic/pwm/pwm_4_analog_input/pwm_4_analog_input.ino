@@ -7,9 +7,9 @@
   
   */
   
-int inputPin = A0;  // set input pin for the potentiometer
-int inputValue = 0; // potentiometer input variable
-int ledPin = 3;     // output pin, deve avere il PWM
+const byte inputPin = A0;// set input pin for the potentiometer
+int inputValue = 0;      // potentiometer input variable
+const byte ledPin = 3;   // output pin, deve avere il PWM
 
 void setup() {
      // declare the ledPin as an OUTPUT:

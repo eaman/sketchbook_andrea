@@ -33,7 +33,7 @@ void loop()
 }
 
 /* Domande:
- 2. I due loop sembrano molto simili: e' possibile accorparli?
+ 1. I due loop sembrano molto simili: e' possibile accorparli?
 
  .
  .
@@ -56,9 +56,7 @@ void loop()
  .
  .
  - Risposte:
- 1. Si, le variabili i e c esistono solo nello scopo degli iteratori
-    in cui sono dichiarate.
- 2. Vedi es. suciessivo.
+ 1. Vedi es. suciessivo.
  */
 
 

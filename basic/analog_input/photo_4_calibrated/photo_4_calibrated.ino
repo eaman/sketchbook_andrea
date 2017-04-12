@@ -12,11 +12,11 @@
  Questo sketch modifica l'intervallo di intermittenza di un led
  in base alla luminosita' rilevata.
  
- Schema: http://lab.piffa.net/schemi/photoresistor_led.png
+ Schema: https://learn.adafruit.com/assets/460
  */
 
 int sensorPin = A0;    // select the input pin for the potentiometer
-int ledPin = 13;      // select the pin for the LED
+int ledPin = 11;      // select the pin for the LED
 int sensorValue = 0;  // variable to store the value coming from the sensor
 
 int min = 60;        // valore minimo rilevato dal sensore
@@ -32,28 +32,38 @@ void setup() {
 void loop() {
   // read the value from the sensor:
   sensorValue = analogRead(sensorPin);   
-  int calValue = map(sensorValue,min,max,0,1000) ; 
-  // Max pausa = 1sec
-      // turn the ledPin on
-    digitalWrite(ledPin, HIGH);  
-  // stop the program for <sensorValue> milliseconds:
-  delay(calValue);          
-  // turn the ledPin off:        
-  digitalWrite(ledPin, LOW);   
+  delay(5); // stabilizziamo il sensore
+  int calValue = map(sensorValue,min,max,0,255) ; 
+  analogWrite(ledPin, calValue);  
   // Debug, per disabilitarlo togliere l'inizializzazione della seriale
   // dal setup()
   Serial.print("sensor = " );                       
   Serial.print(sensorValue);      
   Serial.print("\t cal delay = ");      
   Serial.println(calValue);
-  delay(calValue);                  
 }
 
 /*
 Domande:
-1. Modificare lo sketch in modo che modifichi la luminosita' di un led 
-via PWM tramite il valore letto dal sensore.
-2. Come fare per costringere la variabile dentro un intervallo stabilito?
-3. Come si potrebbe eseguire la calibrazione automaticamente?
+1. Come fare per costringere la variabile dentro un intervallo stabilito?
+2. Come si potrebbe eseguire la calibrazione automaticamente?
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+1. Utilizzando costrain()
+2. Vedi esercizio sucessivo
 */
 

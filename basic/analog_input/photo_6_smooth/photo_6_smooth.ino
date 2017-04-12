@@ -2,13 +2,16 @@
   Smoothing
  
  Legge 10 valori dal sensore e ritorna il valore medio tra questi.
+
+ Schema: https://learn.adafruit.com/assets/460
+
  
  
  */
 
 // These constants won't change:
 const int sensorPin = A0;    // pin that the sensor is attached to
-const int ledPin = 9;        // pin that the LED is attached to
+const int ledPin = 11;        // pin that the LED is attached to
 
 // variables:
 int sensorValue = 0;         // the sensor value
@@ -19,6 +22,7 @@ int sensorMax = 0;           // maximum sensor value
 void setup() {
   // turn on LED to signal the start of the calibration period:
   pinMode(13, OUTPUT);
+  pinMode(ledPin, OUTPUT);
   digitalWrite(13, HIGH);
 
   // calibrate during the first five seconds 

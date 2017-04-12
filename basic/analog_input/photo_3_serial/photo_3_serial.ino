@@ -13,10 +13,11 @@
  in base alla luminosita' rilevata.
  
  Schema: http://lab.piffa.net/schemi/photoresistor_led.png
+ Guida:  https://learn.adafruit.com/photocells/using-a-photocell
  */
 
-int sensorPin = A0;    // select the input pin for the potentiometer
-int ledPin = 13;      // select the pin for the LED
+int sensorPin = A0;   // select the input pin for the potentiometer
+int ledPin = 3;      // select the pin for the LED
 int sensorValue = 0;  // variable to store the value coming from the sensor
 
 void setup() {
@@ -47,7 +48,8 @@ void loop() {
 /* domande:
  1. qual'e' il valore minimo rilevato?
  2. quale il massimo?
- 3. Come adattare la risoluzione dell'attuatore alla sensibilita' del sensore?
+ 3. Modificare lo sketch in modo che modifichi la luminosita' di un LED 
+via PWM tramite il valore letto dal sensore. (vedi esercizio sucessivo)
  */
 
 

@@ -23,12 +23,13 @@
  http://arduino.cc/en/Tutorial/Calibration
  
  This example code is in the public domain.
+ Schema:  Schema: https://learn.adafruit.com/assets/460
  
  */
 
 // These constants won't change:
 const int sensorPin = A0;    // pin that the sensor is attached to
-const int ledPin = 9;        // pin that the LED is attached to
+const int ledPin = 11;        // pin that the LED is attached to
 
 // variables:
 int sensorValue = 0;         // the sensor value
