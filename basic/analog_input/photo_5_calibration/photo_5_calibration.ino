@@ -66,12 +66,13 @@ void setup() {
 void loop() {
   // read the sensor:
   sensorValue = analogRead(sensorPin);
-
+  // in case the sensor value is outside the range seen during calibration
+  sensorValue = constrain(sensorValue, sensorMin, sensorMax);
+  
   // apply the calibration to the sensor reading
   sensorValue = map(sensorValue, sensorMin, sensorMax, 0, 255);
 
-  // in case the sensor value is outside the range seen during calibration
-  sensorValue = constrain(sensorValue, 0, 255);
+
 
   // fade the LED using the calibrated value:
   analogWrite(ledPin, sensorValue);
