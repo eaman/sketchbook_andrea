@@ -18,14 +18,12 @@ struct color {
 
 color led;
 
-
 void setup()
 {
   for (byte i = 0; i < 4; i++) {
     pinMode(pin[i], OUTPUT);
   }
 }
-
 
 void loop()
 {
@@ -60,15 +58,13 @@ struct ledRGB {
     byte    red;
 };
 
-ledRGB led {0,255,255,9,10,11};
+ledRGB led {9,10,11,0,255,255};
    
-   
-
 void setup()
 {
-  pinMode(led.Pin, OUTPUT);
-  pinMode(led.Pin, OUTPUT);
-  pinMode(led.Pin, OUTPUT);
+  pinMode(led.rPin, OUTPUT);
+  pinMode(led.gPin, OUTPUT);
+  pinMode(led.bPin, OUTPUT);
 }
 
 void loop()

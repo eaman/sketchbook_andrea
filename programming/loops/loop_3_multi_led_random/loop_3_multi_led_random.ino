@@ -17,8 +17,8 @@
  */
 
 byte ledPins[8] = {  // Domanda: cosa succede se uso int?
-  2,3,4,5,6,7,8,9} 
-; //Array
+  2,3,4,5,6,7,8,9
+  }; //Array
 int timer = 100;           // Pausa per far brillare i LED
 int randNumber ;
 
@@ -33,12 +33,13 @@ void setup() {
 
   Serial.print("Dimesione array: ");
   Serial.println(sizeof(ledPins));
+  
   randomSeed(analogRead(0));  // Rilevazione di un valore esterno
  // per scegliere il primo elemento del pseudorandom generators
 }
 
 void loop() {
-  // print a random number from 0 to 8
+  // print a random number from 0 to 7
   randNumber = random(8);
   // turn the pin on:
   Serial.print("Accensione pin  n. ");
@@ -60,14 +61,13 @@ void rainbow() {
   // Esegue un pattern con i led
   
   Serial.println(">>> Rainbow! <<<");
+    // loop from the lowest pin to the highest:
   for (int thisPin = 0; thisPin < sizeof(ledPins); thisPin++) {
     // turn the pin on:
     digitalWrite(ledPins[thisPin], HIGH);  
     delay(timer / 2);                  
     // turn the pin off:
     digitalWrite(ledPins[thisPin], LOW);    
-    // Debug
-
   }
 
   // loop from the highest pin to the lowest:
