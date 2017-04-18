@@ -65,8 +65,8 @@ void loop() {
 .
 .
 Soluzioni:
- 1. utilizzare continue
- 2. utilizzare break
+ 1. Utilizzare continue con un ciclo if, oppure eliminare un elemento dall'Array.
+ 2. Utilizzare break
  3. Utilizzare un variabile sarebbe gia' un inizio, ancora meglio estrarre il
     valore tramite la funzione sizeof().
 Links:
