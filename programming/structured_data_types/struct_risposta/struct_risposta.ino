@@ -11,13 +11,7 @@
  */
 
 
-struct lampeggino {
-  byte pin ;
-  long pausa;
-  boolean stato;
-  char feedback[20]; // Messaggio via seriale
-} ;
-
+#include "lamp.h"
 
 // instanziamo un lampeggino
 lampeggino rosso { 13, 1000, 0, ">> Led Rosso <<"};
@@ -31,19 +25,7 @@ void setup()
 void loop()
 {
     // Utilizziamo un lampeggiatore
-    digitalWrite(rosso.pin,rosso.stato);
-    Serial.println(rosso.feedback);
-    rosso.stato = !rosso.stato ;
-    delay(rosso.pausa);
+   lampeggia(rosso);
 }
-
-/* Domande
-
-   1. Provare a creare una funzione che accetti come parametro un lampeggino
-      e svolga qualche operazione su di esso (come quello che si vede nel loop).
-
-
-   Risposta nell'esercizio successivo.
-*/
 
 

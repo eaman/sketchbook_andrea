@@ -1,8 +1,9 @@
 /* Knight Rider 2
- * --------------
- *
- * Array e uso dei cicli iterativi.
- *
+ 
+ Array e uso dei cicli iterativi.
+ Gli array sono omogeni: possono contenere solo dati dello stesso tipo.
+ Per l'uso avanzato degli array puo' essere utile approfondire l'uso dei pointers
+ (in particolare per passare un array a una funzione).
 
 
    Schema semplificato:
