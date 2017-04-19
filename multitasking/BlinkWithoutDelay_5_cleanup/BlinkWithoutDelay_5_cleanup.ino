@@ -61,8 +61,31 @@ void lightLedB (int interval) {
 /* Domande:
  1. E' possibile avere una sola funzione che permetta di gestire 
     qualunque LED io voglia aggiungere?
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+  Risposte:
+
+  1. Allo stato attuale la funzione lightLed deve avere una variabile univoca
+     previousMillis per ogni LED che gestisce. Servirebbe un costrutto che permetta
+     di raggruppare le proprieta' di ogni LED (es. struct) da associare poi alla
+     unziona che aggiorna il LED.
+
+     Ancora meglio un costrutto (oggetto) che associ sia le proprita' che le azioni
+     in un unico oggetto.
+         
     
-/* Approfondimenti
+/* Ulteriori approfondimenti
  - integrazione tra funzioni e dati: programmazione a oggetti
  - Uso di pointers per modificare dati esterni allo scope della funzione, static
  - Uso di forme di dati strutturate (array, struct) per scambiare dati tra funzioni e programma

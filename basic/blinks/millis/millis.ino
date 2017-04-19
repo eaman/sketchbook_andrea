@@ -11,7 +11,7 @@ Schema: https://lab.piffa.net/schemi/circuito_led_bb.png
 
 const int led = 13;      // Primo LED
               
-unsigned long previousMillis = 0;        // Ultimo agiornamento
+unsigned long previousMillis = 0;        // Ultimo aggiornamento
 unsigned long interval = 1000;           // Pausa tra i lampeggi
 
 void setup() {

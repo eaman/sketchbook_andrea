@@ -7,6 +7,7 @@
  Massimo comun denominatore 1000 MCD 500 = 500ms
  Durata Periodo = 500ms
  
+ Schema: https://lab.piffa.net/schemi/millis_bb.png
  
  Stati: 
  
@@ -56,26 +57,6 @@ void loop() {
 }
 
 /* Domande
- 1. Altro scenartio: fare brillare un LED ogni 300ms mentre il secondo brilla ogni 400m
+ 1. Altro scenario: fare brillare un LED ogni 300ms mentre il secondo brilla ogni 400m
  2. ...valutare come aggiungere un terzo LED, gestire altri intevalli.
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -44,7 +44,7 @@ void loop() {
         if (sensorReading == LOW) {
             Serial.print("Sensore: ");
             Serial.print(thisSensor);
-            tone(piezo_pin, notes[thisSensor ], 50); // Notes array is translated
+            tone(piezo_pin, notes[thisSensor], 50); // Notes array is translated
             Serial.print("\t Nota: ");
             Serial.println(notes[thisSensor]);
         }

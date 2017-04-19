@@ -15,19 +15,15 @@ Variabili: http://www.maffucci.it/2011/12/15/appunti-di-programmazione-su-arduin
 /////////////
 // First LED
 const int ledA =  13;       // the number of the LED pin
-// Variables will change:
 int ledStateA = LOW;        // ledState used to set the LED
 long previousMillisA = 0;   // will store last time LED was updated
-// the follow variables is a long because the time, measured in miliseconds,
-// will quickly become a bigger number than can be stored in an int.
 long intervalA = 1000;      // interval at which to blink (milliseconds)
 void lightLedA () ;
 
 //////////////
 //  Second LED
-// Now with less global variables thanks to static (see function body)
+// Ora con meno variabili globali utilizzando static (vedi corpo della funzione)
 const int ledB = 12; //Secondo LED
-                     // ledState used to set the LED
 long previousMillisB = 0;    // will store last time LED was updated
                              // interval at which to blink (milliseconds)
 void lightLedB () ;

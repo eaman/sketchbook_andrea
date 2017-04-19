@@ -40,7 +40,10 @@ void loop()
 ////////////////
 // Funzioni
 
-void lightLed(struct blinkLed *temp) { // temp ora e' un pointer e non una struttura autonoma: pass by reference (not by value)
+void lightLed(struct blinkLed *temp) { // temp ora e' un pointer e non una copia autonoma: pass by reference (not by value)
+// Si noti che la funzione e' ora void dato che non deve tornare a passare nulla al loop: molto
+piu' semplice (una sorta di polimorfismo).
+  
   // Illumina il ledA secondo un intervallo passato come argomento
 
   if(millis() - (*temp).previousMillis >= (*temp).interval) { // l'operatore punto ha priorita' maggiore rispetto al pointer asterisco

@@ -49,7 +49,7 @@ void loop()
 {
 // Primo LED
   if (millis() - previousMillisA >= intervalA) {
-    // Timestamp + timestamp = delta temporale
+    
     previousMillisA += intervalA ;
 
     // if the LED is off turn it on and vice-versa:

@@ -4,9 +4,9 @@
   by: Dipto Pratyaksa
   last updated: 31/3/13
 */
-#include <pitches.h>
+#include "pitches.h"
 //#include "/home/utente/sketchbook-andrea/piezo/piezo_mario_tune/pitches.h";
-#define melodyPin 3
+#define melodyPin 9
 //Mario main theme melody
 int melody[] = {
   NOTE_E7, NOTE_E7, 0, NOTE_E7, 
@@ -111,7 +111,7 @@ int underworld_tempo[] = {
 
 void setup(void)
 {
-   pinMode(3, OUTPUT);//buzzer
+   pinMode(melodyPin, OUTPUT);//buzzer
    pinMode(13, OUTPUT);//led indicator when singing a note
 
 }

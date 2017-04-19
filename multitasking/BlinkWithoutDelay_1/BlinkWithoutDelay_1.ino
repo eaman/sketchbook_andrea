@@ -1,5 +1,5 @@
 /* Blink without Delay
- 
+
  Utilizziamo la funzione millis() al posto di delay()
  per poter gestire il lampeggio di un LED senza bloccare
  il processore.
@@ -8,69 +8,54 @@
  nei quali una versione minimale si evolve per introdurre
  programmazione ad oggetti, interrupts, pointers.
 
- Turns on and off a light emitting diode(LED) connected to a digital  
- pin, without using the delay() function.  This means that other code
- can run at the same time without being interrupted by the LED code.
- 
- The circuit:
- * LED attached from pin 13 to ground.
- * Note: on most Arduinos, there is already an LED on the board
- that's attached to pin 13, so no hardware is needed for this example.
- 
- 
- created 2005
- by David A. Mellis
- modified 8 Feb 2010
- by Paul Stoffregen
- 2015 modified by Andrea Manni
- 
- This example code is in the public domain.
+Per vedere direttamente un esempio succinto:
+- https://lab.piffa.net/sketchbook_andrea/basic/blinks/millis/millis.ino
 
- 
- http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
+Schema: https://lab.piffa.net/schemi/millis_bb.png
+
+Tutorial:
+- http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
  */
 
-// constants won't change. Used here to 
-// set pin numbers:
-const int ledPin =  13;      
+const int ledPin =  13;
 
-// Variables will change:
-int ledState = LOW;             // ledState used to set the LED
-long previousMillis = 0;        // will store last time LED was updated
-
-// the follow variables is a long because the time, measured in miliseconds,
-// will quickly become a bigger number than can be stored in an int.
-const long interval = 1000;           // interval at which to blink (milliseconds)
+// Variabili
+boolean ledState = LOW;    // Variabile associata allo stato del LED
+unsigned long previousMillis = 0;  // Timestamp dell'ultimo aggiornamento,
+// previousMillis dovra' essere di tipo long in quanto deve contenere numeri grandi
+// e sara' sempre positiva quindi unsigned.
+const unsigned long interval = 1000;  // Intervallo tra un blink e l'altro (milliseconds)
+// Dato che dovra' essere aggiunta ad altre variabili long e unsigned tanto vale
+// fare anche interval come quelle
 
 void setup() {
-  // set the digital pin as output:
-  pinMode(ledPin, OUTPUT);      
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop()
 {
-  // here is where you'd put code that needs to be running all the time.
+  // Verifichiamo se e' il momento di modificare lo variabile
+  // associata allo stato del LED.
 
-  // check to see if it's time to blink the LED; that is, if the 
-  // difference between the current time and last time you blinked 
-  // the LED is bigger than the interval at which you want to 
-  // blink the LED.
- 
-  if (millis() >= previousMillis + interval) {
+  if (millis() - previousMillis >= interval) {
+    // Timestamp + timestamp = delta temporale
+
+    previousMillis = previousMillis + interval ;
     // Aggiorniamo il contatore previousMillis
-    previousMillis += interval ; 
-    // previousMillis = millis(); // 3) Cosa succederebbe se fosse
-    // passato piu' di 1ms dall'evento all'azione?
 
-    // if the LED is off turn it on and vice-versa:
+    // Se il LED e' spento accendiamolo e vice-versa:
     if (ledState == LOW)
+    {
       ledState = HIGH;
+    }
     else
+    {
       ledState = LOW;
+    }
     // e' possibile semplificare questa operazione?
     // Hint: lo stato del LED e' binario: ha solo due stati possibili.
 
-    // set the LED with the ledState of the variable:
+    // Aggiorniamo lo stato del LED
     digitalWrite(ledPin, ledState);
   }
 }
@@ -79,11 +64,19 @@ void loop()
    1. Aggioungere un LED che brilli ogni 500ms: iniziare pensando
       a quali variabili gestiscono l'attuale LED e a quali si
       dovranno aggiungere.
-   2. E' ora agevole cambiare gli intervalli dei due LED? 
+   2. E' ora agevole cambiare gli intervalli dei due LED?
       Modificare gli intervalli dei due led (es 500ms - 320ms)
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
    Risposta
    3. Si sarebbe introdotto uno slip (ritardo) nei tempi dello sketch
 

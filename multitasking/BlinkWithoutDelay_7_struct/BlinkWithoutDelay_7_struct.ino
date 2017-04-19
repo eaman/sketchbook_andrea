@@ -1,7 +1,17 @@
 /* Blink without Delay
- Soluzione
  
- Introdotto un argomento per la funzione che nodifica l'intervallo di lampeggio 
+Raggruppamento delle proprieta' dell'oggetto in uno struct.
+Una funzione accetta e restituisce uno struct di questo tipo
+facendo una "copy by value" (vedi esercizio con i pointers per
+una "copy by reference").
+
+Questo e' un esercizio avanzato: propedeutico a capire le basi
+della programmazione a oggetti (suggerimento: 
+https://lab.piffa.net/sketchbook_andrea/RGB_LED/
+
+e' piu' semplice dato che non usa pointers e references
+non dovendo modificare in modo permanente nessuna variabile
+dello struct).
  */
 
 struct blinkLed {

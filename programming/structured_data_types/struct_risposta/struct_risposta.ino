@@ -27,5 +27,3 @@ void loop()
     // Utilizziamo un lampeggiatore
    lampeggia(rosso);
 }
-
-
