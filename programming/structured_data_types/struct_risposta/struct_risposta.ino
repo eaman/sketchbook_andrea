@@ -14,7 +14,7 @@
 #include "lamp.h"
 
 // instanziamo un lampeggino
-lampeggino rosso { 13, 1000, 0, ">> Led Rosso <<"};
+lampeggino rosso { 13, 1000, ">> Led Rosso <<"};
 
 void setup()
 {
