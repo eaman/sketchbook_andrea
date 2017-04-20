@@ -11,14 +11,13 @@
  
  Sostanzialmente e' un circuito a corrente alternata.
  
- Schema: http://lab.piffa.net/schemi/diodi_bb.png
  
  Ricordarsi di usare una resistenza da ~320ohms per i LED.
  Resistenza = (Voltaggio_Arduino - Forward_voltage_LED) / (ampere utilizzati)
  R = (5v-1.8v) / 0.010a 
  R =320ohms
  
- This example code is in the public domain.
+ Schema: http://lab.piffa.net/schemi/diodi_bb.png
  */
 
 
@@ -47,46 +46,6 @@ void loop() {
 
 /* Domande
  * 
- 1. Quanti stati sono disponibili per i LED ?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	Risposte:
-	1. Quattro combinazione tra cui 3 stati differenti.
-     */
+ 1. Aggiungere uno stato in cui entrambi i LED sono spenti.
+ 
+ */
